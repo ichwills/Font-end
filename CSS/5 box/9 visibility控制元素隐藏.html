@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        article {
+            padding: 30px;
+            width: 400px;
+            border: solid 3px #ddd;
+        }
+
+        div {
+            width: 100px;
+            height: 100px;
+            background: red;
+            margin-bottom: 10px;
+        }
+
+        div:nth-of-type(1) {
+            /* display: none; */
+            /*比display代码少,更简洁*/
+            /* visibility: hidden; */    
+            opacity:.2;/*改透明程度 0为消失*/
+        }
+    </style>
+</head>
+
+<body>
+    <article>
+        <div>1</div>
+        <div>2</div>
+    </article>
+</body>
+
+</html>
