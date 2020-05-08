@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
     <script>
         /* 
@@ -13,18 +14,20 @@
 
          */
         //1234
-        function encryption(num){
+        function encryption(num) {
             let a = (num % 10 + 5) % 10;
             let b = (parseInt(num / 10) % 10 + 5) % 10;
             let c = (parseInt(num / 100) % 10 + 5) % 10;
             let d = (parseInt(num / 1000) + 5) % 10;
             return Number("" + a + b + c + d);
         }
-
+        console.log((12 % 10 + 5) % 10);/*解释过程*/
         console.log(encryption(12));
     </script>
 </head>
+
 <body>
-    
+
 </body>
+
 </html>
