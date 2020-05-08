@@ -7,7 +7,7 @@
         <title>Document</title>
         <script>
             /* 
-                   3.以下通过循环给数组每个元素赋值，随机数。
+                   以下通过循环给数组每个元素赋值产生随机数。
 
                    Math.random()  随机 [0,1)
                    //随机0~9的整数
@@ -20,11 +20,11 @@
 
 
             //1、长度是10的数组
-            var arr = new Array(10);
-            for(var i = 0; i < arr.length; i++){
+            let arr = new Array(10);
+            for(let i = 0; i < arr.length; i++){
                 arr[i] = parseInt(Math.random() * 10);
             }
-            alert(arr);
+            console.log(arr);
         </script>
     </head>
     <body>
