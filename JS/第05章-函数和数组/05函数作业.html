@@ -14,14 +14,14 @@
          */
         //1234
         function encryption(num){
-            var a = (num % 10 + 5) % 10;
-            var b = (parseInt(num / 10) % 10 + 5) % 10;
-            var c = (parseInt(num / 100) % 10 + 5) % 10;
-            var d = (parseInt(num / 1000) + 5) % 10;
+            let a = (num % 10 + 5) % 10;
+            let b = (parseInt(num / 10) % 10 + 5) % 10;
+            let c = (parseInt(num / 100) % 10 + 5) % 10;
+            let d = (parseInt(num / 1000) + 5) % 10;
             return Number("" + a + b + c + d);
         }
 
-        alert(encryption(5555));
+        console.log(encryption(12));
     </script>
 </head>
 <body>
