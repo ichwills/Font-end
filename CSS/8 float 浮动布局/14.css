@@ -1,7 +1,7 @@
 p {
   border: solid 1px #ddd;
   padding: 10px;
-  overflow: hidden;
+  overflow: auto;
 }
 p span.shape {
   width: 100px;
@@ -10,5 +10,5 @@ p span.shape {
   padding: 30px;
   border: solid 20px red;
   margin: 0px;
-  shape-outside: margin-box;
+  shape-outside: padding-box;
 }
