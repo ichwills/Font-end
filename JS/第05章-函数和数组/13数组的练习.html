@@ -29,7 +29,7 @@
                 //3、取出求平均数的这组数
                 // var newArr = arr.splice(0, 5);
                 var newArr = arr.slice(i * 5, (i + 1) * 5);
-                alert(newArr);
+                console.log(newArr);
                 //4、求平均值
                 var sum = 0; //求和数
                 for(var j = 0; j < newArr.length; j++){
@@ -38,7 +38,7 @@
                 averageArr.push(sum / 5);
             }
 
-            alert(averageArr);  //6,16,26,36,46,56
+            console.log(averageArr);  //6,16,26,36,46,56
         </script>
     </head>
     <body>
