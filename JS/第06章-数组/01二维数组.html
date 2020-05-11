@@ -14,7 +14,7 @@
              */
             var arr1 = [10, 20, 30];
             var arr = [true, 100, "hello", arr1];
-            // alert(arr.length);
+            console.log(arr.length);
 
             // alert(arr[3] == arr1);
 
@@ -26,7 +26,7 @@
             /* 
                 通过循环按行顺序为一个5×5的二维数组a赋1到25的自然数，然后输出该数组的左下半三角。试编程。
              */
-            var arr = [
+            var arr2 = [
                 [1, 2, 3, 4, 5],
                 [6, 7, 8, 9, 10],
                 [11, 12, 13, 14, 15],
@@ -37,12 +37,12 @@
             // alert(arr[0][1])
             // alert(arr[i][j])
 
-            for(var i = 0; i < arr.length; i++){
+            for(var i = 0; i < arr2.length; i++){
                 // document.write(arr[i]);
                 
-                for(var j = 0; j < arr[i].length; j++){
+                for(var j = 0; j < arr2[i].length; j++){
                    if(i >= j){
-                       document.write(arr[i][j] + "&nbsp;");
+                       document.write(arr2[i][j] + "&nbsp;");
                    }
                 }
                 document.write("<br/>");
