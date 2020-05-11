@@ -20,7 +20,7 @@
                 例如：输入：692223361219输出：6922233612192
             */
 
-            alert(ean13(692223361219)); //6922233612192
+            console.log(ean13(692223361219)); //6922233612192
 
             function ean13(num){
                 //1、将其中每一位数都取下来
@@ -29,7 +29,7 @@
                     arr.unshift(num % 10);
                     num = parseInt(num / 10);
                 }
-                // alert(arr); //6,9,0,1,2,3,4,5,6,7,8,9
+                console.log(arr); //6,9,0,1,2,3,4,5,6,7,8,9
                 var odd = 0;
                 var even = 0;
                 for(var i = 0; i < arr.length; i++){
