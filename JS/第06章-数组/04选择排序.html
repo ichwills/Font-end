@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-        <title>Document</title>
-        <script>
-            /* 
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <script>
+        /* 
                 选择排序(打擂台法)
                     规则：选出一个位置，这个位置上的数，和后面所有的数进行比较，如果比较出大小就交换两个数位置。
                     规律：每一轮都能选出一个最小的数，放在正确的位置。
@@ -46,31 +47,33 @@
 
                 
             */
-            var arr = [9, 8, 7, 6, 5, 4];
+        var arr = [9, 8, 7, 6, 5, 4];
 
-            for(var i = 0; i < arr.length - 1; i++){
-                //被比较的数的下标
-                for(var j = i + 1; j < arr.length; j++){
-                    if(arr[i] > arr[j]){
-                        var tmp = arr[i];
-                        arr[i] = arr[j];
-                        arr[j] = tmp;
-                    }
+        for (var i = 0; i < arr.length - 1; i++) {
+            //被比较的数的下标
+            for (var j = i + 1; j < arr.length; j++) {
+                if (arr[i] > arr[j]) {
+                    var tmp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = tmp;
                 }
             }
-            alert(arr);
+        }
+        console.log(arr);
 
-            // 用的擂台的下标
-            /* for(var i = 0; i < arr.length - 1; i++){
-                //被比较的数的下标
-                for(var j = i + 1; j < arr.length; j++){
-                    document.write("⭕️");
-                }
-                document.write("<br/>");
-            } */
-        </script>
-    </head>
-    <body>
-        
-    </body>
+        // 用的擂台的下标
+        /* for(var i = 0; i < arr.length - 1; i++){
+            //被比较的数的下标
+            for(var j = i + 1; j < arr.length; j++){
+                document.write("⭕️");
+            }
+            document.write("<br/>");
+        } */
+    </script>
+</head>
+
+<body>
+
+</body>
+
 </html>
