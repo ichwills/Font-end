@@ -15,15 +15,15 @@
                     3、字符串常量赋值
              */
             var str1 = new String(100);
-            // alert(str1 + 20);
-            alert(typeof str1); //object  对象 引用数据类型
+            // console.log(str1 + 20);
+            console.log(typeof str1); //object  对象 引用数据类型
             var str2 = String(100);
-            // alert(str2 + 20);
-            alert(typeof str2); //string
+            // console.log(str2 + 20);
+            console.log(typeof str2); //string
 
             var str3 = "100";
-            alert(typeof str3); //string
-            // alert(str3);
+            console.log(typeof str3); //string
+            // console.log(str3);
 
 
             /* 
@@ -39,11 +39,11 @@
                 【注】在JS中，字符串既是基本数据类型，又是复合数据类型。
              */
             /*  var str = "hello北京";
-            //  alert(str.length);
-            // alert(str.charAt(4));
-            alert(str[4]);
+            //  console.log(str.length);
+            // console.log(str.charAt(4));
+            console.log(str[4]);
             str[4] = "x";
-            alert(str); */
+            console.log(str); */
 
             /* 
                 字符串中的字符进行遍历也可以通过循环遍历。
@@ -51,7 +51,7 @@
              var str = "hello北京";
              var str2 = str;
              for(var i = 0; i < str.length; i++){
-                 document.write(str[i] + "<br/>");
+                console.dir(str[i]);
              }
         </script>
     </head>
