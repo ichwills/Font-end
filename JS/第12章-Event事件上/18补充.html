@@ -11,32 +11,32 @@
                     console.log(i);
                 }, 4000);
             }
-            alert("循环结束了" + i); */
+            console.log("循环结束了" + i); */
 
             /* window.onload = function(){
 
             }
             var person = {};
             person.showName = function(){
-                alert(1);
+                console.log(1);
             }
             person.showName = function(){
-                alert(2);
+                console.log(2);
             } */
 
             var d = new Date();
-            alert(d.getFullYear());
+            console.log(d.getFullYear());
             d.setFullYear(2000);
-            alert(d);
+            console.log(d);
 
             window.onload = function(){
                 var oPhone = document.getElementById("phone");
                 oPhone.onblur = function(){
                     var oValue = this.value;
                     if(oValue[0] != "1"){
-                        alert("手机号码是以1开头");
+                        console.log("手机号码是以1开头");
                     }else if(oValue.length != 11){
-                        alert("请输入11位的手机号码");
+                        console.log("请输入11位的手机号码");
                     }else{
                         var isYes = true; //假设都是数字
                         for(var i = 0; i < oValue.length; i++){
@@ -47,9 +47,9 @@
                         }
 
                         if(isYes){
-                            alert("正确的手机");
+                            console.log("正确的手机");
                         }else{
-                            alert("手机格式不对");
+                            console.log("手机格式不对");
                         }
 
 
@@ -60,7 +60,7 @@
                 var oPassword = document.getElementById("password");
                 oRepassword.onblur = function(){
                     if(oPassword.value != oRepassword.value){
-                        alert("两次密码输入不一致");
+                        console.log("两次密码输入不一致");
                     }
                 }
             }
