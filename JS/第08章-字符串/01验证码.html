@@ -21,6 +21,7 @@
                         2、随机ASCII码值
              */
             
+            //数字验证码
             //n位验证码  每一个数字的范围 0~9   parseInt(Math.random() * 10);
             function numTestCode(n){
                 let arr = []; //存储生成的数字
@@ -30,14 +31,13 @@
                 }
                 return arr.join("");
             }
-
-            // alert(numTestCode(6));
+            console.log(numTestCode(6));
 
 
             function testCode(n){
                 let arr = [];
                 for(let i = 0; i < n; i++){
-                    let num = parseInt(Math.random() * 123);    
+                    let num = parseInt(Math.random() * 200);    
                     if(num >= 0 && num <= 9){
                         arr.push(num);
                     }else if(num >= 97 && num <= 122 || num >= 65 && num <= 90){

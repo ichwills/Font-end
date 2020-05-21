@@ -17,7 +17,7 @@
                 return arr.join(" ");
             }
 
-            // alert(reverseStr("Welome to Beijing"));
+            // console.log(reverseStr("Welome to Beijing"));
 
 
             /* 
@@ -36,7 +36,7 @@
                 return newArr;
             }
 
-            // alert(symmetryArr(["one", 'two', 'three']));
+            // console.log(symmetryArr(["one", 'two', 'three']));
 
 
             /* 
@@ -56,7 +56,7 @@
                 return count;
             }
 
-            // alert(countOfWord("Yes, she*is%my@love.Yes, she*is%my@love."));
+            // console.log(countOfWord("Yes, she*is%my@love.Yes, she*is%my@love."));
 
 
             
@@ -80,7 +80,7 @@
                 return arr.length - 1;
             }
 
-            // alert(countOfStr("abcabcabc", "abc"));
+            // console.log(countOfStr("abcabcabc", "abc"));
 
 
             /* 
@@ -91,9 +91,9 @@
                 mail@1000phone.comp  不是
             */
 
-            alert(isEmail("mail@1000phone.com"));
-            alert(isEmail("$mail@1000phone.com"));
-            alert(isEmail("mail@1000phone.comp"));
+            console.log(isEmail("mail@1000phone.com"));
+            console.log(isEmail("$mail@1000phone.com"));
+            console.log(isEmail("mail@1000phone.comp"));
 
             function isEmail(email){
                 //1、查找@符号的位置
@@ -118,7 +118,7 @@
                     }
                 }
             }
-            // alert(isDEF("."));
+            // console.log(isDEF("."));
             //判断单个字符是否符合数字字母下划线
             function isDEF(charStr){
                 if(charStr >= "a" && charStr <= 'z' || charStr >= "A" && charStr <= "Z" || charStr >= "0" && charStr <= "9" || charStr == "_"){
