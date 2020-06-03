@@ -17,9 +17,9 @@
                      */
                     //1、创建ajax对象
                     var xhr = null;
-                    if(window.XMLHttpRequest){
+                    try{
                         xhr = new XMLHttpRequest();
-                    }else{
+                    }catch(error){
                         xhr = new ActiveXObject("Microsoft.XMLHTTP");
                     }
 
@@ -31,15 +31,31 @@
                              true 异步
                              false同步
                      */
+                    
                     xhr.open("get", "1.txt", true);
 
                     //3、调用send
                     xhr.send();
+                    
 
                     //4、等待数据响应
+                    /* 
+                        readystatechange 事件类型
+                        xhr.readyState  发生变化的时候调用
+                        0  调用open方法之前
+                        1  调用你send方法之后，发送请求
+                        2  send方法完成，已经接受到所有的响应内容
+                        3  正在解析下载到的数据
+                        4  解析完成
+                     */
                     xhr.onreadystatechange = function(){
                         if(xhr.readyState == 4){
-                            console.log(xhr.responseText);
+                            //判断本次下载的状态码都是多少
+                            if(xhr.status == 200){
+                                alert(xhr.responseText);
+                            }else{
+                                alert("Error:" + xhr.status);
+                            }
                         }
                     }
 

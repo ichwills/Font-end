@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+        <title>Document</title>
+        <script>
+            /* 
+                json数据传输格式(字符串的一种格式)
+                xml数据传输格式
+
+
+                宜家        运输         我家
+                装好的       拆掉         装好的
+
+                前端        运输         后端
+                数据结构     字符串       数据结构
+
+            */
+           /* 
+               JSON对象
+
+               JSON.stringify()  数据结构 => 字符串
+               JSON.parse()      json格式字符串 => 数据结构
+           */
+            // alert(JSON);
+
+            //1、数组
+            /* var arr = [100, true, "hello"];
+            var str = JSON.stringify(arr);
+            alert(arr);
+            alert(str); //'[100,true,"hello"]' */
+
+            /* var str = '[100,true,"hello"]';
+            var arr = JSON.parse(str);
+            alert(arr[1]); */
+
+
+            //2、对象
+           /*  var obj = {
+                username: "钢铁侠",
+                age: 18,
+                sex: "男"
+            }; */
+
+            /* var str = JSON.stringify(obj);
+            alert(obj);
+            alert(str); //'{"username":"钢铁侠","age":18,"sex":"男"}' */
+
+
+            var str = '{"username":"钢铁侠","age":18,"sex":"男"}';
+            var obj = JSON.parse(str);
+            alert(obj.username);
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>

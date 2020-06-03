@@ -10,18 +10,8 @@
                 var oBtn = document.getElementById("btn1");
                 oBtn.onclick = function(){
 
-                    /* 
-                        XMLHttpRequest  IE8以下不兼容
-                        IE8以下声明ajax的方法是
-                            ActiveXObject("Microsoft.XMLHTTP");
-                     */
                     //1、创建ajax对象
-                    var xhr = null;
-                    if(window.XMLHttpRequest){
-                        xhr = new XMLHttpRequest();
-                    }else{
-                        xhr = new ActiveXObject("Microsoft.XMLHTTP");
-                    }
+                    var xhr = new XMLHttpRequest();
 
                     //2、调用open
                     /* 
@@ -39,7 +29,7 @@
                     //4、等待数据响应
                     xhr.onreadystatechange = function(){
                         if(xhr.readyState == 4){
-                            console.log(xhr.responseText);
+                            alert(xhr.responseText);
                         }
                     }
 
