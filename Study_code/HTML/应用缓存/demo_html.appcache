@@ -1,0 +1,11 @@
+CACHE MANIFEST
+#2020年06月13日 09:33:24 v1.0.0
+/theme.css
+/demo_time.js
+/hy.jpg
+
+NETWORK:
+login.asp
+
+FALLBACK:
+/html5/ /404.html

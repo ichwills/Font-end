@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+</head>
+	<script>
+		"use strick"
+		let x = "";
+		function message() {
+			try {
+				addled("hello world");
+			} catch (error) {
+				txt = "There was an error on this page.\n\n";
+				txt += "Error description: " + error.message + "\n\n";
+				txt += "Click OK to continue.\n\n";
+				alert(txt);
+			}
+		}
+	</script>
+
+<body>
+
+	<input type="button" value="View message" onclick="message()">
+</body>
+
+</html>
