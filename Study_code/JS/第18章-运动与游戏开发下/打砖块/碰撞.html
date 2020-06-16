@@ -26,7 +26,7 @@
                        var e = ev || window.event;
 
                         //判断
-                        if(konck(oDiv1, oDiv2)){
+                        if(knock(oDiv1, oDiv2)){
                             oDiv1.style.backgroundColor = 'black';
                         }else{
                             oDiv1.style.backgroundColor = 'red';
@@ -46,7 +46,7 @@
                 思路：找到如何是绝对碰不上的。
             */
 
-            function  konck(node1, node2){
+            function  knock(node1, node2){
                 var l1 = node1.offsetLeft;
                 var r1 = node1.offsetLeft + node1.offsetWidth;
                 var t1 = node1.offsetTop;
