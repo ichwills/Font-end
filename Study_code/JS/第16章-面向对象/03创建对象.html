@@ -1,33 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-        <title>Document</title>
-        <script>
-            /* 
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <script>
+        /* 
                 1、创建了一个有名字和有性别的人
                 2、如果现在想要再创建一个叫red的女人
             */
-            var p1 = new Object();
-            p1.name = "blue";
-            p1.sex = "男";
-            p1.showName = function(){
-                console.log("我的名字叫" + this.name);
-            }
-            p1.showSex = function(){
-                console.log("我的性别是" + this.sex + "的");
-            }
+        var p1 = {};
+        var p2 = {};
+        p1.name = "blue";
+        p1.sex = "男";
+        p2.name = 'red';
+        p2.sex = '女';
 
-            p1.showName();
-            p1.showSex();
+        function ask(question, yes, no) {
+            if (confirm(question)) yes()
+            else no();
+        }
+        ask(
+            '你想查看p1吗?',
+            () => console.log('我的名字是', p1.name, '我的性别是', p1.sex),
+            () => console.log('我的名字是', p2.name, '我的性别是', p2.sex)
+        );
+    </script>
+</head>
 
-            
+<body>
 
-        </script>
-    </head>
-    <body>
-        
-    </body>
+</body>
+
 </html>
