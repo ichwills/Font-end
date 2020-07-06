@@ -32,10 +32,10 @@
                 this.name = name;
                 this.sex = sex;
                 this.showName = function(){
-                    alert("我的名字叫" + this.name);
+                    console.log("我的名字叫" + this.name);
                 }
                 this.showSex = function(){
-                    alert("我的性别是" + this.sex + "的");
+                    console.log("我的性别是" + this.sex + "的");
                 }
 
                 //3、出厂
@@ -52,7 +52,7 @@
             p2.showName();
             p2.showSex();
 
-            alert(p1.showName === p2.showName); //false
+            console.log(p1.showName === p2.showName); //false
 
 
             /* 
