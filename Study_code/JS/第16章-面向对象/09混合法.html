@@ -30,10 +30,10 @@
 
             //Person构造函数添加方法，添加在构造函数的原型上prototype
             Person.prototype.showName = function(){
-                alert("我的名字" + this.name);
+                console.log("我的名字" + this.name);
             }
             Person.prototype.showSex = function(){
-                alert("我的性别" + this.sex);
+                console.log("我的性别" + this.sex);
             }
 
 
@@ -47,7 +47,7 @@
             p2.showName();
             p2.showSex();
 
-            alert(p1.showName === p2.showName); //false
+            console.log(p1.showName === p2.showName); //false
 
 
             /* 
