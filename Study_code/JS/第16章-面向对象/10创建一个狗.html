@@ -18,10 +18,10 @@
              */
              Dog.prototype = {
                  run: function(){
-                     alert(this.name + "会飞快的奔跑");
+                     console.log(this.name + "会飞快的奔跑");
                  },
                  showSelf: function(){
-                     alert(`这是一个${this.type}的，${this.age}岁的，叫${this.name}的小狗`);
+                     console.log(`这是一个${this.type}的，${this.age}岁的，叫${this.name}的小狗`);
                  }
              }
 
@@ -33,27 +33,27 @@
                  功能：判断某一个对象是否是这个构造函数构造出来的。
               */
             
-             var xiaobai = new Dog({
+             var xb = new Dog({
                  name: "小白",
                  type: "比熊",
                  age: 3
              });
-            //  alert(xiaobai instanceof Dog);
-            alert(xiaobai instanceof Object);
-            /*  xiaobai.run();
-             xiaobai.showSelf(); */
-            //  alert(xiaobai.__proto__ == Dog.prototype);
+            //  console.log(xb instanceof Dog);
+            console.log(xb instanceof Object);
+            /*  xb.run();
+             xb.showSelf(); */
+            //  console.log(xb.__proto__ == Dog.prototype);
 
-             var xiaohei = new Dog({
+             var xh = new Dog({
                  name: "小黑",
                  type: "拉布拉多",
                  age: 5
              })
-            /*  xiaohei.run();
-             xiaohei.showSelf(); */
-            /*  alert(xiaohei.__proto__ == Dog.prototype);
+            /*  xh.run();
+             xh.showSelf(); */
+            /*  console.log(xh.__proto__ == Dog.prototype);
 
-             alert(xiaobai.__proto__ == xiaohei.__proto__); */
+             console.log(xb.__proto__ == xh.__proto__); */
 
 
         </script>
