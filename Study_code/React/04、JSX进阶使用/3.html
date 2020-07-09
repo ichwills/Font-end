@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="node_modules/react/umd/react.development.js"></script>
+    <script src="node_modules/react-dom/umd/react-dom.development.js"></script>
+    <script src="node_modules/babel-standalone/babel.min.js"></script>
+    <style>
+    .demostyle{
+        color:red;
+    }
+    </style>
+</head>
+<body>
+    <div id="reactDom"></div>
+    <script type="text/babel">
+        // 三元/三目运算符
+        // let phone=3999;
+        // let myDom=(
+        //     <div>当前手机价格是{phone}-----{phone>4000?"很贵":"很便宜"}</div>
+        // )
+
+        // 渲染数组
+        // var arr=[
+        //     <p>新闻列表1</p>,
+        //     <p>新闻列表2</p>,
+        //     <p>新闻列表3</p>,
+        //     <p>新闻列表4</p>,
+        //     <p>新闻列表5</p>,
+        //     <p>新闻列表6</p>
+        // ]
+        // let myDom=(
+        //     <div>
+        //         {arr}
+        //      </div>
+        // )
+
+        // 属性设置
+        // let text="点我去百度";
+        // let linkUrl="http://www.baidu.com";
+        // let myDom=<a href={linkUrl}>{text}</a>
+        // let modStyle={color:"red",backgroundColor:"pink"}    
+        // let myDom=<p style={modStyle}>修改我的样式</p>
+
+        // 注意在jsx 不能使用class 这个属性 因为class是js的关键字   className
+ 
+        let myDom=<p className="demostyle">修改我的样式</p>
+
+        ReactDOM.render(myDom,document.getElementById("reactDom"))
+    </script>
+</body>
+</html>

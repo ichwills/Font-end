@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="node_modules/react/umd/react.development.js"></script>
+    <script src="node_modules/react-dom/umd/react-dom.development.js"></script>
+    <script src="node_modules/babel-standalone/babel.min.js"></script>
+  
+</head>
+<body>
+        <div id="demoReact">
+
+        </div>
+        <script type="text/babel">
+            //   props是react中一个重要的属性  是组件对外的接口   我们props就可以从组件的外部向组件的内部进行数据的传递
+            //   也可以完成父组件给子组件的数据传递
+                //  注意：无论是无状态组件还是类组件 我们都不饿能修改自身的props
+                
+                function Com(props){
+                    return (
+                        <div>我是一个无状态组件------外部传递数据是：{props.text}---{props.num}</div>
+                    )
+                }
+
+                let obj={
+                    text:"我是text数据",
+                    num:"我是num"
+                }
+
+            ReactDOM.render(<Com {...obj} />,document.getElementById("demoReact"));
+        </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="node_modules/react/umd/react.development.js"></script>
+    <script src="node_modules/react-dom/umd/react-dom.development.js"></script>
+    <script src="node_modules/babel-standalone/babel.min.js"></script>
+  
+</head>
+<body>
+        <div id="demoReact">
+
+        </div>
+        <script type="text/babel">
+            // 创建类组件  组件名首字母大写
+            class MyCom extends React.Component{
+                render(){
+                    return(
+                        <div>类组件</div>
+                    )
+                }
+            }
+            let com=<MyCom/>
+
+            ReactDOM.render(com,document.getElementById("demoReact"));
+        </script>
+</body>
+</html>

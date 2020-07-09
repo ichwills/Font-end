@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="node_modules/react/umd/react.development.js"></script>
+    <script src="node_modules/react-dom/umd/react-dom.development.js"></script>
+    <script src="node_modules/babel-standalone/babel.min.js"></script>
+    <script src="node_modules/prop-types/prop-types.js"></script>
+  
+</head>
+<body>
+        <div id="demoReact">
+
+        </div>
+        <script type="text/babel">
+        // 之前的数据都是存在组件内部  
+        // 如果我想渲染外部传递进来props的数据怎么办？
+
+        // 当我点击页面中的lol英雄展示的时候下面的内容隐藏 点之后在显示
+        let bool=true;// 控制变量用来保存当前的内容显示和隐藏的状态
+        let MyCom=(props)=>{
+                return (
+                    <div style={{display:bool?"block":"none"}}>
+                       
+                        {
+                            props.arr.map((v,i)=>{
+                                return <p key={i}>{v}</p>
+                            })
+                        }
+                    </div>
+                )
+        }
+
+       let dataArr=["寒冰","盖伦","蛮王"];
+        let Com=()=>{
+            return(
+                <div>
+                    <h1 onClick={()=>{bool=!bool;console.log(bool);render()}}>LOL英雄展示</h1>
+                    <MyCom arr={dataArr}/>
+                </div>
+            )
+        }
+         
+         function render(){
+            ReactDOM.render(<Com />,document.getElementById("demoReact"));
+         }
+         render()
+         
+        </script>
+</body>
+</html>

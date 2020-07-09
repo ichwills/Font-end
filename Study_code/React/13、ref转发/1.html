@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="node_modules/react/umd/react.development.js"></script>
+    <script src="node_modules/react-dom/umd/react-dom.development.js"></script>
+    <script src="node_modules/babel-standalone/babel.min.js"></script>
+    <script src="node_modules/prop-types/prop-types.js"></script>
+  
+</head>
+<body>
+        <div id="demoReact">
+
+        </div>
+        <script type="text/babel">
+        // 转发 refs    react当中提供了一个ref的数据 （不能再无状态组件当中来进行使用  因为无状态组件没有实例）
+        // 表示当前组件的真正实例的引用  他会返回绑定当前属性的元素
+        //    标识组件内部的元素---方便我们查找
+
+        // react给我们3中方式进行ref的使用
+        // 1、字符串的方式
+        // 2.回调函数（推荐）
+            // 就是在dom节点上或者组件上挂在函数  函数的入参形参 是dom接地那  他的效果和字符串的方式是一样的都是获取值得引用
+        // 3.React.createRef()（react16.3新提供的一种方式）
+        // 把值付给一个变量  通过ref挂在在节点或者足尖上  使用ref的current属性拿到这个节点
+
+
+        // 官方当中建议我们  不要过度的使用refs对逻辑进行处理  需要优先考虑state
+
+        class Com extends React.Component{
+
+            constructor(props){
+                super(props)
+                this.myRef=React.createRef();
+            }
+
+
+
+            fun=()=>{
+                // console.log(this.refs.demoInput.value)
+                // console.log(this.textinput.value)
+                console.log(this.myRef.current.value)
+            }
+            render(){
+                return(
+                    <div>
+                        我是组件
+                     {/* <input type="text" ref="demoInput" placeholder="请输入"/>
+                        <button onClick={this.fun}>点我得到输入框的值</button>*/}
+
+                        {/*<input type="text" ref={(input)=>{this.textinput=input}} placeholder="请输入"/>
+                        <button onClick={this.fun}>点我得到输入框的值</button>*/}
+                        
+                        <input type="text" ref={this.myRef} placeholder="请输入"/>
+                        <button onClick={this.fun}>点我得到输入框的值</button>
+                    </div>
+                )
+            }
+        }
+
+            ReactDOM.render(<Com />,document.getElementById("demoReact"));
+      
+         
+        </script>
+</body>
+</html>

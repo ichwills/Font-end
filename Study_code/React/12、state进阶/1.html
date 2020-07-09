@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="node_modules/react/umd/react.development.js"></script>
+    <script src="node_modules/react-dom/umd/react-dom.development.js"></script>
+    <script src="node_modules/babel-standalone/babel.min.js"></script>
+    <script src="node_modules/prop-types/prop-types.js"></script>
+  
+</head>
+<body>
+        <div id="demoReact">
+
+        </div>
+        <script type="text/babel">
+            // state 状态
+            // state和props的区别
+            // props是组件对外的接口  state是组件对内的接口
+            // 组件内可以引用其他组件   组件之间的引用就形成了一个树状的接口  如果下层组件需要使用上层组件的数据 
+            // 上曾组建就可以通过下层组件中props来进行数据的传递 因此props就是组件对外的接口
+            
+            // 组件除了使用上层组件传递的数据之外 他自身也可能有需要管理的数据  这个对内管理数据的属性就是state
+            // 主要区别：
+            // 1.state是可变的 
+            // 2.props对于当前页面的组件来说  他是只读 如果我们想修改props中的数据 那么我们修改传递给当前组件数据的父组件中的内容
+
+
+
+            // react中我们只需要关心的是数据  当数据改变的时候页面就会自动的发生改变 
+            // 状态等同于页面中的数据   状态/数据改变了---页面中对应的数据绑定内容就会被react自动的进行改变
+
+            // 声明式渲染  ---  一切的数据改变操作都不用我们关心 只需要我们生命好数据  react就会自动的对于数据进行相应的改变
+             
+            //  如果想使用状态  那么不能使用无状态组件
+            class Com extends React.Component{
+                // 在ES6中不管子类写不写constructor 在new实力的时候都会不上consttructor。
+                // 我们可以不写 但是如果我们写了constructor 之后就必须在其中协商super() 就是指向父类的构造方法
+                constructor(props){
+                    // 如果想在consternation使用props 那么super中必须写上props   
+                    super(props)
+
+                    // 定义state
+                    this.state={
+                        name:"西西"
+                    }
+                }
+                render(){
+                    return (
+                        // this.setState({key:newValue}) 异步的  react就会自动的触发render进行数据的渲染
+                        <div>
+                            <button onClick={()=>{this.setState({name:"哈哈"})}}>点我改变state的数据</button>
+                            <div>我是一个组件-----{this.state.name}</div>
+                        </div>
+                    )
+                }
+            }
+           
+           
+           
+            ReactDOM.render(<Com />,document.getElementById("demoReact"));
+      
+         
+        </script>
+</body>
+</html>

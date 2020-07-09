@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="node_modules/react/umd/react.development.js"></script>
+    <script src="node_modules/react-dom/umd/react-dom.development.js"></script>
+    <script src="node_modules/babel-standalone/babel.min.js"></script>
+    <script src="node_modules/prop-types/prop-types.js"></script>
+  
+</head>
+<body>
+        <div id="demoReact">
+
+        </div>
+        <script type="text/babel">
+            // this.setState()是异步的
+            class Com extends React.Component{
+                constructor(props){
+                    super(props)
+                    this.state={
+                        name:"西西",
+                        newHtml:"<p>我是state中的内容</p>"
+                    }
+                }
+                fun=()=>{
+                    this.setState({
+                        name:"haha"
+                    },()=>{
+                        console.log(this.state.name)
+                    })
+                 
+                }
+                render(){
+                    return(
+                       <div>
+                       <button onClick={this.fun}>点我修改</button>
+                        {this.state.name}
+
+                        <div>{this.state.newHtml}</div>
+                           {/* 字符串标签插入的话  dangerouslySetInnderHTML={{__HTML:你要插入的字符串}}*/}
+                        <div dangerouslySetInnerHTML={{__html:this.state.newHtml}}></div>
+                       </div> 
+                    )
+                }
+            }
+           
+           
+           
+            ReactDOM.render(<Com />,document.getElementById("demoReact"));
+      
+         
+        </script>
+</body>
+</html>

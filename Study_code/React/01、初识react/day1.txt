@@ -1,0 +1,18 @@
+1.react的基本概念
+   React是Facebook开发出的一款JS库 Facebook认为MVC无法满足他们的扩展需求
+
+   特点  
+   1.react不使用模板
+   2.react 不是一个MVC框架
+   3.响应式
+   4. react是一个轻量级的js库
+
+原理
+  虚拟DOM   react把DOM抽象成为一个JS对象
+  diff算法
+
+  1.虚拟DOM确保最对界面上真正发生变化的部分进行实际的DOM操作
+  2.逐层次的来进行节点的比较
+
+react 历史轴
+2013     

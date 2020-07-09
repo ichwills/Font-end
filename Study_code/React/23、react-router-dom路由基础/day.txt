@@ -1,0 +1,28 @@
+路由   --根据 url的不同来切换对应的组件  实现spa（单页面应用） 在页面切换的时候不会刷新   更加接近原生体验
+
+v5版本
+
+1下载  npm install --save react-router-dom
+
+router-router     只提供了一些核心的API
+router-router-dom  更多的一些选项
+
+
+路由模式：
+hash  HashRouter  （hash 模式   带#号     刷新的时候页面不会丢失）
+browser BrowserRouter  历史记录模式    没有#号   他是通过历史记录api来进行路由切换的  刷新会丢失 本地模式不会
+
+
+2.index.js引用路由模块
+
+3.路由模式包裹根组件
+ReactDOM.render(<BrowserRouter><App /></BrowserRouter>, document.getElementById('root'));
+
+4引用import {Route} from 'react-router-dom'
+
+
+5配置  Route
+
+
+
+路由导航    Link  to="去哪里"  NavLink  可以动态的给选中的导航添加active的类名

@@ -1,0 +1,11 @@
+1.create-react-app 是facebook官方退出的一款react的脚手架
+
+
+电脑上面必须有node   升级到最新版本
+
+
+安装
+1.npm install -g create-react-app  全局安装脚手架
+2，create-react-app --version  查看版本
+3.cd 需要创建的文件夹中    create-react-app 项目名 创建项目
+4.npm start 启动项目

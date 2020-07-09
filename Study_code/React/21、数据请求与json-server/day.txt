@@ -1,0 +1,6 @@
+json-server  模拟数据的  npm install json-server -g
+启动  cd mock文件夹下
+json-server json数据的名字 --port 4000
+
+axios 数据请求  npm install --save axios
+在页面中引用axios

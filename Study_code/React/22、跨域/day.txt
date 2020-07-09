@@ -1,0 +1,20 @@
+解决跨域
+1.正向代理--开发环境 一个位于客户端和目标服务器之间的代理服务器  为了获取到目标服务器的内容  客户端向代理服务器发送一个请求  代理服务器
+帮助我们去目标服务器里面获取数据并且返回给我们
+2.反向代理--上线环境  可以通过代理服务起来接受网络上的请求连接  然后将这个请求转发给内部的网络服务器上  并且把这个服务器上得到的数据返回给网络
+请求的客户端   这个时候代理服务器对外的表现就是一个反向代理
+
+
+模拟请求真实的网络接口   中国天气网中的数据
+
+找到文件 项目\node_modules\react-scripts\config\webpackDevServer.config.js
+
+  proxy:{
+      "/api":{
+        target:"http://www.weather.com.cn/data/cityinfo",
+        changeOrigin:true,
+        "pathRewrite":{
+          "^/api":"/"
+        }
+      }
+    },

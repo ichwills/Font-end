@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="node_modules/react/umd/react.development.js"></script>
+    <script src="node_modules/react-dom/umd/react-dom.development.js"></script>
+    <script src="node_modules/babel-standalone/babel.min.js"></script>
+    <script src="node_modules/prop-types/prop-types.js"></script>
+  
+</head>
+<body>
+        <div id="demoReact">
+
+        </div>
+        <script type="text/babel">
+            // 1.无状态组件的props验证和 默认值
+            // 默认值 需要defaultProps
+                function Com(props){
+                       return (
+                           <div>我是无状态组件----{props.name}---{props.age}</div>
+                       ) 
+                }
+                Com.defaultProps={
+                    name:"我是props中name的默认值"
+                }
+
+
+                // 如果是15x版本的react 那么我们可以使用  ||的方式来完成
+                // function Com(props){
+                //     props.name=props.name||"我是默认值"
+                //        return (
+                //            <div>我是无状态组件----{props.name}</div>
+                //        ) 
+                // }
+
+
+
+                // props验证  ---  验证传递进来的数据是否符合我们期望了类型或者要求  上线模式中请取消props
+                // 1.引用prop-types库   npm install --save prop-types
+                    // 官网地址：https://react.docschina.org/docs/typechecking-with-proptypes.html
+                Com.propTypes={
+                    name:PropTypes.number,//验证name这个props传递进来的数据必须是number类型
+                    age:PropTypes.number.isRequired
+                }
+
+                let num=9527
+                let agetext=18
+            ReactDOM.render(<Com name={num} age={agetext}/>,document.getElementById("demoReact"));
+        </script>
+</body>
+</html>
