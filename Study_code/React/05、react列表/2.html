@@ -21,8 +21,8 @@
     let index = 0;
     function fun() {
 
-      let myDom = arr.map((v, i) => {
-        return <p style={{ color: i == index ? 'red' : '' }} key={i} onClick={() => { index = i; console.log(i == index); render() }}>{v}</p>
+      let myDom = arr.map((v, c) => {
+        return <p style={{ color: c == index ? 'red' : '' }} key={c} onClick={() => { index = c; console.log(c == index); render() }}>{v}</p>
       })
       return myDom
     }
