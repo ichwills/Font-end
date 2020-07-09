@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <script src="node_modules/react/umd/react.development.js"></script>
-    <script src="node_modules/react-dom/umd/react-dom.development.js"></script>
-    <script src="node_modules/babel-standalone/babel.min.js"></script>
+    <script src="../node_modules/_react@16.13.1@react/umd/react.development.js"></script>
+    <script src="../node_modules/_react-dom@16.13.1@react-dom/umd/react-dom.development.js"></script>
+    <script src="../node_modules/_babel-standalone@6.26.0@babel-standalone/babel.min.js"></script>
   
 </head>
 <body>
@@ -16,7 +16,7 @@
         </div>
         <script type="text/babel">
         // react列表渲染   map()
-            let arr=["吃饭","睡觉","打豆豆"];
+            let arr=["吃饭","睡觉","干活"];
 
             // let myDom=arr.map((item,index)=>{
                 // key 必须是独一无二的  
@@ -26,13 +26,13 @@
             // 必须使用map来遍历吗？
             // for in循环
             function fun(){
-                let newarr=[
+                let Arr=[
                
                ];
                for(let index in arr){
-                   newarr.push(<p key={index}>{arr[index]}</p>)  
+                   Arr.push(<p key={index}>{arr[index]}</p>)  
                }
-               return newarr;
+               return Arr;
             }
 
             ReactDOM.render(fun(),document.getElementById("demoReact"));
