@@ -12,8 +12,7 @@
             var str = "google";
             var box = /google|baidu|bing/;
 
-            // alert(box.test(str));
-
+            // console.log(box.test(str));
 
             /* 
                 修饰符
@@ -24,8 +23,8 @@
             */
 
             var str = "1、ba13idu\n2、go33ogle\n3、b12ing";
-            var box = /^\d/gm;
-            alert(str.replace(box, "*"));
+            var box = /^\d/igm;
+            console.log(str.replace(box, "*"));
         </script>
     </head>
     <body>
