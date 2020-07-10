@@ -58,10 +58,8 @@
         //  var box = /^google$/;
         //  console.log(box.test(str));
 
-        var str = 1;
         var box = /^[1-9]\d{5}$/;
-        console.log(typeof str);
-        console.log(box.test(str));
+        console.log(eval(`/${1,5,9}/`).test(box));//true
     </script>
 </head>
 
