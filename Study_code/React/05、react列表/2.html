@@ -18,11 +18,11 @@
   </div>
   <script type="text/babel">
     let arr = ["吃饭", "睡觉", "干活"];
-    let index = 0;
+    let Color = 0;
     function fun() {
 
       let myDom = arr.map((v, c) => {
-        return <p style={{ color: c == index ? 'red' : '' }} key={c} onClick={() => { index = c; console.log(c == index); render() }}>{v}</p>
+        return <p style={{ color: c == Color ? 'green' : '' }} key={c} onClick={() => { Color = c; console.log(c == Color); render() }}>{v}</p>
       })
       return myDom
     }
