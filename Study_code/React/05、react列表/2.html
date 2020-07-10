@@ -22,7 +22,7 @@
     function fun() {
 
       let myDom = arr.map((v, c) => {
-        return <p style={{ color: c == Color ? 'green' : '' }} key={c} onClick={() => { Color = c; console.log(c == Color); render() }}>{v}</p>
+        return <p style={{ color: c == Color ? 'green' : '' }} key={c} onClick={() => { Color = c;/* console.log(c == Color);*/ render() }}>{v}</p>
       })
       return myDom
     }
