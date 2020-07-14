@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+        <title>Document</title>
+        <style>
+            div{width: 100px; height: 100px; background-color: orange; position: absolute;;}
+            p,em{position: absolute;}
+        </style>
+        <script src = 'jquery-1.10.1.min.js'></script>
+        <script>
+            /* 
+                $.extend()   拓展工具方法   $.xxx() $.yyy()
+                $.fn.extend()  拓展JQ方法 $().xxx() $().yyy()
+
+                JQ插件方法，如果我们想要给JQ新增函数，通过上述两个插件方法拓展函数库。
+             */
+
+             $.extend({
+                 aaa: function(){
+                     alert("这是一个工具方法");
+                 }
+             })
+             $.fn.extend({
+                 aaa: function(){
+                     alert("这是一个JQ方法");
+                 },
+                 drag: function(){
+                    //  this.css("backgroundColor", 'red');
+                    //this = $("div,p,em");  
+                    $(this).mousedown(function(ev){
+                        var offsetX = ev.clientX - $(this).offset().left;
+                        var offsetY = ev.clientY - $(this).offset().top;
+
+                        var _this = this;
+
+                        $(document).mousemove(function(ev){
+                            $(_this).css({
+                                left: ev.clientX - offsetX,
+                                top: ev.clientY - offsetY
+                            })
+                        })
+                    })
+                    $(document).mouseup(function(){
+                        $(document).off("mousemove");
+                    })
+                    return this;
+                 }
+             })
+
+             $(function(){
+                /*  $.aaa();
+                 $("div").aaa(); */
+
+                 alert($("div").drag == $("p").drag);
+
+                $("div,p,em").drag().css("backgroundColor", 'blue').mouseover(function(){
+                    $(this).css("backgroundColor", 'yellow');
+                });
+                 
+             })
+
+
+        </script>
+    </head>
+    <body>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <p>p</p>
+        <em>em</em>
+    </body>
+</html>

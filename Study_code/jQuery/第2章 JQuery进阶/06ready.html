@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+        <title>Document</title>
+        <script src = 'jquery-1.10.1.min.js'></script>
+        <script>
+            /* 
+                ready  事件
+                $(document).ready()  事件触发在当前的document加载完成以后执行。
+
+                window
+
+                document加载完毕肯定是在window加载完毕之前。
+            */
+           window.onload = function(){
+               alert("我是onload")
+           }
+
+            $(function(){
+                //相当于window.onload
+                alert(1);
+            })
+            $(document).ready(function(){
+                alert(2);
+            })
+        
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>

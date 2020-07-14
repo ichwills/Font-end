@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+        <title>Document</title>
+        <script src = 'jquery-1.10.1.min.js'></script>
+        <script>
+            /* 
+                JQuery  标签间的内容  html() 相当于innerHTML
+                JQuery  标签间纯文本  text() 相当于innerText
+            */
+
+            $(function(){
+               /*  alert($("#div1").html()); //<em>em</em>div文本<strong>strong</strong>
+                alert($("#div1").text()); //emdiv文本strong */
+
+                // $("#div1").html("<h1>hello world</h1>");
+                $("#div1").text("<h1>hello world</h1>")
+            })
+        </script>
+    </head>
+    <body>
+        <div id = 'div1'><em>em</em>div文本<strong>strong</strong></div>
+    </body>
+</html>
