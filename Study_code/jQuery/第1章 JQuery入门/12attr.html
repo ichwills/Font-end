@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+        <title>Document</title>
+        <script src = 'jquery-1.10.1.min.js'></script>
+        <script>
+            /* 
+                attr 设置和修改行间属性
+             */
+            $(function(){
+                /* alert($("#div1").attr("id"));
+                alert($("#div1").attr("title"));
+                alert($("#div1").attr("class")); */
+
+
+                //设置属性值
+               /*  $("#div1").attr("title", 'world');
+                $("#div1").attr("class", 'box22') */
+
+                //一次性修改多条属性
+                $("#div1").attr({
+                    title: 'world',
+                    class: "xxxx",
+                    yyy: "zzz"
+                })
+            })
+        </script>
+    </head>
+    <body>
+        <div id = 'div1' title = 'hello' class = 'box'></div>
+    </body>
+</html>
