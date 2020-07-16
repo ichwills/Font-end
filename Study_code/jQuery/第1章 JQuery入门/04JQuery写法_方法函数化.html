@@ -17,10 +17,10 @@
             $(function(){
                 //添加一个点击事件
                 $("h1").click(function(){
-                    alert("我被点击了");
+                    console.log("我被点击了");
                 })
 
-                //后续所有的事件绑定大家都会了，都是一样的套路
+                //绑定事件参考文档
                 $("h1").mouseover(function(){
                     this.style.backgroundColor = 'red';
                 })
@@ -35,6 +35,6 @@
         <h1>hello world</h1>
     </body>
     <script>
-        alert("hello")
+        console.log("hello")
     </script>
 </html>
