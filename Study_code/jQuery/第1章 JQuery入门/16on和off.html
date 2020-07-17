@@ -11,19 +11,17 @@
         <script src = 'jquery-1.10.1.min.js'></script>
         <script>
             /* 
-                $().click(function(){
-
-                })
-                
+                $().click(function(){...})
                 on和off方法
              */
+             
             /*  $(function(){
                  $("#div1").click(function(){
-                     alert(1);
+                     console.log(1);
                  })
 
                  $("#div1").click(function(){
-                     alert(2);
+                     console.log(2);
                  })
              }) */
 
@@ -31,7 +29,7 @@
 
                  //1、给一个事件添加一个函数
                 /*  $("#div1").on("click", function(){
-                     alert("hello");
+                     console.log("hello");
                  }) */
 
                  //2、同时给多个事件添加一个函数， 多个事件之间可以通过空格隔开
@@ -43,7 +41,7 @@
                  //3、给不同的事件添加不同的函数
                  $("#div1").on({
                      click: function(){
-                         alert("点击");
+                         console.log("点击");
                      },
                      mouseover: function(){
                          $(this).css("backgroundColor", 'orange');
@@ -56,7 +54,7 @@
                  $("#div1").click(show);
 
                  function show(){
-                     alert("show");
+                     console.log("show");
                  }
 
                  //4、事件委托
