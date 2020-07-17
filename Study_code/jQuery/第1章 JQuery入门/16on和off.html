@@ -1,99 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-        <title>Document</title>
-        <style>
-            #div1{width: 100px; height: 100px; background-color: red}
-        </style>
-        <script src = 'jquery-1.10.1.min.js'></script>
-        <script>
-            /* 
-                $().click(function(){...})
-                on和off方法
-             */
-             
-            /*  $(function(){
-                 $("#div1").click(function(){
-                     console.log(1);
-                 })
 
-                 $("#div1").click(function(){
-                     console.log(2);
-                 })
-             }) */
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      #div1 {
+        width: 100px;
+        height: 100px;
+        background-color: red
+      }
+    </style>
+    <script src='jquery-1.10.1.min.js'></script>
+    <script>
+      /* 
+          $().click(function(){...})
+          on和off方法
+      */
 
-             $(function(){
+      /*  $(function(){
+          $("#div1").click(function(){
+              console.log(1);
+          })
 
-                 //1、给一个事件添加一个函数
-                /*  $("#div1").on("click", function(){
-                     console.log("hello");
-                 }) */
+          $("#div1").click(function(){
+              console.log(2);
+          })
+      }) */
 
-                 //2、同时给多个事件添加一个函数， 多个事件之间可以通过空格隔开
-                 /* var i = 0;
-                 $("#div1").on("click mouseover", function(){
-                    $(this).html(i++);
-                 }) */
+      $(function () {
 
-                 //3、给不同的事件添加不同的函数
-                 $("#div1").on({
-                     click: function(){
-                         console.log("点击");
-                     },
-                     mouseover: function(){
-                         $(this).css("backgroundColor", 'orange');
-                     },
-                     mouseout: function(){
-                         $(this).css("backgroundColor", 'blue');
-                     }
-                 })
+        //1、给一个事件添加一个函数
+        /*  $("#div1").on("click", function(){
+            console.log("hello");
+        }) */
 
-                 $("#div1").click(show);
+        //2、同时给多个事件添加一个函数， 多个事件之间可以通过空格隔开
+        /* var i = 0;
+        $("#div1").on("click mouseover", function(){
+          $(this).html(i++);
+        }) */
 
-                 function show(){
-                     console.log("show");
-                 }
+        //3、给不同的事件添加不同的函数
+        $("#div1").on({
+          click: function () {
+            console.log("点击");
+          },
+          mouseover: function () {
+            $(this).css("backgroundColor", 'orange');
+          },
+          mouseout: function () {
+            $(this).css("backgroundColor", 'blue');
+          }
+        })
 
-                 //4、事件委托
-                 /* 
-                    第二个参数，是触发对象的选择器
-                  */
-                 /* $("ul").on("click", "li.box", function(){
-                    $(this).css("backgroundColor", 'red');
-                 })
+        $("#div1").click(show);
 
-                 var i = 6;
-                 $("#btn1").click(function(){
-                     //新增li节点
-                    $(`<li class = 'box'>${i++ * 1111}</li>`).appendTo($("ul"));
-                 }) */
+        function show() {
+          console.log("show");
+        }
 
-                 $("#cancel").click(function(){
-                    // $("#div1").off(); //取消所有事件上的所有函数
-                    // $("#div1").off("click"); //取消某一个事件下的所有函数
+        //4、事件委托
+        /* 
+          第二个参数，是触发对象的选择器
+        */
+        /* $("ul").on("click", "li.box", function(){
+          $(this).css("backgroundColor", 'red');
+        })
 
-                    $("#div1").off("click", show); //取消某一个事件下指定的函数
-                 })
-             })
-             
-             
-        
-        </script>
-    </head>
-    <body>
-        <div id = 'div1'></div>
-        <ul>
-            <li>1111</li>
-            <li class = 'box'>2222</li>
-            <li>3333</li>
-            <li class = 'box'>4444</li>
-            <li>5555</li>
-            
-        </ul>
-        <button id = 'btn1'>增加节点</button>
-        <button id = 'cancel'>取消事件</button>
-    </body>
+        var i = 6;
+        $("#btn1").click(function(){
+            //新增li节点
+          $(`<li class = 'box'>${i++ * 1111}</li>`).appendTo($("ul"));
+        }) */
+
+        $("#cancel").click(function () {
+          // $("#div1").off(); //取消所有事件上的所有函数
+          // $("#div1").off("click"); //取消某一个事件下的所有函数
+
+          $("#div1").off("click", show); //取消某一个事件下指定的函数
+        })
+      })
+
+
+
+    </script>
+  </head>
+
+  <body>
+    <div id='div1'></div>
+    <ul>
+      <li>1111</li>
+      <li class='box'>2222</li>
+      <li>3333</li>
+      <li class='box'>4444</li>
+      <li>5555</li>
+
+    </ul>
+    <button id='btn1'>增加节点</button>
+    <button id='cancel'>取消事件</button>
+  </body>
+
 </html>
