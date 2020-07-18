@@ -13,7 +13,7 @@
       background-color: red
     }
   </style>
-  <script src="/lib/jquery-3.5.0.min.js"></script>
+  <script src="jquery-1.10.1.min.js"></script>
   <script>
     /* 
         $().click(function(){...})
@@ -50,9 +50,11 @@
         },
         mouseover: function () {
           $(this).css("backgroundColor", 'orange');
+          console.log('cursor is here');
         },
         mouseout: function () {
           $(this).css("backgroundColor", 'blue');
+          console.log('cursor is out');
         }
       })
 
