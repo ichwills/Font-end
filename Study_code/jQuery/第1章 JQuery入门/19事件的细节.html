@@ -34,7 +34,7 @@
 
              $(function(){
                  $("div").click(function(ev){
-                     alert(this.id);
+                     console.log(this.id);
 
                      ev.stopPropagation();
                  })
@@ -47,18 +47,18 @@
                  })
 
                  $(document).mousedown(function(ev){
-                   /*  alert(ev.pageX + ", " + ev.pageY); //带滚动距离
-                    alert(ev.clientX + ", " + ev.clientY); //可视窗口为原点 */
+                   /*  console.log(ev.pageX + ", " + ev.pageY); //带滚动距离
+                    console.log(ev.clientX + ", " + ev.clientY); //可视窗口为原点 */
 
-                    alert(ev.which);
+                    console.log(ev.which);
                  })
 
                  /* $(window).keydown(function(ev){
-                     alert(ev.which);
+                     console.log(ev.which);
                  }) */
 
                  $(window).keypress(function(ev){
-                     alert(ev.which);
+                     console.log(ev.which);
                  })
              })
         </script>
