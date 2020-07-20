@@ -25,6 +25,20 @@
       right: 0px;
       top: 0px
     }
+
+    #publish {
+      text-align: center;
+      background-color: #fff;
+      border-radius: 20px;
+      width: 50px;
+      height: 50px;
+      margin: auto;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
   </style>
   <script src='jquery-1.10.1.min.js'></script>
   <script>
@@ -64,8 +78,9 @@
 <body style='height: 3000px'>
   <button id='publish'>发布</button>
   <div id='div1'>
-    <input type="text" placeholder="用户名" />
+    <input type="text" placeholder="用户名" style="left: initial;"/>
     <input type="text" placeholder="密码" />
+    <button>登陆</button>
     <div id='close'>X</div>
   </div>
 </body>
