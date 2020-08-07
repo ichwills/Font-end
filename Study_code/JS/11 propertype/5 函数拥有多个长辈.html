@@ -6,23 +6,19 @@
   </head>
   <body></body>
   <script>
-    // let hd = {};
-    // console.dir(hd);
-   
     function User() {}
-    User.__proto__.view = function() {
+    User.__proto__.view = () => {
       console.log("User function view method");
     };
     User.view();
-    
-    // User.apply
-    // console.dir(User);
-    // User.prototype.show = function() {
-    //   console.log(" ");
-    // };
-    // let hd = new User();
 
-    // hd.show();
-    // console.log(User.prototype == hd.__proto__);
+    User.apply;
+    console.dir(User);
+    User.prototype.show = () => {
+      console.log(" ");
+    };
+    let obj = new User();
+
+    console.log(User.prototype == obj.__proto__);
   </script>
 </html>
