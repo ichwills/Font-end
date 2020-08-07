@@ -2,19 +2,19 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title> </title>
+    <title></title>
   </head>
   <body></body>
   <script>
-    let hd = new Object();
-    hd.name = " ";
-    Object.prototype.show = function () {
+    let obj = new Object();
+    obj.name = " ";
+    Object.prototype.show = () => {
       console.log("hello world");
     };
-    hd.show();
+    obj.show();
     function User() {}
-    let xj = new User();
-    xj.show();
+    let user = new User();
+    user.show();
     User.show();
   </script>
 </html>
