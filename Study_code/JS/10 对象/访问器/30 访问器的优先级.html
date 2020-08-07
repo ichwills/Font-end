@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>30</title>
+  </head>
+  <body></body>
+  <script>
+	//定义内部私有属性
+    "use strict";
+    const DATA = Symbol();
+    const user = {
+      name: "CY",
+      [DATA]: { name },
+      age: 10,
+      set name(value) {
+        this[DATA].name = value;
+      },
+      get name() {
+        return this[DATA].name;
+      }
+    };
+    user.name = "hello world";
+    // user.data.name = "你好";
+    console.log(user[Symbol()]);
+  </script>
+</html>

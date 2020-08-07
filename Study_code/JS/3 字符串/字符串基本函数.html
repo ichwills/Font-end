@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title> </title>
+  </head>
+  <body>
+    <input type="text" name="password" />
+    <span></span>
+    <script>
+      // let name = " helloworld";
+      // console.log(name.length);//查看长度
+      // console.log(name.toUpperCase());//字符串大写转换
+      // console.log(name.toLowerCase());//字符串小写转换
+      // let site = "   Hello World   ";
+      // console.log(site.trim().length);//清除字符串空白
+      
+
+      // let ps = document.querySelector("[name='password']");
+      // ps.addEventListener("keyup", function() {
+      //   this.value = this.value.trim();
+      //   let span = document.getElementsByTagName("span");
+      //   let error = "";
+      //   if (this.value.length < 5) {
+      //     error = "密码不能小于5位";
+      //   }
+      //   span[0].innerHTML = error;
+      // });
+	  
+	  //实例：字符放大效果
+      let hd = " helloworld";
+      // console.log(hd[0]);
+      for (let i = 0; i < hd.length; i++) {
+        let span = document.createElement("span");
+        span.style.fontSize = (i + 1) * 10 + "px";
+        span.innerHTML = hd[i];
+        document.body.append(span);
+      }
+    </script>
+  </body>
+</html>

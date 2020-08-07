@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>使用getter设置只读的课程总价</title>
+	</head>
+	<body></body>
+	<script>
+		let Lesson = {
+			lists: [{
+					name: "js",
+					price: 100
+				},
+				{
+					name: "mysql",
+					price: 212
+				},
+				{
+					name: "vue.js",
+					price: 98
+				}
+			],
+			get total() {
+				return this.lists.reduce((t, b) => t + b.price, 0);
+			}
+		};
+		console.log(Lesson.total); //410
+		Lesson.total = 30; //无效
+		console.log(Lesson.total); //410
+	</script>
+</html>

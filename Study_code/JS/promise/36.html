@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title> </title>
+  </head>
+  <body></body>
+  <script src="js/ajax.js"></script>
+  <script>
+    class User {
+      // constructor(name) {
+      //   this.name = name;
+      // }
+      // then(resolve, reject) {
+      //   let user = ajax(`http://localhost:8888/php/user.php?name=${this.name}`);
+      //   resolve(user);
+      // }
+      async get(name) {
+        let user = await ajax(
+          `http://localhost:8888/php/user.php?name=${name}`
+        );
+        user.name += "- helloworld.com";
+        return user;
+      }
+    }
+    new User().get(" ").then(user => {
+      console.log(user);
+    });
+    // async function get() {
+    //   let user = await new User(" ");
+    //   console.log(user);
+    // }
+    // get();
+  </script>
+</html>

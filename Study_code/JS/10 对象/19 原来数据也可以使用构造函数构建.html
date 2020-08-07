@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JS中大部分数据类型都是通过构造函数创建的</title>
+  </head>
+  <body></body>
+  <script>
+	  // const num = new Number(99);
+	  // console.log(num.valueOf());
+	  
+	  // const string = new String("CY");
+	  // console.log(string.valueOf());
+	  
+	  // const boolean = new Boolean(true);
+	  // console.log(boolean.valueOf());
+	  
+	  // const date = new Date();
+	  // console.log(date.valueOf() * 1);
+	  
+	  // const regexp = new RegExp("\\d+");
+	  // console.log(regexp.test(99));
+	  
+	  // let hd = new Object();
+	  // hd.name = "CY";
+	  // console.log(hd);
+	  
+	  //字面量创建的对象，内部也是调用了Object构造函数
+	  const hd = {
+	    name: "CY"
+	  };
+	  console.log(hd.constructor); //ƒ Object() { [native code] }
+	  
+	  //下面是使用构造函数创建对象
+	  const Hello World = new Object();
+	  Hello World.title = "开源内容管理系统";
+	  console.log(Hello World);
+  </script>
+</html>

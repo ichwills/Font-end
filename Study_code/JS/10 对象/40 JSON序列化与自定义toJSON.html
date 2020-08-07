@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>序列化</title>
+	</head>
+	<body></body>
+	<script>
+		//序列化是将 json 转换为字符串，一般用来向其他语言传输使用
+		let hd = {
+			title: "CY",
+			url: "hello world",
+			teacher: {
+				name: "cy"
+			},
+			toJSON: function() {
+				return {
+					title: this.title,
+					teacher: this.teacher.name
+				};
+			}
+		};
+		// let json = JSON.stringify(hd, null, 2);
+		// console.log(json);
+
+		//根据第二个参数指定保存的属性	
+		// let json = JSON.stringify(hd, ["title", "url"], 2);
+		// console.log(json);
+
+		//第三个是参数用来控制TAB数量，如果字符串则为前导字符
+		// let arr = ["CY", "hello world"];
+		// let arrJson = JSON.stringify(arr, ["title", "url"], 2);
+		// console.log(arrJson);
+
+		//为数据添加 toJSON 方法来自定义返回格式
+		console.log(JSON.stringify(hd));
+	</script>
+</html>

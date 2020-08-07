@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>浅拷贝不会将深层的数据复制</title>
+  </head>
+  <body></body>
+  <script>
+    // let obj = {
+    //   name: "CY",
+    //   user: {
+    //     name: "cy"
+    //   }
+    // };
+    // let hd = {
+    //   name: obj.name,
+    //   user: obj.user
+    // };
+    // hd.user.name = "hw";
+    // console.log(JSON.stringify(obj, null, 2));
+    // console.log(JSON.stringify(hd, null, 2));
+
+	//完全的复制一个对象，两个对象是完全独立的对象
+    // let data = {
+    //   name: "CY",
+    //   user: {
+    //     name: "cy"
+    //   }
+    // };
+    // function copy(object) {
+    //   let res = {};
+    //   for (const key in object) {
+    //     res[key] =
+    //       typeof object[key] == "object" ? copy(object[key]) : object[key];
+    //   }
+    //   return res;
+    // }
+    // let hd = copy(data);
+    // hd.user.name = "hw";
+    // console.log(JSON.stringify(hd, null, 2));
+    // console.log(JSON.stringify(data, null, 2));
+
+	//含有数组的实例
+    let data = {
+      name: "CY",
+      user: {
+        name: "cy"
+      },
+      arr: []
+    };
+    // console.log({} instanceof Object);
+    // let a = ["CY", "hw"];
+    // console.log(JSON.stringify(Object.entries(a), null, 2));
+    // let b = { name: "CY", title: "hw" };
+    // console.log(JSON.stringify(Object.entries(b), null, 2));
+    function copy(obj) {
+      let res = obj instanceof Array ? [] : {};
+      for (const [k, v] of Object.entries(obj)) {//解构语法
+        res[k] = typeof v == "object" ? copy(v) : v;
+      }
+      return res;
+    }
+    let hd = copy(data);
+    // hd.user.name = "hw";
+    hd.arr.push("abc");
+    console.log(JSON.stringify(hd, null, 2));
+    console.log(JSON.stringify(data, null, 2));
+  </script>
+</html>

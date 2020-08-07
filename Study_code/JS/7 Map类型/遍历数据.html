@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title> </title>
+	</head>
+	<body></body>
+	<script>
+		let hd = new Map([
+			["name", "CY"],
+			["title", "Hello world"]
+		]);
+		hd.set("class", "1");
+		// console.log(hd.keys());//获取所有键
+		// console.log(hd.values());//获取所有值
+		// console.log(hd.entries());//获取所有键值对
+		
+		/*for-of*/
+		// for (const [key, value] of hd.entries()) {
+		//   console.log(key, value);
+		// }
+		
+		/*forEach*/
+		hd.forEach((key, value) => {
+			console.log(key, value);
+		});
+	</script>
+</html>

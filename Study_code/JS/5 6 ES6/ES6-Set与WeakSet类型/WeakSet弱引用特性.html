@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title> </title>
+	</head>
+	<body></body>
+	<script>
+		/*引用类型的垃圾回收原理*/
+		//let hd = {
+		//name: "CY"
+		//};
+		//let edu = hd;
+		// let arr = [hd];
+		// hd = null;
+		// edu = null;
+		// arr[0] = null;
+		// console.log(arr);
+
+		const hd = new WeakSet();
+		let arr = ["Hello World"];
+		hd.add(arr);
+		console.log(hd.has(arr));
+
+		arr = null;
+		console.log(hd); //WeakSet {Array(1)}
+
+		setTimeout(() => {
+			console.log(hd); //WeakSet {}
+		}, 1000);
+	</script>
+</html>

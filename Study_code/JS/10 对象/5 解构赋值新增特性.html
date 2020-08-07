@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>解构是一种更简洁的赋值特性，可以理解为分解一个数据的结构</title>
+  </head>
+  <body></body>
+  <script>
+	//赋值
+    // let user = { name: "hello world", age: 18 };
+    // // console.log(user);
+    // const { name, age } = user;
+    // console.log(age);
+	
+	//函数赋值
+    // function hd() {
+    //   return { name: "hello world", age: 18 };
+    // }
+    // let { name, age } = hd();
+    // console.log(name, age);
+	
+	//函数传参
+    // function user({ name, age }) {
+    //   console.log(name, age);
+    // }
+    // user({ name: "CY", age: 22 });
+	
+	//创建随机数
+    // let { random } = Math;
+    // console.log(random());
+
+    let user = { name: "hello world", age: 18 };
+    const { name } = user;
+    console.log(name);
+  </script>
+</html>

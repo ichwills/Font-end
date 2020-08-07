@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title></title>
+	</head>
+	<body></body>
+	<script>
+		let symbol = Symbol("这是一个Symbol类型");
+		let hd = {
+			name: "CY",
+			[symbol]: "hello wolrd"
+		};
+		/*Symbol 不能使用 for/in、for/of 遍历操作*/
+		// for (const key in hd) {
+		//   console.log(key);
+		// }	
+		
+		/*使用 Object.getOwnPropertySymbols 获取所有Symbol属性*/
+		// for (const key of Object.getOwnPropertySymbols(hd)) {
+		//   console.log(key);
+		// }
+		
+		/*使用 Reflect.ownKeys(obj) 获取所有属性包括Symbol*/
+		// for (const key of Reflect.ownKeys(hd)) {
+		//   console.log(key);
+		// }
+		
+		/*如果对象属性不想被遍历，可以使用Symbol保护*/
+		let site = Symbol("这是一个Symbol");
+		class User {
+			constructor(name) {
+				this.name = name;
+				this[site] = "CY";
+			}
+			getName() {
+				return `${this[site]} ${this.name}`;
+			}
+		}
+		let lisi = new User("李四");
+		// console.log(lisi.getName());
+		for (const key in lisi) {
+			console.log(key);
+		}
+	</script>
+</html>

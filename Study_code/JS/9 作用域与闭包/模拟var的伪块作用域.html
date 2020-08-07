@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>在 for 循环中使用let/const 会在每一次迭代中重新生成不同的变量</title>
+	</head>
+	<body></body>
+	<script>
+		//函数封装
+		for (var i = 1; i <= 3; i++) {
+			(function(i) {
+				setTimeout(function() {
+					console.log(i);
+				}, 1000);
+			})(i);
+		}
+	</script>
+</html>

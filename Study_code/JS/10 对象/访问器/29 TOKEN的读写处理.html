@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>29</title>
+	</head>
+	<body></body>
+	<script>
+		"use strict";
+		//设置token储取的示例，将业务逻辑使用getter/setter处理更方便,也方便其他业务的复用
+		let Request = {
+			get token() {
+				let con = localStorage.getItem('token');
+				if (!con) {
+					alert('请登录后获取token')
+				} else {
+					return con;
+				}
+			},
+			set token(con) {
+				localStorage.setItem('token', con);
+			}
+		};
+		// Request.token = ' helloworld'
+		console.log(Request.token);
+	</script>
+</html>

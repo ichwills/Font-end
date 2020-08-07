@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>下面的定时器函数来体验块作用域</title>
+  </head>
+  <body></body>
+  <script>
+    for (let i = 1; i <= 3; i++) {
+      setTimeout(function() {
+        //console.log(i);
+      }, 1000);
+    }
+    // console.log(i);
+  </script>
+</html>

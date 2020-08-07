@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title> </title>
+	</head>
+	<body></body>
+	<script>
+		let arr = ["Hello World", " helloworld"];
+		// let [a, b] = arr;
+		// console.log(a, b);
+		// let entries = arr.entries();
+		// let {
+		//   done,
+		//   value: [a, b]
+		// } = entries.next();
+		// console.log(a, b);
+		
+		/*获取数组所有键*/
+		for (const [key, value] of arr.entries()) {
+			console.log(value);
+		}
+		// console.log(entries.next());
+		// let values = arr.values();
+		// for (const key of arr.keys()) {
+		//   console.log(key);
+		// }
+
+		/*使用while遍历*/
+		//{done:true,value:'xxx'}
+		// while (({ value, done } = values.next()) && done === false) {
+		//   console.log(value);
+		// }
+
+		let keys =arr.values();
+		//let { value, done } = keys.next();
+		//console.log(value, done);
+
+		/*通过迭代对象获取索引*/
+		// console.log(keys.next());
+		// console.log(keys.next());
+		// console.log(keys.next());
+	</script>
+</html>

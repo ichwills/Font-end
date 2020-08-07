@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title></title>
+</head>
+
+<body>
+	<button id="hd">订阅</button>
+</body>
+<script>
+	//函数可以做为参数传递,大多数语言都支持的语法规则
+	// document.querySelector('button').addEventListener('click', function () {
+	//        console.log('感谢订阅');
+	//    });
+
+	//获按钮的内容
+	// function event() {
+	//   console.log(this.innerHTML);
+	// }
+	// document.getElementById("hd").addEventListener("click", event);
+
+	//取小于3的数，函数可以做为参数传递
+	// function hd(a) {
+	//   return a <= 3;
+	// }
+	// let arr = [1, 2, 3, 4, 5, 6, 7].filter(hd);
+	// console.log(arr);
+
+	//每个一秒输出++i的值到1000
+	// let i = 0;
+	// function cms() {
+	//   console.log(++i);
+	// }
+	// setInterval(cms, 1000);
+
+	//使用arguments
+	// function sum() {
+	// 	console.log(arguments.length);
+	// 	console.log(arguments[1]);
+	// }
+	// sum(1, 2, 3);
+
+	//arguments 是函数获得到所有参数集合，下面是使用 arguments 求和的例子
+	// function sum() {
+	// 	//reduce接收一个函数作为累加器，数组中的每个值（从左到右）开始缩减，最终计算为一个值
+	// 	return [...arguments].reduce((total, num) => {
+	// 		return (total += num);
+	// 	}, 0);
+	// }
+	// console.log(sum(2, 3, 4, 2, 6)); //17
+
+	//使用展示语法
+	// function sum(...args) {
+	//  return args.reduce((a, b) => a + b);
+	// }
+	// console.log(sum(2, 3, 4, 2, 6)); //17
+</script>
+
+</html>

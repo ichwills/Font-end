@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>每个字符都有属性，如L属性表示是字母，P 表示标点符号，需要结合 u 模式才有效</title>
+	</head>
+	<body></body>
+	<script>
+		//使用\p{L}属性匹配字母
+		let hd = "hello world 2020 年";
+		console.log(hd.match(/\p{L}+/u));
+
+		//使用\p{P}属性匹配标点
+		console.log(hd.match(/\p{P}+/gu));
+
+		//字符也有unicode文字系统属性 Script=文字系统,下面是使用 \p{sc=Han} 获取中文字符 han为中文系统
+		let zf = `
+		张三:010-99999999,李四:020-88888888`;
+		let res = zf.match(/\p{sc=Han}+/gu);
+		console.log(res);
+
+		//使用 u 模式可以正确处理四个字符的 UTF-16 字节编码
+		let str = "𝒳𝒴";
+		console.log(str.match(/[𝒳𝒴]/u));
+	</script>
+</html>

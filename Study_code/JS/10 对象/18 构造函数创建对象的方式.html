@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body></body>
+  <script>
+    function Student(name) {
+      this.name = name;
+      this.show = function() {
+        console.log(this.name);
+      };
+      //不需要返回，系统会自动返回
+      // return this;
+    }
+    const lisi = new Student("李四");
+    lisi.show();
+    const cy = new Student("cy");
+    cy.show();
+	
+	//如果构造函数返回对象，实例化后的对象将是此对象
+	function ArrayObject(...values) {
+	  const arr = new Array();
+	  arr.push.apply(arr, values);
+	  arr.string = function(sym = "|") {
+	    return this.join(sym);
+	  };
+	  return arr;
+	}
+	const array = new ArrayObject(1, 2, 3);
+	console.log(array);
+	console.log(array.string("-"));
+  </script>
+</html>

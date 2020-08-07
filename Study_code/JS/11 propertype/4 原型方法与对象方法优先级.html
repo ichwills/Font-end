@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body></body>
+  <script>
+	  //如果自身是有这个方法的就会,原型也有这个方法就会执行自己的方法
+    let hd = {
+      show() {
+        console.log("CY");
+      },
+      render() {
+        console.log("hd . render");
+      }
+    };
+    console.log(hd);
+    hd.__proto__.render = function() {
+      console.log("cy");
+    };
+    hd.render();
+  </script>
+</html>

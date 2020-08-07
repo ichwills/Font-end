@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title> </title>
+	</head>
+	<body></body>
+	<script>
+		/*交集-获取两个集合中共同存在的元素*/
+		// let hd = new Set(['Hello World', ' helloworld']);
+		// let cms = new Set([' ', 'Hello World']);
+		// let newSet = new Set(
+		// 	[...hd].filter(item => cms.has(item))
+		// );
+		// console.log(newSet); //{"Hello World"}
+
+		/*差集-在集合a中出现但不在集合b中出现元素集合*/
+		// let hd = new Set(['Hello World', ' helloworld']);
+		// let cms = new Set([' ', 'Hello World']);
+		// let newSet = new Set(
+		// 	[...hd].filter(item => !cms.has(item))
+		// );
+		// console.log(newSet); //{" helloworld"}
+
+		/*并集-将两个集合合并成一个新的集合，由于Set特性当然也不会产生重复元素*/
+		let hd = new Set(['Hello World', ' helloworld']);
+		let cms = new Set([' ', 'Hello World']);
+		let newSet = [...hd, ...cms];
+		console.log(newSet);
+	</script>
+</html>

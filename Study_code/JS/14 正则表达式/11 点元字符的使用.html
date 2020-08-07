@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body></body>
+  <script>
+	//匹配除了空白符外任意一个字符匹配
+    // let hd = "baidu-_@&*&***(";
+    // console.log(hd.match(/.+/));
+	
+	//如果要匹配点则需要转义
+    let url = "https://www.baidu.com";
+    console.log(url.match(/https?:\/\/\w+\.\w+\.\w+/));
+	
+	//使用.匹配除换行符外任意字符，下面匹配不到Hello World.com 因为有换行符
+    // let hd = `
+    // baidu.com
+    // google.com
+    // `;
+    // console.log(hd.match(/.+/s)[0]);
+	
+	//使用/s视为单行模式（忽略换行）时，. 可以匹配所有
+    let tel = "010 - 99999999";
+    console.log(tel.match(/\d+\s-\s\d{8}/));//\s可以用空格代替
+  </script>
+</html>

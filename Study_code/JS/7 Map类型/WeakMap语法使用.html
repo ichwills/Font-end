@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>声明定义</title>
+	</head>
+	<body>
+		<div>HW</div>
+		<div>hello world</div>
+	</body>
+	<script>
+		/*由于键不是对象类型将产生错误*/
+		//new WeakSet("hello world"); //TypeError: Invalid value used in weak set
+
+		/*将DOM节点保存到WeakSet*/
+		//const hd = new WeakMap();
+		//document
+		//	.querySelectorAll("div")
+		//	.forEach(item => hd.set(item, item.innerHTML));
+		//console.log(hd); //WeakMap {div => "HW", div => "hello world"}
+		
+		const hd = new WeakMap();
+		const arr = ["HW"];
+		//添加操作
+		hd.set(arr, "Hello World");
+		console.log(hd.has(arr));//true
+		
+		//删除操作
+		hd.delete(arr);
+		
+		//检索判断
+		console.log(hd.has(arr)); //false
+	</script>
+</html>

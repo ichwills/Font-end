@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title></title>
+  <p>?<!</p> </head> <body>
+      </body>
+      <script>
+        //匹配前面不是数字的
+        let hd = "hello123world";
+        let reg = /(?<!\d+)[a-z]+/i;
+        console.log(hd.match(reg));
+      </script>
+
+</html>

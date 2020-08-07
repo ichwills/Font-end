@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>?<=</title>
+  </head>
+  <body>
+    <main>
+      <a href="https://baidu.com">百度</a>
+      <a href="https://yahoo.com">雅虎</a>
+    </main>
+  </body>
+  <script>
+    const main = document.querySelector("main");
+    const reg = /(?<=href=([""])).+(?=\1)/gi;
+    // main.innerHTML = main.innerHTML.replace(reg, "https://www.zhihu.com");
+    console.log(main.innerHTML.match(reg));
+	
+    let hd = "hello123world456";
+    const sz = /(?<=world)\d+/gi;
+	console.log(hd.match(sz));
+  </script>
+</html>

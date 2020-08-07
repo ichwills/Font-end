@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title></title>
+  </head>
+  <body></body>
+  <script>
+    let xj = { name: "CY" };
+    console.log(xj);
+    console.log(xj.hasOwnProperty("name"));//属性来自原型
+	
+    //完全数据字典对象,没有原型关系存在
+    let hd = Object.create(null, {
+      name: {
+        value: "cy"
+      }
+    });
+	console.log(hd);
+    console.log(hd.hasOwnProperty("name"));
+  </script>
+</html>

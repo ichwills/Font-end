@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>将所有span更换为h4 并描红，并在内容前加上CY-</title>
+	</head>
+	<body>
+		<main>
+			<span>baidu</span>
+			<span>hello world</span>
+			<span>HELLO WORLD</span>
+		</main>
+	</body>
+	<script>
+		const main = document.querySelector("main");
+		const reg = /<span>([\s\S]+?)<\/span>/gi;
+		main.innerHTML = main.innerHTML.replace(reg, (v, p1) => {
+			return `<h4 style="color:red">CY-${p1}</h4>`;
+		});
+	</script>
+</html>

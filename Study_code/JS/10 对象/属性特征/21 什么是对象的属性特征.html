@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>JS中可以对属性的访问特性进行控制</title>
+	</head>
+	<body></body>
+	<script>
+		const user = {
+			name: "cy",
+			age: 18
+		};
+		// //使用 Object.getOwnPropertyDescriptor查看对象属性的描述。
+		// console.log(
+		// 	JSON.stringify(Object.getOwnPropertyDescriptor(user, "name"), null, 2)
+		// );
+		// // 使用 Object.getOwnPropertyDescriptors查看对象所有属性的描述
+		// console.log(
+		// 	JSON.stringify(Object.getOwnPropertyDescriptors(user), null, 2)
+		// );
+
+		// user.lesson = "js";
+		// console.log(user);
+		// delete user.lesson;
+		// console.log(user);
+		// let arr = ["CY", "hello world"];
+		// console.log(arr);
+		// for (const [key, value] of Object.entries(arr)) {
+		//   console.log(key, value);
+		// }
+	</script>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>数组转换</title>
+	</head>
+	<body></body>
+	<script>
+		/*使用点语法 或 Array.form 静态方法将Set类型转为数组*/
+		// const set = new Set(["Hello World", " helloworld"]);
+		// console.log([...set]); //["Hello World", " helloworld"]
+		// console.log(Array.from(set)); //["Hello World", " helloworld"]
+
+		/*移除Set内大于5的数值*/
+		// let hd = new Set("123456789");
+		// hd = new Set([...hd].filter(item => item < 5));
+		// console.log(hd);
+
+		/*去除字符串重复*/
+		console.log([...new Set("helloworld")].join("")); //houdnre
+
+		/*去除数组重复*/
+		// const arr = [1, 2, 3, 4, 5, 2, 3];
+		// console.log(...new Set(arr)); // 1,2,4,5
+	</script>
+</html>

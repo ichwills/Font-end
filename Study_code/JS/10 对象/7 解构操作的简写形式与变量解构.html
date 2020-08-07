@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>如果属性名与赋值的变量名相同可以更简洁</title>
+	</head>
+	<body></body>
+	<script>
+		// let web = {
+		// 	name: "CY",
+		// 	url: "hello world"
+		// };
+		// let {
+		// 	name,
+		// 	url
+		// } = web;
+		// console.log(name, url);
+		// let arr = ["CY", "hello world"];
+		// let [, b] = arr;
+		// console.log(b);
+		
+		//只赋值部分变量
+		// let [,url]=['CY','hello world'];
+		// console.log(url);//hello world
+		
+		// let {name}= {name:'CY',url:'hello world'};
+		// console.log(name); //CY
+		
+		//直接使用变量赋值对象属性
+		let name = "CY",url = "hello world";
+		//标准写法如下
+		let hd = { name: name, url: url };
+		console.log(hd);  //{name: "CY", url: "hello world"}
+		
+		//如果属性和值变量同名可以写成以下简写形式
+		let opt = { name, url };
+		console.log(opt); //{name: "CY", url: "hello world"}
+	</script>
+</html>

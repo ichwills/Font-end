@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>禁止添加</title>
+  </head>
+  <body></body>
+  <script>
+	"use strict";
+   const user = {
+     name: "cy"
+   };
+   
+   //Object.preventExtensions 禁止向对象添加属性
+   // Object.preventExtensions(user);
+   // user.age = 18; //Error
+   
+   //Object.isExtensible 判断是否能向对象中添加属性
+   // Object.preventExtensions(user);
+   // console.log(Object.isExtensible(user)); //false
+  </script>
+</html>

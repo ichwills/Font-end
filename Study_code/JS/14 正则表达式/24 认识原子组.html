@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>原子组</title>
+		<p>如果一次要匹配多个元子，可以通过元子组完成</p>
+		<p>原子组与原子表的差别在于原子组一次匹配多个元子，而原子表则是匹配任意一个字符</p>
+		元字符组用 () 包裹
+	</head>
+	<body></body>
+	<script>
+		//使用原子组匹配标题元素
+		let hd = `<h1>hello world</h1>
+    <h2>HELLO WORLD</h2>
+    `;
+
+		let reg = /<(h[1-6])>([\s\S]*)<\/\1>/i;
+		console.dir(hd.match(reg));
+		console.log(hd);
+	</script>
+</html>

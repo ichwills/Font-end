@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>默认值</title>
+	</head>
+	<body></body>
+	<script>
+		//为变量设置默认值
+		// let arr = ["CY", "hello world"];
+		// let [a, b, c = "Hello World"] = arr;
+		// console.log(a, b, c);
+
+		// let user = { name: "CY", url: "hello world", title: "开源系统" };
+		// let { url, name, title = "Hello World" } = user;
+		// console.log(name, url, title);
+
+		//DOM Node   使用默认值特性可以方便的对参数合并
+		function createElement(options = {}) {
+			let {
+				width = 200, height = 100, backgroundColor = "red"
+			} = options;
+			// console.log(width, height, backgroundColor);
+			const div = document.createElement("div");
+			div.style.width = width + "px";
+			div.style.height = height + "px";
+			div.style.backgroundColor = backgroundColor;
+			document.body.appendChild(div);
+		}
+		createElement({
+			width: 60,
+			height: 30,
+			backgroundColor: "green"
+		});
+	</script>
+</html>

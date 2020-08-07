@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>CY</title>
+  </head>
+  <body></body>
+  <script>
+    // let arr = ["CY", 2010];
+    // //let name = arr[0];//转换为数组
+    // //let year = arr[1];//转换为数组
+    // let [name, year] = arr;//将两个字符串转换为数组再输出
+    // console.log(name);
+    // console.log(name, year);
+	
+	/*解构赋值数组*/
+    // function get() {
+    //   return ["CY", 2010];
+    // }
+    // let [name, year] = get();
+    // console.log(name);
+	
+    // var [name, year] = ["CY", 2010];
+    // console.log(name);
+
+    // console.log(..."Hello World");
+    // const [...arr] = "Hello World";
+    // const [...arr] = ['h','d' c m .s]
+    // console.log(arr);
+
+    /*只赋值部分变量*/
+	// let [, year] = ["CY", 2010];
+    // console.log(year);
+
+    /*展开语法获取多个值*/
+	// let [name, ...args] = ["CY", "CY", 2010];
+    // console.log(args);
+    // let a = ["cms", ...args];
+    // console.log(a);
+
+    // let [name, year = 2010] = ["CY"];
+    // console.log(name);
+	
+	/*函数解构*/
+    function show(args) {
+      console.log(args);
+    }
+    show(["CY", 2010]);
+  </script>
+</html>

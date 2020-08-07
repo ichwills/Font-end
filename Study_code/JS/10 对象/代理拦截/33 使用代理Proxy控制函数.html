@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>使用 apply 计算函数执行时间</title>
+  </head>
+  <body></body>
+  <script>
+    function factorial(num) {
+      return num == 1 ? 1 : num * factorial(num - 1);
+    }
+    let proxy = new Proxy(factorial, {
+      apply(func, obj, args) {
+        console.time("run");
+        func.apply(this, args);
+        console.timeEnd("run");
+      }
+    });
+    proxy.apply({}, [100]);
+  </script>
+</html>

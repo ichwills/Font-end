@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title> </title>
+  </head>
+  <body>
+    <main></main>
+  </body>
+  <script>
+    let users = `
+  电话1: 12345678900
+  电话2: 98745675603
+`;
+    let reg = /(?<=\d{7,9})\d{4}/gi;
+    users = users.replace(reg, v => {
+      return "*".repeat(4);
+    });
+    console.log(users);
+  </script>
+</html>

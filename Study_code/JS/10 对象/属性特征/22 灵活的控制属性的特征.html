@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>设置特性</title>
+  </head>
+  <body></body>
+  <script>
+    "use strict";
+    const user = {
+      name: "CY",
+      age: 18
+    };
+    console.log(
+      JSON.stringify(Object.getOwnPropertyDescriptor(user, "age"), null, 2)
+    );
+	//使用Object.defineProperty 方法修改属性特性,通过下面的设置属性name将不能被遍历、删除、修改
+    // Object.defineProperty(user, "name", {
+    //   value: " ",
+    //   writable: false,
+    //   enumerable: false,
+    //   configurable: false
+    // });
+	
+	// 不允许修改
+	// user.name = "cy"; //Error
+	
+	// 不能遍历
+	// console.log(Object.keys(user));
+	
+	//不允许删除
+	// delete user.name;
+	// console.log(user);
+	
+	//不允许配置
+	// Object.defineProperty(user, "name", {
+	//   value: "CY",
+	//   writable: true,
+	//   enumerable: false,
+	//   configurable: false
+	// });
+	
+	//使用 Object.defineProperties 可以一次设置多个属性，具体参数和上面介绍的一样
+	// Object.defineProperties(user, {
+	//   name: { value: "cy", writable: false },
+	//   age: { value: 18 }
+	// });
+	// console.log(user);
+	// user.name = "CY"; //TypeError
+  </script>
+</html>

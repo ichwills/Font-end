@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>hasOwnProperty检测对象自身是否包含指定的属性，不检测原型链上继承的属性</title>
+	</head>
+	<body></body>
+	<script>
+		// let hd = { name: "CY" };
+		// console.log(hd.hasOwnProperty("name"));
+		
+		//通过数组查看
+		// let arr = ["hello world", "Hello World"];
+		// console.log(arr);
+		// console.log(arr.hasOwnProperty("length"));
+		// console.log(arr.hasOwnProperty("concat"));
+		//使用 in 可以在原型对象上检测
+		// console.log("concat" in arr);
+
+		// let a = {
+		// 	name: "CY"
+		// };
+		// let b = {
+		// 	url: "hello world"
+		// };
+		// Object.setPrototypeOf(a, b);
+		// console.log(a);
+		// console.log(a.hasOwnProperty("url"));//是否包含在a中,在父系里
+		// console.log("url" in a);//是否在a这个原型链中
+
+		function oss(options) {
+			if (!options.hasOwnProperty("host")) {
+				throw new Error("必须设置主机地址");
+			}
+		}
+		oss({
+			user: "admin"
+		});
+	</script>
+</html>

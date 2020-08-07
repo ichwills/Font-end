@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>截取字符</title>
+	</head>
+	<body></body>
+	<script>
+		//对数组进行代理，用于截取标题操作
+		const lessons = [{
+				title: "媒体查询响应式布局",
+				category: "css"
+			},
+			{
+				title: "FLEX模型",
+				category: "css"
+			},
+			{
+				title: "MYSQL多表查询随意操作",
+				category: "mysql"
+			}
+		];
+		let proxy = new Proxy(lessons, {
+			get(array, key) {
+				const title = array[key].title;
+				const len = 5;//需要的字符数量
+				array[key].title =
+					title.length > len 
+					? title.substr(0, len) + ".".repeat(3) 
+					: title;
+				return array[key];
+			}
+		});
+		console.log(JSON.stringify(proxy[0], null, 2));
+	</script>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>把所有不是以 https://oss.```.com 开始的静态资源替换为新网址</title>
+  </head>
+  <body>
+    <main>
+      <a href="https://www.dercyc.com/1">1</a>
+      <a href="https://oss.dercyc.com/2">2</a>
+      <a href="https://cdn.dercyc.com/3">3</a>
+      <a href="https://dercyc.com/4">CY</a>
+    </main>
+  </body>
+  <script>
+    const main = document.querySelector("main");
+    const reg = /https:\/\/([a-z]+)?(?<!oss)\..+?(?=\/)/gi;
+    main.innerHTML = main.innerHTML.replace(reg, v => {
+      return "https://oss.dercyc.com";
+    });
+  </script>
+</html>

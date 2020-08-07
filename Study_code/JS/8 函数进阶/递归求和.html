@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>递归求和与点语法注意事项</title>
+  </head>
+  <body></body>
+  <script>
+	//累加计算方法
+    function sum(...args) {
+      // console.log(args);
+      return args.length == 0 ? 0 : args.pop() + sum(...args);
+      // if (args.length == 0) {
+      //   return 0;
+      // }
+      // return args.pop() + sum(...args);
+    }
+    console.log(sum(1, 2, 4, 6, 5, 8));
+
+    // function cms(...args) {
+    //   console.log(args);
+    // }
+    // console.log(cms([1, 2, 3]));
+  </script>
+</html>

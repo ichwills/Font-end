@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title></title>
+  </head>
+  <body></body>
+  <script>
+    let user1 = {
+      name: "李四",
+      test: Symbol()
+    };
+    let user2 = {
+      name: "李四",
+      test: Symbol()
+    };
+    let grade = {
+      [user1.test]: { js: 100, css: 89 },
+      [user2.test]: { js: 35, css: 55 }
+    };
+    console.log(grade[user1.test]);
+  </script>
+</html>

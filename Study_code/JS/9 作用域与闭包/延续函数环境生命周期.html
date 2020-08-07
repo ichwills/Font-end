@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>如果子函数被使用时父级环境将被保留</title>
+	</head>
+	<body></body>
+	<script>
+		function hd() {
+			let n = 1;
+			return function sum() {
+				// console.log(++n);
+				let m = 1;
+				return function show() {
+					console.log("m:" + ++m);
+					console.log("n:" + ++n);
+				};
+			};
+		}
+		let a = hd()();
+		//函数执行以后就会创建一个新的内存空间
+		a(); //2,2
+		a(); //3,3
+	</script>
+</html>

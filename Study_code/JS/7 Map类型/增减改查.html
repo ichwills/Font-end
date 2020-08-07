@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title></title>
+	</head>
+	<body></body>
+	<script>
+		let obj = {
+			name: "CY"
+		};
+		let obj1 = {
+			name: "cy"
+		}
+		let obj2={
+			title:"hello"
+		}
+		let map = new Map();
+		map.set(obj, "hello world");
+		map.set(obj1, "hw");
+		console.log(map.size); //获取数据数量
+		console.log(map.has(obj)); //检测元素是否存在
+		console.log(map.get(obj)); //读取元素
+		
+		/*删除元素*/
+		map.delete(obj);
+		console.log(map.get(obj1));
+		
+		/*clear清除所有元素*/
+		console.log(map.clear());
+		console.log(map.size);
+	</script>
+</html>

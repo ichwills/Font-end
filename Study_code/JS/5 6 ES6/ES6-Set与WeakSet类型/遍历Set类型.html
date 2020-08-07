@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title> </title>
+	</head>
+	<body></body>
+	<script>
+		/*使用 keys()/values()/entries() 都可以返回迭代对象,keys与values 方法结果一致*/
+		// const hd = new Set(["Hello World", " helloworld"]);
+		// console.log(hd.values()); //SetIterator {"Hello World", " helloworld"}
+		// console.log(hd.keys()); //SetIterator {"Hello World", " helloworld"}
+		// console.log(hd.entries()); //SetIterator {"Hello World" => "Hello World", " helloworld" => " helloworld"}
+
+		/*保持和遍历数组参数统一，函数中的value与key是一样的,默认使用 values 方法创建迭代器*/
+		// let arr = [7, 6, 2, 8, 2, 6];
+		// let set = new Set(arr);
+		/*使用forEach遍历*/
+		//set.forEach((item,key) => console.log(item,key));
+		/*使用for/of遍历*/
+		let set = new Set([7, 6, 2, 8, 2, 6]);
+		
+		for (const iterator of set) {
+			console.log(iterator);
+		}
+	</script>
+</html>

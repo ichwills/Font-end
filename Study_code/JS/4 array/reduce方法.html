@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title></title>
+  </head>
+  <body></body>
+  <script>
+    // let arr = [1, 2, 3, 4, 5];
+    // arr.reduce(function(pre, value, index, array) {//pre为上一次返回的结果
+    //   console.log(pre, value);
+    //   return 6;
+    // });
+	
+    // arr.reduce(function(pre, value, index, array) {
+    //   console.warn(pre, value);
+    //   return 6;
+    // }, 0);//pre初始值为0
+
+	/*统计元素出现的次数*/
+    // let arr = [1, 2, 3, 1, 1];
+    // function arrayCount(array, item) {
+    //   return array.reduce(function(total, cur) {
+    //     total += item == cur ? 1 : 0;//cur当前的元素值
+    //     return total;
+    //   }, 0);
+    // }
+    // console.log(arrayCount(arr, 1));
+	
+	/*取数组中的最大值*/
+    let arr = [1, 2, 3, 5, 2, 19];
+    function arrayMax(array) {
+      return array.reduce(function(pre, cur) {
+        return pre > cur ? pre : cur;
+      });
+    }
+    console.log(arrayMax(arr));
+  </script>
+</html>

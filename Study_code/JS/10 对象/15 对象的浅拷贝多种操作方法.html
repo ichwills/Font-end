@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>对象赋值时复制的内存地址，所以一个对象的改变直接影响另一个</title>
+	</head>
+	<body></body>
+	<script>
+		// let obj = {
+		// 	name: 'CY',
+		// 	user: {
+		// 		name: 'cy'
+		// 	}
+		// }
+		// let a = obj;
+		// let b = obj;
+		// a.name = 'lisi';
+		// console.log(b.name); //lisi
+		
+		//浅拷贝-使用for/in执行对象拷贝
+		// let obj = {name: "CY"};
+		// let hd = {};
+		// for (const key in obj) {
+		//   hd[key] = obj[key];
+		// }
+		// hd.name = "Hello World";
+		// console.log(hd);
+		// console.log(obj);
+		
+		//Object.assign 函数可简单的实现浅拷贝
+		//它是将两个对象的属性叠加后面对象属性会覆盖前面对象同名属性
+		// let user = {
+		// 	name: 'CY'
+		// };
+		// let hd = {
+		// 	stu: Object.assign({}, user)
+		// };
+		// hd.stu.name = 'cy';
+		// console.log(user.name);//CY
+		
+		//使用展示语法也可以实现浅拷贝
+		let obj = {
+		  name: "CY"
+		};
+		let hd = { ...obj };
+		hd.name = "cy";
+		console.log(hd);
+		console.log(obj);
+	</script>
+</html>

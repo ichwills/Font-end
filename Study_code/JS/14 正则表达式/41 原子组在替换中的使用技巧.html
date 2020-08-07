@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>为链接添加上https,并补全 www.</title>
+  </head>
+  <body>
+    <main>
+      <a style="color:red" href="http://www.google.com">google</a>
+      <a id="l1" href="http://baidu.com">baidu</a>
+      <a href="http://yahoo.com">雅虎</a>
+      <h4>hello world</h4>
+    </main>
+  </body>
+  <script>
+    const main = document.querySelector("body main");
+    const reg = /(<a.*href=['"])(http)(:\/\/)(www\.)?(google|baidu)/gi;
+    main.innerHTML = main.innerHTML.replace(reg, (v, ...args) => {
+      args[1] += "s";
+      args[3] = args[3] || "www.";
+      return args.splice(0, 5).join("");
+    });
+  </script>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body></body>
+  <script>
+	//使用系统提供的API可以方便获取对象属性与值
+    let hd = {
+      name: "CY",
+      year: "2010"
+    };
+    // console.log(Object.keys(hd));
+    // console.log(Object.values(hd));
+    // console.log(JSON.stringify(Object.entries(hd), null, 2));
+
+	//使用for/in遍历对象属性
+    // for (const key in hd) {
+    //   console.log(hd[key]);
+    // }
+	
+	//for/of用于遍历迭代对象,不能直接操作对象,但Object对象的keys/方法返回的是迭代对象
+    // for (const iterator of hd) {
+    //   console.log(iterator);
+    // }
+	
+    // let lessons = [{ name: "js", click: 999 }];
+    // for (const iterator of lessons) {
+    //   console.log(iterator);
+    // }
+	
+	//同时获取属性名与值
+    for (const [key, value] of Object.entries(hd)) {
+      console.log(value);
+    }
+	
+	//添加元素DOM实例
+    // let lessons = [
+    //   { name: "js", click: 999 },
+    //   { name: "node", click: 127 }
+    // ];
+    // let ul = document.createElement("ul");
+    // for (const lesson of lessons) {
+    //   let li = document.createElement("li");
+    //   li.innerHTML = `课程:${lesson.name}，点击数:${lesson.click}`;
+    //   ul.appendChild(li);
+    // }
+    // document.body.appendChild(ul);
+  </script>
+</html>

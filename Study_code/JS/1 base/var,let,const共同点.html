@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title> </title>
+  </head>
+  <body>
+    <script>
+      const web = " helloworld.com";//全局变量
+      function show() {
+        const web = " ";//局部变量
+        function run() {
+          var web = "run .. web";
+          console.log(web);
+        }
+        run();
+        console.log(web);
+      }
+      show();
+      console.log(web);
+    </script>
+  </body>
+</html>

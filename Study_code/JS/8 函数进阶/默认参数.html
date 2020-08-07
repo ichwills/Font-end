@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>默认参数</title>
+	</head>
+	<body></body>
+	<script>
+		//通过计算年平均销售额来体验以往默认参数的处理方式
+		// function avg(total, year) {
+		//   year = year || 1;
+		//   return Math.round(total / year);
+		// }
+		// console.log(avg(2000, 3));
+
+		//新版本默认参数方式
+		// function avg(total, year = 1) {
+		//   return Math.round(total / year);
+		// }
+		// console.log(avg(2000, 3));
+
+		//通过排序来体验新版默认参数的处理方式，下例中当不传递 type 参数时使用默认值 asc
+		// function sortArray(array, type = "asc") {
+		//   return array.sort((a, b) => (type == "asc" ? a - b : b - a));
+		// }
+		// console.log(sortArray([3, 1, 4, 2], "asc"));//desc降序，asc升序
+
+		//打折
+		function sum(total, discount = 0, dis = 0) {
+			return total * (1 - discount) * (1 - dis);
+		}
+		console.log(sum(1000, 0.1, 0.2));
+	</script>
+</html>

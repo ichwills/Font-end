@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>反序列化</title>
+	</head>
+	<body></body>
+	<script>
+		let hd = {
+			title: "CY",
+			url: "hello world",
+			teacher: {
+				name: "cy"
+			}
+		};
+		
+		let json = JSON.stringi
+		fy(hd, null, 2);
+		console.log(json
+		);
+
+		//使用 JSON.parse 将字符串 json 解析成对象
+		// let obj = JSON.parse(json, (key, value) => {
+		// 	if (key == "title") {
+		// 		value = "[Cy]-" + value;
+		// 	}
+		// 	return value;
+		// });
+		// console.log(obj.title);
+
+		//使用第二个参数函数来对返回的数据二次处理
+		// let jsonStr = JSON.stringify(hd);
+		// console.log(
+		// 	JSON.parse(jsonStr, (key, value) => {
+		// 		if (key == "title") {
+		// 			return `[推荐] ${value}`;
+		// 		}
+		// 		return value;
+		// 	})
+		// );
+	</script>
+</html>

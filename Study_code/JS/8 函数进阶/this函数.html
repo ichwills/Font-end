@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>调用函数时 this 会隐式传递给函数指函数调用时的关联对象，也称之为函数的上下文</title>
+	</head>
+	<body></body>
+	<script>
+		//this
+		// let edu = {
+		//   name: "hello world",
+		//   show: function() {
+		//     return this.name;
+		//   }
+		// };
+		// // console.log(edu.show());
+
+		//全局环境下this就是window对象的引用
+		// console.log(window);
+		// console.log(this == edu);
+
+		//使用严格模式时在全局函数内this为undefined
+		// let hd = 'hello world';
+		// function get() {
+		//   "use strict"
+		//   return this.hd;
+		// }
+		// console.log(get());//严格模式将产生错误 Cannot read property 'name' of undefined
+
+		/*方法调用
+		函数为对象的方法时this 指向该对象
+		可以使用多种方式创建对象，下面是使用构造函数创建对象
+		构造函数函数当被 new 时即为构造函数，一般构造函数中包含属性与方法。
+		函数中的上下文指向到实例对象。
+		构造函数主要用来生成对象， 里面的this默认就是指当前对象*/
+		// function User() {
+		// 	this.name = "hello world";
+		// 	this.say = function() {
+		// 		console.log(this); //User {name: "hello world", say: ƒ}
+		// 		return this.name;
+		// 	};
+		// }
+		// let hd = new User();
+		// console.log(hd.say()); //hello world
+
+		/*对象字面量
+		下例中的hd函数不属于对象方法所以指向window
+		show属于对象方法执向 obj对象*/
+		let obj = {
+			site: "hello world",
+			show() {
+				console.log(this.site); //hello world
+				console.log(`this in show method: ${this}`); //this in show method: [object Object]
+				function hd() {
+					console.log(typeof this.site); //undefined
+					console.log(`this in hd function: ${this}`); //this in hd function: [object Window]
+				}
+				hd();
+			}
+		};
+		obj.show();
+
+		// function User(name) {
+		// 	this.name = name;
+		// 	this.show = function() {
+		// 		function render() {
+		// 			console.log(this);
+		// 		}
+		// 		render();
+		// 		return this.name;
+		// 	};
+		// }
+		// let lisi = new User("李四");
+		// console.log(lisi.show());
+	</script>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>函数中的点语法</title>
+	</head>
+	<body></body>
+	<script>
+		//收 放
+		// let hd = [1, 2, 3];
+		// let [a, b, c] = [...hd];
+		// console.log(a); //1
+		// console.log(b); //2
+		// console.log(c); //3
+		// [...hd] = [1, 2, 3];
+		// console.log(hd); //[1, 2, 3]
+
+		//使用展示语法可以替代 arguments 来接收任意数量的参数
+		// function hd(...args) {
+		//   console.log(args);
+		// }
+		// hd(1, 2, 3, "hello world"); //[1, 2, 3, "hello world"]
+		
+		//用于接收部分参数
+		// function hd(site, ...args) {
+		//   console.log(site, args); //hello world (3) [1, 2, 3]
+		// }
+		// hd("hello world", 1, 2, 3);
+		
+		//使用 ... 可以接受传入的多个参数合并为数组，下面是使用点语法进行求合计算
+		// function sum(...params) {
+		// 	console.log(params);
+		// 	return params.reduce((pre, cur) => pre + cur);
+		// }
+		// console.log(sum(1, 3, 2, 4));
+		
+		//多个参数时...参数必须放后面，下面计算购物车商品折扣
+		// function sum(discount = 0, ...prices) {
+		//   let total = prices.reduce((pre, cur) => pre + cur);
+		//   return total * (1 - discount);
+		// }
+		// console.log(sum(0.1, 100, 300, 299));
+	</script>
+</html>

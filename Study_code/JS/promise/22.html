@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title> </title>
+  </head>
+  <body></body>
+  <script src="js/ajax.js"></script>
+  <script>
+    // function hd() {}
+    // hd.site = " helloworld.com";
+    // console.dir(hd);
+    Promise.hd = function(value) {
+      return new Promise(resolve => {
+        resolve(value);
+      });
+    };
+    Promise.hd(" ").then(value => {
+      console.log(value);
+    });
+    function query(name) {
+      const cache = query.cache || (query.cache = new Map());
+      if (cache.has(name)) {
+        console.log("走缓存了");
+        return Promise.resolve(cache.get(name));
+      }
+      return ajax(`http://localhost:8888/php/user.php?name=${name}`).then(
+        user => {
+          cache.set(name, user);
+          console.log("没走缓存");
+          return user;
+        }
+      );
+    }
+    // query(" ").then(user => {
+    //   console.log(user);
+    // });
+    // query(" ").then(user => {
+    //   console.log(user);
+    // });
+    // setTimeout(() => {
+    //   query(" ").then(user => {
+    //     console.log(user);
+    //   });
+    // }, 1000);
+    // setTimeout(() => {
+    //   query(" ").then(user => {
+    //     console.log(user);
+    //   });
+    // }, 1000);
+    // console.log(Promise.resolve(" "));
+    // Promise.resolve(" ").then(value => {
+    //   console.log(value);
+    // });
+  </script>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title></title>
+  </head>
+  <body>
+    <script>
+      //传值 复制内存空间
+      let a = 1;
+      let b = a;
+      console.log(a, b);
+      b = 3;
+      console.log(a, b);
+	  
+	  //传址 公用内存空间1
+      let e = { name: "Hello World" };
+      let f = e;
+      console.log(e, f);
+      f.name = " helloworld";
+      console.log(e, f);
+    </script>
+  </body>
+</html>

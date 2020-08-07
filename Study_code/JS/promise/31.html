@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title> </title>
+  </head>
+  <body></body>
+  <script>
+    // new Promise(resolve => {
+    //   resolve();
+    // })
+    //   .then(v => {
+    //     return new Promise(resolve => {
+    //       setTimeout(() => {
+    //         resolve(" ");
+    //       }, 2000);
+    //     });
+    //   })
+    //   .then(v => {
+    //     console.log(v);
+    //   });
+
+    async function hd() {
+      let name = await new Promise(resolve => {
+        setTimeout(() => {
+          resolve(" ");
+        }, 2000);
+      });
+      let site = await new Promise(resolve => {
+        setTimeout(() => {
+          resolve(name + " helloworld.com");
+        }, 2000);
+      });
+      console.log(site);
+      // return new Promise(resolve => {
+      //   setTimeout(() => {
+      //     resolve(" helloworld.com");
+      //   }, 2000);
+      // });
+    }
+    hd();
+    // hd().then(v => console.log(v));
+  </script>
+</html>

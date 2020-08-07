@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title></title>
+	</head>
+	<body>需要新版浏览器</body>
+	<script>
+		//检索网站
+		let hd = `
+		baidu.com
+		http://www.google.com
+		https://www.dercyc.cn
+    `;
+		let reg = /https?:\/\/(?:\w+\.)?(?:\w+\.)+(?:com|cn|org|cc)/gi;
+		for (const iterator of hd.matchAll(reg)) {
+			console.log(iterator);
+		}
+
+
+		// let date = "2020/09/12";
+		// console.log(date.split(/[-\/]/));
+	</script>
+</html>

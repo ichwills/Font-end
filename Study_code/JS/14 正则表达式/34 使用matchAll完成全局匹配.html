@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+	<head>需要使用新版浏览器</head>
+  </head>
+  <body>
+    <h1>HELLO WORLD</h1>
+    <h2>hello world</h2>
+    <h1>CY</h1>
+  </body>
+  <script>
+    let reg = /<(h[1-6])>([\s\S]+?)<\/\1>/gi;
+    const body = document.body;
+	// console.dir(body.innerHTML.match(reg));
+    const hd = body.innerHTML.matchAll(reg);
+    let contents = [];
+    for (const iterator of hd) {
+      contents.push(iterator[2]);
+    }
+    console.table(contents);
+	
+	//新浏览器中支持使用 matchAll 操作，并返回迭代对象
+	// let str = "hello world";
+	// let reg = /^[a-z]$/ig;
+	// for (const iterator of str.matchAll(reg)) {
+	//   console.log(iterator);
+	// }
+  </script>
+</html>

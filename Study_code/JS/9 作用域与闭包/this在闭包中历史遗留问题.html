@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title></title>
+  </head>
+  <body></body>
+  <script>
+    let hd = {
+      user: "CY",
+      get: function() {
+        // console.log(this);
+        // let This = this;
+        return () => {     //使用箭头函数解决这个问题
+          return this.user;
+        };
+      }
+    };
+    let a = hd.get();
+    console.log(a());
+  </script>
+</html>

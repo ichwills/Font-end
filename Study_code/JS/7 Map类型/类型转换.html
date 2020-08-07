@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title> </title>
+	</head>
+	<body></body>
+	<script>
+		let hd = new Map([
+			["name", "CY"],
+			["title", "Hello world"]
+		]);
+
+		// console.log([...hd]);//转换为数组
+		// console.log([...hd.entries()]);//单独转换值
+		// console.log([...hd.keys()]);//单独转换键
+		// console.log([...hd.values()]);//单独转换值
+
+		// for (const [key, value] of hd) {
+		//   console.log(key, value);
+		// }
+
+		/*检索包含CY的值组成新Map*/
+		let newArr = [...hd].filter(item => {
+			return item[1].includes("CY");
+		});
+		let edu = new Map(newArr);
+		console.log(...edu.values());
+	</script>
+</html>

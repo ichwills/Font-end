@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>函数被执行后其环境变量将从内存中删除。下面函数在每次执行后将删除函数内部的total变量</title>
+	</head>
+	<body>
+	</body>
+	<script>
+		function count() {
+		  let total = 0;
+		}
+		count();
+	</script>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>通过设置站网站名称与网址体验getter/setter批量设置属性的使用</title>
+  </head>
+  <body></body>
+  <script>
+    "use strict";
+    const web = {
+      name: "CY",
+      url: "hello world",
+      get site() {
+        return `${this.name}想说的是${this.url}`;
+      },
+      set site(value) {
+        [this.name, this.url] = value.split(",");
+      }
+    };
+    // web.name = 'cy';
+    web.site = "cy,hello world";
+    // console.log(web.url);
+    console.log(web.site);
+  </script>
+</html>

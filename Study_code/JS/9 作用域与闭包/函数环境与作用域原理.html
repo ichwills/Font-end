@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>//函数每次调用都会创建一个新作用域</title>
+	</head>
+	<body>
+	</body>
+	<script>
+		let title = "Hello world";
+
+		function show() {
+			let url = "HW";
+
+			function hd() {
+				let site = "CY";
+				console.log(url);
+			}
+			hd();
+		}
+		show();
+		show();
+		show();
+		show();
+		show();
+		
+	</script>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body>希望组参与匹配,便不希望返回到结果中使用 (?: 处理,获取所有域名的示例</body>
+  <script>
+    let hd = `
+    https://www.baidu.com
+    http://Baidu.com
+    https://BAIDU.com
+    `;
+    let reg = /https?:\/\/((?:\w+\.)?\w+\.(?:com|org|cn))/gi;
+    console.dir(hd.match(reg));
+    let urls = [];
+    while ((res = reg.exec(hd))) {
+      urls.push(res[1]);
+    }
+    console.log(urls);
+  </script>
+</html>

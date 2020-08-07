@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>基本操作</title>
+  </head>
+  <body></body>
+  <script>
+    let hd = {};
+    hd.name = " ";
+    hd["age"] = 18;
+    console.log(hd);
+    delete hd.name;
+    console.log(hd);
+
+    console.log(hd.hasOwnProperty("age"));//判断对象是否包含特定的自身（非继承）属性
+  </script>
+</html>

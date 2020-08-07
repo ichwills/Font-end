@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>函数编程与面向对象实例对比</title>
+  </head>
+  <body></body>
+  <script>
+	//面向过程编程
+    // let name = "CY";
+    // let grade = [
+    //   { name: "js", score: 99 },
+    //   { name: "docker", score: 76 }
+    // ];
+    // function average(grade, name) {
+    //   let total = grade.reduce((t, l) => t + l.score, 0);
+    //   return `${name}的平均成绩是: ${total / grade.length}`;
+    // }
+    // console.log(average(grade, name));
+	
+	//面向对象编程
+	//使用对象编程的代码结构清晰
+	//减少了函数的参数传递
+	//不用担心函数名的覆盖
+    let user = {
+      name: "CY",
+      grade: [
+        { name: "js", score: 100 },
+        { name: "docker", score: 76 }
+      ],
+      average() {
+        let total = this.grade.reduce((t, l) => t + l.score, 0);
+        return `${this.name}的平均成绩是: ${total / this.grade.length}`;
+      }
+    };
+    console.log(user);
+    console.log(user.average());
+  </script>
+</html>

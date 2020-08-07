@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>闭包特性中上级作用域会为函数保存数据，从而造成的如下所示的内存泄漏问题</title>
+	</head>
+	<body>
+		<div desc="CY">在线学习</div>
+		<div desc="cy">开源产品</div>
+	</body>
+	<script>
+		let divs = document.querySelectorAll("div");
+		divs.forEach(function(item) {
+			let desc = item.getAttribute("desc");
+			item.addEventListener("click", function() {
+				// console.log(item.getAttribute("desc"));
+				console.log(desc);
+				console.log(item);
+			});
+			item = null;//取值后取消对象，避免内存泄漏
+		});
+	</script>
+</html>

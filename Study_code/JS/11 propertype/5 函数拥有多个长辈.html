@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>函数也是对象</title>
+  </head>
+  <body></body>
+  <script>
+    // let hd = {};
+    // console.dir(hd);
+   
+    function User() {}
+    User.__proto__.view = function() {
+      console.log("User function view method");
+    };
+    User.view();
+    
+    // User.apply
+    // console.dir(User);
+    // User.prototype.show = function() {
+    //   console.log(" ");
+    // };
+    // let hd = new User();
+
+    // hd.show();
+    // console.log(User.prototype == hd.__proto__);
+  </script>
+</html>

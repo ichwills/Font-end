@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>字面量形式没法操作变量</title>
+	</head>
+	<body></body>
+	<script>
+		let hd = "abcde";
+		let a = "a";
+		// console.log(/u/.test(hd));
+		console.log(eval(`/${a}/`).test(hd)); //eval：把字符串变为js表达式
+	</script>
+</html>

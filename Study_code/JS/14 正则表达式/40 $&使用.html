@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body>
+	把所有o加上链接 https://www.baidu.com
+    <main>
+      hello world
+    </main>
+  </body>
+  <script>
+    const main = document.querySelector("body main");
+    main.innerHTML = main.innerHTML.replace(
+      /o/g,
+      `<a href="https://www.baidu.com">$&</a>`
+    );
+  </script>
+</html>

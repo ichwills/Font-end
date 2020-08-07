@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body></body>
+  <script>
+    let hd = "(hello world).+";
+    console.log(hd.match(/[.+]/gi));
+	console.log(hd.match(/(.+)/gi));//
+	console.log(hd.match(/[()]/gi));//原子表内不能含有原子组
+	console.log(hd.match(/.+/gi));//除换行符以外的全部
+	//使用转义
+	console.table(hd.match(/[\(\)\.\+]/g));
+  </script>
+</html>

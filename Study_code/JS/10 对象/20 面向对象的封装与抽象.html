@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body></body>
+  <script>
+    // let cy = {};
+    // cy.name = "cy";
+    // cy.show = function(name) {
+    //   console.log(name);
+    // };
+	
+    //将对象属性封装到构造函数内部
+    // function User(name, age) {
+    //   this.name = name;
+    //   this.age = age;
+    //   this.info = function() {
+    //     return this.age > 50 ? "中年人" : "年轻人";
+    //   };
+    //   this.about = function() {
+    //     return `${this.name}是${this.info()}`;
+    //   };
+    // }
+    // let lisi = new User("李四", 22);
+    // console.log(lisi.about());
+	//上例中的方法和属性仍然可以在外部访问到,比如 info方法只是在内部使用,不需要被外部访问到这会破坏程序的内部逻辑
+	
+	//下面使用闭包特性将对象进行抽象处理
+	function User(name, age) {
+	  let data = { name, age };
+	  let info = function() {
+	    return data.age > 50 ? "中年人" : "年轻人";
+	  };
+	  this.message = function() {
+	    return `${data.name}是${info()}`;
+	  };
+	}
+	let lisi = new User("CY", 22);
+	console.log(lisi.message());
+  </script>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title></title>
+		<head>RegExp对象lastIndex 属性可以返回或者设置正则表达式开始匹配的位置
+			<p>必须结合 g 修饰符使用</p>
+			<p>对 exec 方法有效</p>
+			<p>匹配完成时，lastIndex 会被重置为0</p>
+		</head>
+	<body></body>
+	<script>
+		//lastIndex
+		let hd = "hello world";
+		// console.log(hd.match(/\w/g));
+		let reg = /\w/g;
+		// console.log(reg.lastIndex);
+		// console.log(reg.exec(hd));
+		// console.log(reg.lastIndex);
+		// console.log(reg.exec(hd));
+		
+		while ((res = reg.exec(hd))) {
+		  console.log(res);
+		}
+	</script>
+</html>

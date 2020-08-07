@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>在方法中使用函数时有些函数可以改变this如forEach</title>
+  </head>
+  <body></body>
+  <script>
+    let Lesson = {
+      site: "hello world",
+      lists: ["js", "css", "mysql"],
+      show: function() {
+        // console.log(this.site);
+        // console.log(this.lists);
+        // const self = this;
+        return this.lists.map(function(value) {
+          // console.log(this);
+          // console.log(this.site);
+          return `${this.site}-${value}`;
+          // console.log(this);
+        }, this);
+      }
+    };
+    console.table(Lesson.show());
+	
+	//在父作用域中定义引用this的变量
+	// let Lesson = {
+	//     site: " ",
+	//     lists: ["js", "css", "mysql"],
+	//     show() {
+	//       const self = this;
+	//       return this.lists.map(function(title) {
+	//         return `${self.site}-${title}`;
+	//       });
+	//     }
+	//   };
+	//   console.log(Lesson.show());
+  </script>
+</html>

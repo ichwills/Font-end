@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title> </title>
+	</head>
+	<body></body>
+	<script>
+		/*使用数组做初始数据/*/
+		// let hd = new Set([' ', 'Hello World']);
+		// console.log(hd.values()); //{" ", "Hello World"}
+
+		/*Set 中是严格类型约束的，下面的数值1与字符串1属于两个不同的值*/
+		// let set = new Set([1, 2, 3, 4, 5]);
+		// set.add(1);
+		// set.add("2");
+		// console.log(set);
+		
+		/*使用 add 添加元素，不允许重复添加Hello World值*/
+		// let hd = new Set();
+		// hd.add(' helloworld');
+		// hd.add('Hello World');
+		// hd.add('Hello World')
+		// console.log(hd.values()); //SetIterator {" helloworld", "Hello World"}
+		
+		/*对象可以属性最终都会转为字符串*/
+		//let obj = {1: "Hello World","1": " helloworld"};
+		// obj[1] = "Hello World";
+		// console.log(obj);
+
+		/*使用对象做为键名时，会将对象转为字符串后使用*/
+		let obj = {
+			1: "Hello World",
+			"1": " helloworld"
+		};
+		console.table(obj);
+
+		let hd = {
+			[obj]: " "
+		};
+		console.table(hd);
+
+		console.log(hd[obj.toString()]);
+		console.log(hd["[object Object]"]);
+	</script>
+</html>

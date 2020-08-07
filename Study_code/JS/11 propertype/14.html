@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title> </title>
+  </head>
+  <body></body>
+  <script>
+    let a = { url: " helloworld" };
+    let b = { name: " " };
+    // Object.prototype.web = "Hello World.com";
+    // console.log("web" in a);
+    Object.setPrototypeOf(a, b);
+    // console.log("name" in a);
+    // console.log(a.hasOwnProperty("name"));
+    for (const key in a) {
+      if (a.hasOwnProperty(key)) {
+        console.log(a[key]);
+      }
+    }
+  </script>
+</html>

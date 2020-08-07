@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>使用对象创建正则表达式</title>
+	<h1>CY</h1>
+	<h2>cy</h2>
+  </head>
+  <body>
+    <div class="content">
+      abcdefg
+    </div>
+  </body>
+  <script>
+	//根据用户输入高亮显示内容，支持用户输入正则表达式
+    let con = prompt("请输入要检测的内容，支持正则");
+    let reg = new RegExp(con, "g");
+    let div = document.querySelector("div");
+    div.innerHTML = div.innerHTML.replace(reg, search => {
+      return `<span style="color:red">${search}</span>`;
+    });
+
+	//当正则需要动态创建时使用对象方式
+    // let hd = "abcdefg";
+    // let a = "a";
+    // let reg = new RegExp(a, "g");
+    // console.log(reg.test(hd));
+	
+	//通过对象创建正则提取标签
+	function element(tag) {
+	  const html = document.body.innerHTML;
+	  let reg = new RegExp("<(" + tag + ")>.+</\\1>", "g");
+	  return html.match(reg);
+	}
+	console.table(element("h1"));
+  </script>
+</html>

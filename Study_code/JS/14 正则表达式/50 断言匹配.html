@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>?!</title>
+  </head>
+  <body></body>
+  <script>
+	//取后面不是数字的字符
+    let hd = "hello1234world";
+    let reg = /[a-z]+(?!\d+)$/i;
+    console.log(hd.match(reg));
+  </script>
+</html>

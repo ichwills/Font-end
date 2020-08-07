@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>封闭对象</title>
+  </head>
+  <body></body>
+  <script>
+    "use strict";
+    const user = {
+      name: "CY",
+      age: 18
+    };
+	
+	//Object.seal()方法封闭一个对象,阻止添加新属性并将所有现有属性标记为 configurable: false
+	// Object.seal(user);
+	// console.log(
+	//   JSON.stringify(Object.getOwnPropertyDescriptors(user), null, 2)
+	// );
+	
+	// Object.seal(user);
+	// console.log(Object.isSealed(user));
+	// delete user.name; //Error
+	
+	//Object.isSealed 如果对象是密封的则返回 true,属性都具有 configurable: false
+	Object.seal(user);
+	console.log(Object.isSealed(user)); //true
+  </script>
+</html>

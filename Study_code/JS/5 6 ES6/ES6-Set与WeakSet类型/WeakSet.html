@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title> </title>
+	</head>
+	<body>
+		<div></div>
+		<div></div>
+	</body>
+	<script>
+		/*WeakSet的值必须为对象类型*/
+		//new WeakSet([["Hello World"], [" helloworld"]]);
+		
+		/*将DOM节点保存到WeakSet*/
+		//document.querySelectorAll("button").forEach(item => Wset.add(item));
+		
+		/*常用指令*/
+		const hd = new WeakSet();
+		const arr = ["Hello World"];
+		//添加操作
+		hd.add(arr);
+		console.log(hd.has(arr));
+		
+		//删除操作
+		hd.delete(arr);
+		
+		//检索判断
+		console.log(hd.has(arr));
+	</script>
+</html>

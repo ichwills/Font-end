@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title></title>
+	</head>
+	<body></body>
+	<script>
+		//默认情况下重复选项对单个字符进行重复匹配， 即不是贪婪匹配
+		let hd = "hdddd";
+		console.log(hd.match(/hd+/i)); //hddd
+
+		//使用原子组后则对整个组重复匹配
+		let hd1 = "hdddd";
+		console.log(hd1.match(/(hd)+/i)); //hd
+
+		//匹配0/1个
+		let hd2 = "hdddddd";
+		console.log(hd2.match(/hd?/));
+
+		//匹配2个
+		let hd3 = "hdddddd";
+		console.log(hd3.match(/hd{2}/));
+
+		//匹配1到3
+		let hd4 = "hdddddd";
+		console.log(hd4.match(/hd{1,3}/));
+	</script>
+</html>

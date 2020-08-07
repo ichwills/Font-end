@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>test</title>
+  </head>
+  <body>
+    <style>
+      ul {
+        list-style: none;
+      }
+      li {
+        border: solid 1px #ddd;
+        margin-bottom: 10px;
+        padding: 10px;
+      }
+      li > a {
+        color: green;
+      }
+    </style>
+    <script>
+      // let name = " ";
+      // let web = " helloworld.com";
+      // console.log(tag`${name}`);
+      // function tag(strings, ...vars) {
+      //   console.log(vars);
+      //   console.log(strings);
+      // }
+
+      let lessons = [
+        { title: "查询响应式布局", author: "cy" },
+        { title: "FLEX 弹性盒模型", author: "cy" },
+        { title: "GRID 栅格系统教程", author: "cy" }
+      ];
+      function template() {
+        return `<ul>
+            ${lessons
+              .map(
+                item => links`<li>作者:${item.author}，课程:${item.title}</li>`
+              )
+              .join("")}
+          </ul>`;
+      }
+	 <!-- 标签模板实例 -->
+      function links(strings, ...vars) {
+        return strings
+          .map((str, key) => {
+            return (
+              str +
+              (vars[key]
+                ? vars[key].replace(
+                    "cy",
+                    `<a href="https://www.baidu.com/">cy</a>`
+                  )
+                : "")
+            );
+          })
+          .join("");
+      }
+      document.body.innerHTML += template();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title> </title>
+  </head>
+  <body>
+    <main>
+      CY cy hello world
+    </main>
+  </body>
+  <script>
+    //exec单词匹配与match相似
+    let reg = /CY/g;
+    const main = document.querySelector("body main");
+    let count = 0;
+    while ((res = reg.exec(main.innerHTML))) {
+      count++;
+    }
+    console.log(count);
+    console.log(main.innerHTML.match(reg));
+    // console.log(reg.exec(main.innerHTML));
+    // console.log(reg.lastIndex);
+    // console.log(reg.exec(main.innerHTML));
+    // console.log(reg.lastIndex);
+    // console.log(reg.exec(main.innerHTML));
+    // console.log(reg.lastIndex);
+  </script>
+</html>

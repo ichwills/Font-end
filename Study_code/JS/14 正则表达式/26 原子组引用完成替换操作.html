@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title></title>
+</head>
+
+<body></body>
+<script>
+  //\n 在匹配时引用原子组, $n 指在替换时使用匹配的组数据。下面将标签替换为p标签
+  let hd = `
+      <h1>hello world</h1>
+      <span>CY</span>
+      <h2>HELLO WORLD</h2>
+    `;
+  let reg = /<(h[1-6])>([\s\S]+)<\/\1>/gi;
+  // console.log(hd.replace(reg, `<p>$2</p>`));
+  let res = hd.replace(reg, (p0, p1, p2) => `<p>${p2}</p>`);
+  console.log(res);
+</script>
+
+</html>

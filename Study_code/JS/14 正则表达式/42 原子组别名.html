@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>将<h1><h2>更换为<h4></title>
+	</head>
+	<body></body>
+	<script>
+		let hd = `
+		<h1>hello world</h1>
+			<span>CY</span>
+				<h2>Hello World</h2>
+`;
+		const reg = /<(h[1-6])>(?<con>.*?)<\/\1>/gi;
+		console.log(hd.replace(reg, "<h4>$<con></h4>"));
+	</script>
+</html>

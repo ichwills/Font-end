@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>正则表达式在执行时会按他们的默认执行方式进行,有时候默认的处理方式无法满足需求，所以使用模式修正符更改默认方式</title>
+  </head>
+  <body></body>
+  <script>
+    let hd = "hEllo WOrld";
+    console.log(hd.match(/o/gi));
+    console.log(hd.replace(/o/gi, "@"));
+  </script>
+</html>

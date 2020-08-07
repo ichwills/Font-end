@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>访问器</title>
+	</head>
+	<body></body>
+	<script>
+		"use strict";
+		const user = {
+			data: {
+				name: "CY",
+				age: 10
+			},
+			
+			//向对是地用户的年龄数据使用访问器监控控制
+			set age(value) {
+				if (typeof value != "number" || value < 10 || value > 100) {
+					throw new Error("年龄格式错误");
+				}
+				this.data.age = value;
+			},
+			get age() {
+				return "今年"+this.data.age + "岁";
+			}
+		};
+		// user.setAge(999);
+		user.age = 18;
+		console.log(user.age);
+		// user.age = 19999;
+	</script>
+</html>

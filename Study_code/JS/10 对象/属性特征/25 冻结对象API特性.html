@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>冻结对象</title>
+  </head>
+  <body></body>
+  <script>
+    "use strict";
+    const user = {
+      name: "CY",
+      age: 18
+    };
+	
+	//Object.freeze 冻结对象后不允许添加、删除、修改属性，writable、configurable都标记为false
+	// Object.freeze(user);
+	// user.name = " "; //Error
+	
+	//Object.isFrozen()方法判断一个对象是否被冻结
+	console.log(Object.isFrozen(user));
+	Object.freeze(user);
+	console.log(Object.isFrozen(user));
+  </script>
+</html>

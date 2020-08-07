@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>作用域时已经在使用闭包特性</title>
+  </head>
+  <body></body>
+  <script>
+    function hd() {
+      let n = 1;
+      return function sum() {
+        console.log(++n);
+      };
+    }
+    let a = hd();
+    a();
+    a();
+  </script>
+</html>

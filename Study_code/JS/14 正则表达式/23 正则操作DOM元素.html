@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body>World
+    <p>hello world</p>
+    <h2>hello WOrld</h2>
+    <h1>
+      HELLO WORLD
+    </h1>
+    <h2>Hello world</h2>
+  </body>
+  <script>
+    let body = document.body;
+    let reg = /<(h[1-6])>[\s\S]*<\/\1>/gi;
+    body.innerHTML = body.innerHTML.replace(reg, "");
+  </script>
+</html>

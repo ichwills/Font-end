@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title> helloworld.com</title>
+  </head>
+  <body>
+    <div>Hello World</div>
+    <div> helloworld</div>
+    <script>
+	  /*DOM元素转换为数组后来使用数组函数，第二个参数类似于map 函数的方法，可对数组元素执行函数处理。*/
+      let divs = document.querySelectorAll("div");
+      // console.log(divs);
+      console.log(
+        Array.from(divs, function(item) {
+          item.style.backgroundColor = "red";
+          return item;
+        })
+      );
+      // console.log(Array.isArray([]));//检测是否为数组
+      
+	  // let hd = [1, 3, 4].join("-");//链接成字符串
+      // console.log(location.href + "?id=" + hd);
+      
+	  // let str = "Hello World";
+      // console.log(str.split(","));
+	  
+	  /*使用Array.from可将类数组转换为数组，类数组指包含 length 属性或可迭代的对象*/
+	  // console.log(str.length);
+      // console.log(Array.from(str));
+	  
+	  /*为对象设置length属性后转换为数组，但要下标为数值或数值字符串*/
+      // let object = {
+      //   0: "Hello World",
+      //   1: " helloworld",
+      //   length: 2
+      // };
+      // console.log(Array.from(object));
+    </script>
+  </body>
+</html>

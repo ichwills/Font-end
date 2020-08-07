@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>?=</title>
+  </head>
+  <body>
+    <main>
+      hello-world
+    </main>
+  </body>
+  <script>
+    let main = document.querySelector("main");
+    let reg = /hello(?=-)/g;
+    main.innerHTML = main.innerHTML.replace(
+      reg,
+      `<a href="https://baidu.com">$&</a>`
+    );
+  </script>
+</html>

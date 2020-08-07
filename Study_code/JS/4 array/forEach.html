@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title> </title>
+	</head>
+	<body>
+		<style>
+			.disable {
+				color: #ddd;
+			}
+		</style>
+		<ul>
+			<li>Hello World</li>
+			<li> helloworld</li>
+		</ul>
+	</body>
+	<script>
+		//for-Each操作DOM元素
+		let lis = document.querySelectorAll("ul li");
+		lis.forEach(function(item) {
+			item.addEventListener("click", function() {
+				this.classList.toggle("disable");
+			});
+		});
+		// console.log(lis);
+		// console.log([...lis]);
+
+		/*forEach使函数作用在每个数组元素上，但是没有返回值*/
+		// let lessons = [
+		//   { title: "媒体查询响应式布局", category: "css" },
+		//   { title: "FLEX 弹性盒模型", category: "css" },
+		//   { title: "MYSQL多表查询随意操作", category: "mysql" }
+		// ];
+		// lessons.forEach(function(item, index, lessons) {
+		//   item.title = item.title.substr(0, 2);
+		// });
+		// console.table(lessons);
+	</script>
+</html>
