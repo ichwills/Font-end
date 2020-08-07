@@ -8,17 +8,17 @@
   </head>
   <body></body>
   <script>
-    let xj = { name: "CY" };
-    console.log(xj);
-    console.log(xj.hasOwnProperty("name"));//属性来自原型
-	
+    let str = { name: "CY" };
+    console.log(str);
+    console.log(str.hasOwnProperty("name")); //属性来自原型
+
     //完全数据字典对象,没有原型关系存在
-    let hd = Object.create(null, {
+    let obj = Object.create(null, {
       name: {
-        value: "cy"
-      }
+        value: "cy",
+      },
     });
-	console.log(hd);
-    console.log(hd.hasOwnProperty("name"));
+    console.log(obj);
+    console.log(obj.hasOwnProperty("name"));
   </script>
 </html>
