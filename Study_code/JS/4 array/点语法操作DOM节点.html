@@ -1,38 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-		<title></title>
-	</head>
-	<body>
-		<div>hello world</div>
-		<div>cy</div>
-	</body>
-	<style>
-		.hide {
-			display: none;
-		}
-	</style>
-	<script>
-		const div = document.querySelectorAll("div");
-		// console.log(div);
-		
-		// Array.from(div).map(function(item) {
-		//   console.log(item);
-		// });
-		
-		/*原型链方法*/
-		// Array.prototype.map.call(div, function(item) {
-		//   console.log(item);
-		// });
-		
-		/*隐藏元素*/
-		[...div].map(function(item) {
-			item.addEventListener("click", function() {
-				this.classList.toggle("hide");
-			});
-		});
-	</script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title></title>
+  </head>
+  <body>
+    <div>hello world</div>
+    <div>cy</div>
+  </body>
+  <style>
+    .hide {
+      display: none;
+    }
+  </style>
+  <script>
+    const div = document.querySelectorAll("div");
+    // console.log(div);
+
+    // Array.from(div).map(function(item) {
+    //   console.log(item);
+    // });
+
+    /*原型链方法*/
+    // Array.prototype.map.call(div, function(item) {
+    //   console.log(item);
+    // });
+
+    /*隐藏元素*/
+    [...div].map(function (item) {
+      item.addEventListener("click", function () {
+        this.classList.toggle("hide");
+      });
+    });
+  </script>
 </html>
