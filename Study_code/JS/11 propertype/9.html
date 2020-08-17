@@ -9,18 +9,22 @@
     function User(name) {
       this.name = name;
     }
+
     // User.prototype = {
     //   constructor: User,
     //   show() {
     //     console.log(this.name);
     //   }
     // };
+
     User.prototype.show = function () {
       console.log(this.name);
     };
+
     // console.dir(User);
     // console.log(User.prototype.__proto__ == Object.prototype);
     // console.log(User.prototype.constructor == User);
+
     let user = new User.prototype.constructor("李四");
     user.show();
   </script>
