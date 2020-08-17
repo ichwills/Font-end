@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+  <!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./index.js"></script>
+    <script src="/lib/jquery-3.5.0.min.js"></script>
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="#">upgrade your browser</a> to improve your experience.
+      </p>
+    <![endif]-->
+
+    <div>
+      <ul>
+        <li><span>php</span> <a href="javascript:;">+</a></li>
+        <li><span>js</span> <a href="#all">+</a></li>
+        <li><span>python</span><a href="#all">+</a></li>
+        <li><span>cpp</span><a href="#all">+</a></li>
+      </ul>
+    </div>
+    <div>
+      <strong id="count">你还没选课呢</strong>
+      <p id="lists"></p>
+    </div>
+    <form action="" onsubmit="return post()">
+      <input type="checkbox" name="agreement" error="必须接受协议" />
+      <input type="checkbox" name="student" error="本网站只对本校学生开发" />
+      <input type="submit" value="提交" />
+    </form>
+    <script>
+      new Lesson().run();
+      function post() {
+        let map = new Map();
+        let inputs = document.querySelectorAll("[error]");
+        inputs.forEach((item) => {
+          map.set(item, {
+            error: item.getAttribute("error"),
+            status: item.checked,
+          });
+        });
+        console.log(map);
+        return false;
+      }
+    </script>
+  </body>
+</html>

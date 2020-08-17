@@ -57,7 +57,7 @@
 
   <body>
     <ul>
-      <li> helloworld.com <a href="javascript:;">x</a></li>
+      <li>helloworld.com <a href="javascript:;">x</a></li>
       <li>Hello World.com <a href="javascript:;">x</a></li>
       <li>houdunwang.com <a href="javascript:;">x</a></li>
     </ul>
@@ -67,15 +67,15 @@
       constructor() {
         this.items = document.querySelectorAll("ul>li");
         this.lists = new WeakSet();
-        this.items.forEach(item => this.lists.add(item));
+        this.items.forEach((item) => this.lists.add(item));
       }
       run() {
         this.addEvent();
       }
       addEvent() {
-        this.items.forEach(item => {
+        this.items.forEach((item) => {
           let a = item.querySelector("a");
-          a.addEventListener("click", event => {
+          a.addEventListener("click", (event) => {
             const parentElement = event.target.parentElement;
             if (this.lists.has(parentElement)) {
               parentElement.classList.add("remove");
