@@ -1,72 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-        <title>Document</title>
-        <script src = 'jquery-1.10.1.min.js'></script>
-        <script>
-            /* 
-                   
-                JQ的工具方法和我们自己封装的js方法没有任何区别。
-                    $()下的常用方法(都没用了，ECMA5和ECMA6类似功能的函数)
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <script src="jquery-1.10.1.min.js"></script>
+    <script>
+      /* 
+            
+        JQ的工具方法和我们自己封装的js方法没有任何区别。
+            $()下的常用方法(都没用了，ECMA5和ECMA6类似功能的函数)
 
-                    JQ的方法调用：$().xxx() $().yyy()  必须JQ对象调用这个函数
-                    JQ的工具方法：$.xxx() $.yyy()
+            JQ的方法调用：$().xxx() $().yyy()  必须JQ对象调用这个函数
+            JQ的工具方法：$.xxx() $.yyy()
 
-                        • type()  输出当前数据类型   typeof
-                        • trim()
-                        • inArray()    indexOf()
-                        • proxy()    功能类似于bind  $.proxy()
-                        • noConflict()
-                        • $.parseJSON()   JSON.parse()
-                        • makeArray()    将伪数组转成数组。 Array.from()
-
-             */
-             /* var arr = [10, 20, 30];
+                • type()  输出当前数据类型   typeof
+                • trim()
+                • inArray()    indexOf()
+                • proxy()    功能类似于bind  $.proxy()
+                • noConflict()
+                • $.parseJSON()   JSON.parse()
+                • makeArray()    将伪数组转成数组。 Array.from()
+    */
+      /* var arr = [10, 20, 30];
              var str = new String();
              var d = new Date(); */
-            /*  alert(typeof arr);
-             alert(typeof str);
-             alert(typeof d); */
+      /*  console.log(typeof arr);
+             console.log(typeof str);
+             console.log(typeof d); */
 
-             /* alert($.type(arr));
-             alert($.type(str));
-             alert($.type(d)); */
+      /* console.log($.type(arr));
+             console.log($.type(str));
+             console.log($.type(d)); */
 
+      /* var str = "   he  l lo   ";
+             console.log("|" + str + "|");
+             console.log("|" + str.trim() + "|"); */
+      //  console.log("|" + $.trim(str) + "|");
 
-             /* var str = "   he  l lo   ";
-             alert("|" + str + "|");
-             alert("|" + str.trim() + "|"); */
-            //  alert("|" + $.trim(str) + "|");
+      /*  var arr = [10, 20, 30, 40];
+            console.log($.inArray(30, arr)); */
 
-           /*  var arr = [10, 20, 30, 40];
-            alert($.inArray(30, arr)); */
-
-
-            /* var qian = $.noConflict(); //给$函数起一个别名
+      /* var qian = $.noConflict(); //给$函数起一个别名
             var $ = 10;
 
             qian(function(){
                 qian(document).click(function(){
-                    alert(1);
+                    console.log(1);
                 })
             }) */
-            window.onload = function(){
-                var nodes = document.getElementsByTagName("div");
-                // nodes.push("hello"); //伪数组
-                // nodes = $.makeArray(nodes);
-                nodes = Array.from(nodes);
-                nodes.push("hello");
-                alert(nodes);
-            } 
-        </script>
-    </head>
-    <body>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-    </body>
+      window.onload = function () {
+        var nodes = document.getElementsByTagName("div");
+        // nodes.push("hello"); //伪数组
+        // nodes = $.makeArray(nodes);
+        nodes = Array.from(nodes);
+        nodes.push("hello");
+        console.log(nodes);
+      };
+    </script>
+  </head>
+  <body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </body>
 </html>
