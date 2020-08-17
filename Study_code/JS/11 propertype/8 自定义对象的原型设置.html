@@ -6,17 +6,20 @@
   </head>
   <body></body>
   <script>
-    let hd = { name: "hd" };
+    let obj = { name: "cy" };
     let parent = {
       name: "parent",
       show() {
-        console.log("parent method:" + this.name);
+        console.log("parent name:" + this.name);
       },
     };
-    // console.log(hd.__proto__ == Object.prototype);
-    Object.setPrototypeOf(hd, parent);
-    // hd.show();
-    // parent.show();
-    console.log(Object.getPrototypeOf(hd));
+    console.log(obj.__proto__ == Object.prototype);
+
+    Object.setPrototypeOf(obj, parent);
+
+    obj.show();
+    parent.show();
+
+    console.log(Object.getPrototypeOf(obj));
   </script>
 </html>
