@@ -9,13 +9,13 @@
     function User(name) {
       this.name = name;
     }
-    /* 新增对象,破坏原型,方法不可取
+
     User.prototype = {
       constructor: User,
       show() {
         console.log(this.name);
-      }
-    }; */
+      },
+    };
 
     User.prototype.show = function () {
       console.log(this.name);
