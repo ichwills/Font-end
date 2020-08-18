@@ -9,7 +9,9 @@
     function User(name) {
       this.name = name;
     }
-
+    let user = new User(" ");
+    console.log(user);
+    //1
     User.prototype = {
       constructor: User,
       show() {
@@ -17,9 +19,7 @@
       },
     };
 
-    let user = new User(" ");
-    console.log(user);
-
+    //2
     function createByObject(obj, ...args) {
       const constructor = Object.getPrototypeOf(obj).constructor;
       return new constructor(...args);
