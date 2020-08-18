@@ -9,19 +9,23 @@
     function User(name) {
       this.name = name;
     }
+
     User.prototype = {
       constructor: User,
       show() {
         console.log(this.name);
-      }
+      },
     };
-    let hd = new User(" ");
-    console.log(hd);
+
+    let user = new User(" ");
+    console.log(user);
+
     function createByObject(obj, ...args) {
       const constructor = Object.getPrototypeOf(obj).constructor;
       return new constructor(...args);
     }
-    let xj = createByObject(hd, "向军");
-    xj.show();
+
+    let name = createByObject(user, "cy");
+    name.show();
   </script>
 </html>
