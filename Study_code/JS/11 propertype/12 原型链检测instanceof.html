@@ -9,15 +9,17 @@
     function A() {}
     function B() {}
     function C() {}
-    let c = new C();
+
+    const c = new C();
     B.prototype = c;
-    let b = new B();
+    const b = new B();
     A.prototype = b;
-    let a = new A();
-    //A.prototype
-    console.log(a instanceof A);
-    console.log(a instanceof C);
-    console.log(a instanceof C);
-    console.log(b instanceof A);
+    const a = new A();
+
+    console.dir(a instanceof A); //true
+    console.dir(a instanceof B); //true
+    console.dir(a instanceof C); //true
+    console.dir(b instanceof C); //true
+    console.dir(c instanceof B); //false
   </script>
 </html>
