@@ -7,24 +7,22 @@
   <body></body>
   <script>
     let obj = {
-      data: [1, 2, 3, 4, 5],
+      data: [1, 2, 3, 34, 5, 7],
     };
     Object.setPrototypeOf(obj, {
-      max: function () {
-        return this.data.sort((a, b) => b - a)[0];
+      max(data) {
+        return data.sort((a, b) => b - a)[0];
       },
     });
-    console.log(obj.max());
+    console.log(obj.max(obj.data));
 
-    let lesson = {
-      lessons: { js: 100, php: 78, node: 78, linux: 100 },
-      // get data() {
-      //   return Object.values(this.lessons);
-      // },
+    let grades = {
+      lessons: { js: 87, php: 63, node: 99, linux: 88 },
+      get data() {
+        return Object.values(this.lessons);
+      },
     };
 
-    // console.log(obj.__proto__.max.apply(lesson));
-
-    // console.log(obj.max.call(null, Object.values(lesson.lessons)));
+    console.log(obj.max.call(null, Object.values(grades.lessons)));
   </script>
 </html>
