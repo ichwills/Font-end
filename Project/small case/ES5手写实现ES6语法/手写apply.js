@@ -1,6 +1,6 @@
 // 默认定义context.say = this
 // fn如果已经被占用
-// say需要是一个唯一值 是不是突然想到es6的新类型 Symbol   fn = Symbol()
+// say需要是一个唯一值 es6的新类型 Symbol   fn = Symbol()
 
 function mySymbol(obj) {
   let unique = (Math.random() + new Date().getTime()).toString(32).slice(0, 8);
