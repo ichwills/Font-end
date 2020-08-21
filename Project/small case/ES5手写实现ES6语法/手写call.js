@@ -12,7 +12,7 @@ function mySymbol(obj) {
   }
 }
 //多参数和执行完删除自定义方法删除掉
-Function.prototype.myCall1 = function (context) {
+Function.prototype.myCall = function (context) {
   // 如果没有传或传的值为空对象 context指向window
   context = context || window;
   let fn = mySymbol(context);
@@ -26,8 +26,7 @@ Function.prototype.myCall1 = function (context) {
 let Person = {
   name: "Tom",
   say(age) {
-    console.log(this);
-    console.log(`我叫${this.name}我今年${age}`);
+    console.log(`我叫${this.name}我今年${age}岁`);
   },
 };
 
@@ -35,4 +34,4 @@ Person1 = {
   name: "Tom1",
 };
 
-Person.say.call(Person1, 18);
+Person.say.myCall(Person1, 12);

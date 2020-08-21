@@ -28,8 +28,7 @@ Function.prototype.myApply = function (context) {
 let Person = {
   name: "Tom",
   say(age) {
-    console.log(this);
-    console.log(`我叫${this.name}我今年${age}`);
+    console.log(`我叫${this.name}我今年${age}岁`);
   },
 };
 
@@ -37,4 +36,4 @@ Person1 = {
   name: "Tom1",
 };
 
-Person.say.call(Person1, 18);
+Person.say.myApply(Person1, 12);
