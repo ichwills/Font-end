@@ -4,21 +4,22 @@
     <meta charset="UTF-8" />
     <title> </title>
   </head>
+
   <body>
-    <button message=" " class="red"> </button>
-    <button message="Hello World">Hello World</button>
+    <button message="hw" class="red"></button>
+    <button message="HW">Hello World</button>
   </body>
   <script>
     let arr = [1, 3, 43];
-    let res = arr.filter(item => {
+    let res = arr.filter((item) => {
       return item > 39;
     });
-    // console.dir();
     console.log(res);
-    let btns = document.querySelectorAll("button");
-    btns = [].filter.call(btns, item => {
+
+    let btn = document.querySelectorAll("button");
+    btn = /*Array.prototype*/ [].filter.call(btn, (item) => {
       return item.hasAttribute("class");
     });
-    console.log(btns);
+    console.log(btn);
   </script>
 </html>
