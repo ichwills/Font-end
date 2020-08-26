@@ -7,18 +7,17 @@
   <body></body>
   <script>
     //this
-    let hd = {
-      name: " "
+    let obj = {
+      message: "Hello World",
     };
     let User = {
-      name: "向军",
+      message: "hello world",
       show() {
-        console.log(this.name);
-      }
+        console.log(this.message);
+      },
     };
-    Object.setPrototypeOf(hd, User);
-    hd.show();
-    // console.log(hd);
-    // console.log(hd.show());
+    Object.setPrototypeOf(obj, User);
+    obj.show();
+    User.show();
   </script>
 </html>

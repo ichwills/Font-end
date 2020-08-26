@@ -10,7 +10,9 @@
       this.name = name;
     }
     User.prototype = {
-      constructor: User,
+      constructor() {
+        User;
+      },
       show() {
         console.log(this.name);
       },
