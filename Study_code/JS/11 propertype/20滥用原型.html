@@ -8,6 +8,7 @@
     <button onclick="this.hide()"></button>
   </body>
   <script>
+    //避免在系统底层添加方法
     Object.prototype.hide = function () {
       this.style.display = "none";
     };
