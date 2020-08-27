@@ -1,3 +1,3 @@
-Object.prototype.hide = function() {
+Object.prototype.hide = function () {
   this.setAttribute("hide", true);
 };
