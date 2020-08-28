@@ -7,15 +7,15 @@
   <body></body>
   <script>
     //__proto__ getter setter
-    // let hd = { name: " " };
-    // hd.__proto__ = {
+    // let obj = { name: " " };
+    // obj.__proto__ = {
     //   show() {
     //     console.log(this.name);
     //   }
     // };
-    // hd.__proto__ = 99;
-    // hd.show();
-    // let hd = {
+    // obj.__proto__ = 99;
+    // obj.show();
+    // let obj = {
     //   action: {},
     //   get proto() {
     //     return this.action;
@@ -26,13 +26,13 @@
     //     }
     //   }
     // };
-    // hd.proto = { view: function() {} };
-    // hd.proto = "abc";
-    // console.log(hd.proto);
-    // let hd = Object.create(null);
-    let hd = {};
-    console.dir(hd);
-    hd.__proto__ = " ";
-    console.dir(hd.__proto__);
+    // obj.proto = { view: function() {} };
+    // obj.proto = "abc";
+    // console.log(obj.proto);
+    // let obj = Object.create(null);
+    let obj = {};
+    console.dir(obj);
+    obj.__proto__ = "";
+    console.dir(obj.__proto__);
   </script>
 </html>
