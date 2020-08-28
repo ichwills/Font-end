@@ -7,23 +7,26 @@
   <body></body>
   <script>
     let user = {
+      name: "cy",
       show() {
         return this.name;
-      }
+      },
     };
+    let obj = { name: "CY" };
     //prototype
     //定义对象的原型，不能获取
-    // let hd = Object.create(user, {
+    // let obj = Object.create(user, {
     //   name: {
     //     value: " "
     //   }
     // });
-    // console.log(hd.show());
-    let hd = { name: " " };
-    // hd.__proto__ = user;
-    // console.log(hd.__proto__);   __proto__
-    Object.setPrototypeOf(hd, user);
-    console.log(hd.show());
-    console.log(Object.getPrototypeOf(hd));
+    // console.log(obj.show());
+
+    // obj.__proto__ = user;
+    // console.log(obj.__proto__);
+
+    Object.setPrototypeOf(obj, user);
+    console.log(obj.show());
+    console.log(Object.getPrototypeOf(obj));
   </script>
 </html>
