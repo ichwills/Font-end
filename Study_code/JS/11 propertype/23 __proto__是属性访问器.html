@@ -16,25 +16,25 @@
     // obj.__proto__ = 99;
     // obj.show();
 
-    let obj = {
-      action: {},
-      get proto() {
-        return this.action;
-      },
-      set proto(obj) {
-        if (obj instanceof Object) {
-          this.action = obj;
-        }
-      },
-    };
-    obj.proto = { view: function () {} };
-    obj.proto = "abc";
-    console.log(obj.proto);
+    // let obj = {
+    //   action: {},
+    //   get proto() {
+    //     return this.action;
+    //   },
+    //   set proto(obj) {
+    //     if (obj instanceof Object) {
+    //       this.action = obj;
+    //     }
+    //   },
+    // };
+    // obj.proto = { view: function () {} };
+    // obj.proto = "abc";
+    // console.log(obj.proto);
 
-    // let obj = Object.create(null);
+    let obj = Object.create(null);
     // let obj = {};
-    // console.dir(obj);
-    // obj.__proto__ = "";
-    // console.dir(obj.__proto__);
+    console.dir(obj);
+    obj.__proto__ = "hello world";
+    console.dir(obj.__proto__);
   </script>
 </html>
