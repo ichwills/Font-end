@@ -8,7 +8,7 @@
   <script>
     //原型的继承，而不是改变构造函数的原型
     function User() {}
-    User.prototype.name = function() {
+    User.prototype.name = function () {
       console.log("user.name");
     };
 
@@ -16,16 +16,10 @@
     let a = new Admin();
 
     Admin.prototype.__proto__ = User.prototype;
-    // Admin.prototype = Object.create(User.prototype);
-    Admin.prototype.role = function() {
+    // Admin.prototype = Object.create(User.prototype);//这是改变原型不是继承
+    Admin.prototype.role = function () {
       console.log("admin.role");
     };
     a.role();
-    
-    // function Member() {}
-    // Member.prototype.__proto__ = User.prototype;
-    // Member.prototype.role = function() {
-    //   console.log("member.role");
-    // };
   </script>
 </html>
