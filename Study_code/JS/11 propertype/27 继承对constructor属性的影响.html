@@ -13,7 +13,7 @@
     // console.dir(Hd);
     //原型的继承，而不是改变构造函数的原型
     function User() {}
-    User.prototype.name = function() {
+    User.prototype.name = function () {
       console.log("user.name");
     };
 
@@ -21,7 +21,7 @@
 
     Admin.prototype = Object.create(User.prototype);
     Admin.prototype.constructor = Admin;
-    Admin.prototype.role = function() {
+    Admin.prototype.role = function () {
       console.log("admin.role");
     };
     let a = new Admin();
