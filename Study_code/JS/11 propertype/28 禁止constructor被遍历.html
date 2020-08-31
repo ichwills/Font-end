@@ -8,7 +8,7 @@
   <script>
     //原型的继承，而不是改变构造函数的原型
     function User() {}
-    User.prototype.name = function() {
+    User.prototype.name = function () {
       console.log("user.name");
     };
 
@@ -18,10 +18,11 @@
 
     Object.defineProperty(Admin.prototype, "constructor", {
       value: Admin,
-      enumerable: false
+      enumerable: false, //枚举,禁止遍历
+      writable: false,
     });
     // console.log(Object.getOwnPropertyDescriptors(Admin.prototype));
-    Admin.prototype.role = function() {
+    Admin.prototype.role = function () {
       console.log("admin.role");
     };
     let a = new Admin();
