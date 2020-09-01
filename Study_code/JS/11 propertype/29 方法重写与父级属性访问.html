@@ -10,16 +10,19 @@
     User.prototype.show = function () {
       console.log("user.name");
     };
+
     User.prototype.site = function () {
-      return " ";
+      return "hello world";
     };
+
     function Admin() {}
     Admin.prototype = Object.create(User.prototype);
     Admin.prototype.constructor = Admin;
     Admin.prototype.show = function () {
       console.log(User.prototype.site() + "admin.show");
     };
-    let hd = new Admin();
-    hd.show();
+
+    let obj = new Admin();
+    obj.show();
   </script>
 </html>
