@@ -6,18 +6,18 @@
   </head>
   <body></body>
   <script>
-    // let hd = {
+    // let obj = {
     //   name: " ",
     //   view() {
     //     console.log(this.name);
     //   }
     // };
-    // hd.view();
+    // obj.view();
     function User(name, age) {
       this.name = name;
       this.age = age;
     }
-    User.prototype.show = function() {
+    User.prototype.show = function () {
       console.log(this.name, this.age);
     };
 
@@ -26,14 +26,14 @@
       User.apply(this, args);
     }
     Admin.prototype = Object.create(User.prototype);
-    let xj = new Admin("向军", 18);
-    xj.show();
+    let name = new Admin("向军", 18);
+    name.show();
 
     function Member(...args) {
       User.apply(this, args);
     }
     Member.prototype = Object.create(User.prototype);
-    let lisi = new Member("李四", 19);
-    lisi.show();
+    let mem = new Member("李四", 19);
+    mem.show();
   </script>
 </html>
