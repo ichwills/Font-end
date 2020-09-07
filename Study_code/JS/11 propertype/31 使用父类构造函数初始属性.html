@@ -6,13 +6,6 @@
   </head>
   <body></body>
   <script>
-    // let obj = {
-    //   name: " ",
-    //   view() {
-    //     console.log(this.name);
-    //   }
-    // };
-    // obj.view();
     function User(name, age) {
       this.name = name;
       this.age = age;
@@ -22,11 +15,10 @@
     };
 
     function Admin(...args) {
-      // console.log(args);
       User.apply(this, args);
     }
-    Admin.prototype = Object.create(User.prototype);
-    let name = new Admin("cy", 18);
+    Admin.prototype = Object.create(User.prototype); //构造函数
+    let name = new Admin("张三", 18);
     name.show();
 
     function Member(...args) {
