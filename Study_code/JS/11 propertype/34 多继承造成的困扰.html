@@ -10,20 +10,20 @@
       sub.prototype = Object.create(sup.prototype);
       Object.defineProperty(sub.prototype, "constructor", {
         value: sub,
-        enumerable: false
+        enumerable: false,
       });
     }
     function Address() {}
-    Address.prototype.getAddress = function() {
+    Address.prototype.getAddress = function () {
       console.log("获取收货地址");
     };
     function Credit() {}
-    Credit.prototype.total = function() {
+    Credit.prototype.total = function () {
       console.log("积分统计");
     };
     function Request() {}
     extend(Request, Credit);
-    Request.prototype.ajax = function() {
+    Request.prototype.ajax = function () {
       console.log("请求后台");
     };
     function User(name, age) {
@@ -31,7 +31,7 @@
       this.age = age;
     }
     extend(User, Request);
-    User.prototype.show = function() {
+    User.prototype.show = function () {
       console.log(this.name, this.age);
     };
 
@@ -39,7 +39,7 @@
       User.call(this, name, age);
     }
     extend(Admin, User);
-    let admin = new Admin("向军", 19);
+    let admin = new Admin("张三", 19);
     admin.show();
     admin.ajax();
     admin.total();
@@ -48,6 +48,6 @@
       User.call(this, name, age);
     }
     extend(Member, User);
-    let lisi = new Member("李四", 22);
+    let ls = new Member("李四", 22);
   </script>
 </html>
