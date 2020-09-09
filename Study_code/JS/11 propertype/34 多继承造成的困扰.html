@@ -6,40 +6,47 @@
   </head>
   <body></body>
   <script>
+    //较为混乱不使用这种多次继承的方式
+    //继承原型工厂
     function extend(sub, sup) {
       sub.prototype = Object.create(sup.prototype);
       Object.defineProperty(sub.prototype, "constructor", {
         value: sub,
-        enumerable: false
+        enumerable: false,
       });
     }
+
     function Address() {}
-    Address.prototype.getAddress = function() {
+    Address.prototype.getAddress = function () {
       console.log("获取收货地址");
     };
+
     function Credit() {}
-    Credit.prototype.total = function() {
+    Credit.prototype.total = function () {
       console.log("积分统计");
     };
+
     function Request() {}
     extend(Request, Credit);
-    Request.prototype.ajax = function() {
+    Request.prototype.ajax = function () {
       console.log("请求后台");
     };
+
     function User(name, age) {
       this.name = name;
       this.age = age;
     }
+
     extend(User, Request);
-    User.prototype.show = function() {
-      console.log(this.name, this.age);
+    User.prototype.show = function () {
+      console.log(this.name, this.age`user`);
     };
 
     function Admin(name, age) {
       User.call(this, name, age);
     }
     extend(Admin, User);
-    let admin = new Admin("向军", 19);
+    let admin = new Admin("张三", 19);
     admin.show();
     admin.ajax();
     admin.total();
@@ -48,6 +55,6 @@
       User.call(this, name, age);
     }
     extend(Member, User);
-    let lisi = new Member("李四", 22);
+    let ls = new Member("李四", 22);
   </script>
 </html>
