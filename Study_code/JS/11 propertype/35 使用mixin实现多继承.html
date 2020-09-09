@@ -11,29 +11,29 @@
       sub.prototype = Object.create(sup.prototype);
       Object.defineProperty(sub.prototype, "constructor", {
         value: sub,
-        enumerable: false
+        enumerable: false,
       });
     }
     const Address = {
       getAddress() {
         console.log("获取收货地址");
-      }
+      },
     };
     const Credit = {
       total() {
         console.log("积分统计");
-      }
+      },
     };
     const Request = {
       ajax() {
         console.log("请求后台");
-      }
+      },
     };
     function User(name, age) {
       this.name = name;
       this.age = age;
     }
-    User.prototype.show = function() {
+    User.prototype.show = function () {
       console.log(this.name, this.age);
     };
 
@@ -52,7 +52,7 @@
     }
     extend(Member, User);
     Member.prototype = Object.assign(Admin.prototype, Request, Credit, Address);
-    let lisi = new Member("李四", 22);
-    lisi.getAddress();
+    let ls = new Member("李四", 22);
+    ls.getAddress();
   </script>
 </html>
