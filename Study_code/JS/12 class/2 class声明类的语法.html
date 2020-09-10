@@ -6,10 +6,13 @@
   </head>
   <body></body>
   <script>
+    //类声明
     // class User {}
     // // console.log(typeof User);
     // let obj = class {};
     // console.log(obj);
+
+    //类方法间不需要逗号
     // class User {
     //   show() {}
     //   get() {
@@ -19,11 +22,18 @@
     // let obj = new User();
     // // console.dir(obj);
     // obj.get();
+
     // function Article(title) {
     //   this.title = title;
     // }
-    // let a = new Article(" ");
+    // let a = new Article("article");
     // console.log(a.title);
+
+    /*构造函数
+     *使用 constructor 构造函数传递参数，下例中show为构造函数方法，getName为原型方法
+     *constructor 会在 new 时自动执行
+     *one class only one constructor!!!
+     */
     class User {
       constructor(name) {
         this.name = name;
@@ -32,10 +42,10 @@
         return this.name;
       }
     }
-    let obj = new User(" ");
+    let obj = new User("user");
     console.log(obj.getName());
-    // console.log(obj.name);
-    // let user = new User("向军");
-    // console.log(user.name);
+    console.log(obj.name);
+    let user = new User("zs");
+    console.log(user.name);
   </script>
 </html>
