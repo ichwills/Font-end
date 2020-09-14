@@ -6,19 +6,19 @@
   </head>
   <body></body>
   <script>
-    // function Hd(name) {
+    // function obj(name) {
     //   this.name = name;
     // }
-    // Hd.prototype.show = function() {};
+    // obj.prototype.show = function() {};
     // console.log(
     //   JSON.stringify(
-    //     Object.getOwnPropertyDescriptor(Hd.prototype, "show"),
+    //     Object.getOwnPropertyDescriptor(obj.prototype, "show"),
     //     null,
     //     2
     //   )
     // );
-    // let h = new Hd(" ");
-    // for (const key in h) {
+    // let h = new obj("U");
+    // for (const key in h) {//不会枚举出show属性
     //   console.log(key);
     // }
     // for (const key in h) {
@@ -26,14 +26,16 @@
     //     console.log(key);
     //   }
     // }
+
     class User {
       constructor(name) {
         this.name = name;
       }
+
       show() {}
     }
-    let u = new User("向军");
-    console.dir(User);
+    let u = new User("user");
+    // console.dir(User);
     console.log(
       JSON.stringify(
         Object.getOwnPropertyDescriptor(User.prototype, "show"),
