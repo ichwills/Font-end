@@ -6,6 +6,7 @@
   </head>
   <body></body>
   <script>
+    //在 class 中定义的属性为每个new 出的对象独立创建，下面定义了 site 与 name 两个对象属性
     class User {
       site = " ";
       constructor(name) {
@@ -18,11 +19,11 @@
         return `${this.site}:${this.name}`;
       }
     }
-    let hd = new User(" ");
-    hd.changeSite(" helloworld");
-    console.log(hd.show());
-    // console.log(hd);
-    // let xj = new User("向军");
-    // console.log(xj);
+    let obj = new User("User");
+    obj.changeSite("helloworld");
+    console.log(obj.show());
+    console.log(obj);
+    let user = new User("向军");
+    console.log(user);
   </script>
 </html>
