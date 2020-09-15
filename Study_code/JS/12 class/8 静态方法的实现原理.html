@@ -17,8 +17,8 @@
     // User.show();
     // console.dir(User);
     // console.dir(User);
-    // let hd = new User();
-    // hd.show();
+    // let user = new User();
+    // user.show();
     // class User {
     //   show() {
     //     console.log("prototype.show");
@@ -29,8 +29,10 @@
     // }
     // User.show();
     // console.dir(User);
-    // let hd = new User();
-    // hd.show();
+    // let user = new User();
+    // user.show();
+    // let user = new User("user");
+    // console.log(user);
 
     class Member {
       constructor(name, age, sex) {
@@ -42,9 +44,7 @@
         return new this(...args);
       }
     }
-    let xj = Member.create("向军", 19, "男");
-    console.log(xj);
-    // let hd = new User(" ");
-    // console.log(hd);
+    let obj = Member.create("向军", 19, "男");
+    console.log(obj);
   </script>
 </html>
