@@ -10,17 +10,19 @@
     //   this.url = url;
     // }
     // Web.url = "Hello World.com";
-    // let hd = new Web(" helloworld.com");
+    // let hd = new Web("helloworld.com");
     // console.log(hd);
     // console.dir(Web);
+
     class Request {
-      static host = "https://www. helloworld.com";
+      static host = "https://dercyc.tk";
       api(url) {
         return Request.host + `/${url}`;
       }
     }
     let obj = new Request();
-    console.log(obj.api("article"));
+    console.log(obj.api("2020/07/01/ZSH"));
+    console.log(obj);
     // console.log(obj);
     // console.dir(Request);
     // let obj2 = new Request();
