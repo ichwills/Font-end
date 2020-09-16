@@ -9,7 +9,7 @@
     const data = [
       { name: "js", price: 100 },
       { name: "mysql", price: 212 },
-      { name: "vue.js", price: 98 }
+      { name: "vue.js", price: 98 },
     ];
     class Lesson {
       constructor(data) {
@@ -27,14 +27,14 @@
         }, 0);
       }
       static createBatch(data) {
-        return data.map(item => new Lesson(item));
+        return data.map((item) => new Lesson(item));
       }
       static maxPrice(data) {
         return data.sort((a, b) => b.price - a.price)[0];
       }
     }
-    // let obj1 = new Lesson(data[0]);
-    // console.log(obj1);
+    // let obj = new Lesson(data[0]);
+    // console.log(obj);
     let lessons = Lesson.createBatch(data);
     console.log(Lesson.maxPrice(lessons).name);
     console.log(Lesson.totalPrice(lessons));
