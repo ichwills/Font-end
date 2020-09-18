@@ -13,7 +13,7 @@
       }
       set host(url) {
         if (!/^https?:\/\//i.test(url)) {
-          throw new Error("地址错误");
+          throw new Error("输入三级域名");
         }
         this.data.host = url;
       }
@@ -21,9 +21,8 @@
         return this.data["host"];
       }
     }
-    let hd = new Requset("https:// helloworld.com");
-    // hd.host = "https://Hello World.com";
-    // hd.setUrl("https://Hello World.com");
+    let hd = new Requset("https://helloworld.com");
+    hd.host = "https://HelloWorld.com";
     console.log(hd.host);
   </script>
 </html>
