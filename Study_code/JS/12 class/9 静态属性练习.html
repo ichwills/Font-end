@@ -12,6 +12,7 @@
       { name: "vue.js", price: 98 },
     ];
     class Lesson {
+      //传递数据
       constructor(data) {
         this.model = data;
       }
@@ -22,19 +23,17 @@
         return this.model.name;
       }
       static totalPrice(data) {
-        return data.reduce((t, c) => {
-          return t + c.price;
+        return data.reduce((a, b) => {
+          return a + b.price;
         }, 0);
       }
       static createBatch(data) {
         return data.map((item) => new Lesson(item));
       }
       static maxPrice(data) {
-        return data.sort((a, b) => b.price - a.price)[0];
+        return data.sort((c, d) => d.price - c.price)[0];
       }
     }
-    // let obj = new Lesson(data[0]);
-    // console.log(obj);
     let lessons = Lesson.createBatch(data);
     console.log(Lesson.maxPrice(lessons).name);
     console.log(Lesson.totalPrice(lessons));
