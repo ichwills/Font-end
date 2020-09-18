@@ -6,6 +6,8 @@
   </head>
   <body></body>
   <script>
+    //静态方法赋予函数本身但是不会赋予prototype
+
     // function User() {}
     // User.prototype.show = function() {
     //   console.log("prototype.show");
@@ -19,6 +21,7 @@
     // console.dir(User);
     // let obj = new User();
     // obj.show();
+
     // class User {
     //   show() {
     //     console.log("prototype.show");
@@ -28,11 +31,11 @@
     //   };
     // }
     // User.show();
-    // console.dir(User);
-    // let obj = new User();
-    // obj.show();
     // let obj = new User("user");
+    // obj.show();
+
     // console.log(obj);
+    // let obj = new User();
 
     class Member {
       constructor(name, age, sex) {
