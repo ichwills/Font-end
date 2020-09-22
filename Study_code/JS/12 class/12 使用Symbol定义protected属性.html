@@ -10,7 +10,7 @@
     class Common {
       constructor() {
         this[protecteds] = {};
-        this[protecteds].host = "https:// helloworld.com";
+        this[protecteds].host = "https://helloworld.com";
       }
       set host(url) {
         if (!/^https?:/i.test(url)) {
@@ -24,16 +24,16 @@
     }
     class User extends Common {
       constructor(name) {
-        super();
+        super(); //调用父类的方法
         this[protecteds].name = name;
       }
       get name() {
         return this[protecteds].name;
       }
     }
-    let hd = new User(" ");
-    hd.host = "https://www.Hello World.com";
-    // console.log(hd[Symbol()]);
+    let hd = new User("user");
+    hd.host = "https://www.HelloWorld.com";
+    // console.log(hd[Symbol()]);//Symbol is not Object,cannot get
     console.log(hd.name);
   </script>
 </html>
