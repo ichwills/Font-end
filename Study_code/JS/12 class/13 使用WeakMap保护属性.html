@@ -6,18 +6,19 @@
   </head>
   <body></body>
   <script>
+    //WeakMap 是一组键/值对的集,利用WeakMap类型特性定义私有属性
     const protecteds = new WeakMap();
     class Comment {
       constructor() {
         protecteds.set(this, {
-          host: '"https:// helloworld.com"'
+          host: '"https://helloworld.com"',
         });
       }
       set host(url) {
         if (!/^https?:/i.test(url)) {
-          throw new Error("非常网址");
+          throw new Error("错误网址");
         }
-        protecteds.set(this, { ...protecteds.get(this), url });
+        protecteds.set(this, { ...protecteds.get(this), host: url });
       }
       get host() {
         return protecteds.get(this)["host"];
@@ -35,9 +36,9 @@
         return protecteds.get(this)["name"];
       }
     }
-    let hd = new User(" ");
-    // hd.name = "向军";
-    // console.log(hd.name);
-    console.log(hd);
+    let obj = new User("user");
+    obj.name = "Name";
+    console.log(obj.name);
+    console.log(obj);
   </script>
 </html>
