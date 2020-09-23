@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title> </title>
+  </head>
+  <body></body>
+  <script>
+    /*
+     *private 指私有属性，只在当前类可以访问到，并且不允许继承使用
+        为属性或方法名前加 # 为声明为私有属性
+        私有属性只能在声明的类中使用
+        下面声明私有属性 #host 与私有方法 check 用于检测用户名
+     */
+    class User {
+      //private
+      #host = "https://hello.com";
+      constructor(name) {
+        this.name = name;
+        this.#check(name);
+      }
+      set host(url) {
+        if (!/^https?:/i.test(url)) {
+          throw new Error("错误网址");
+        }
+        this.#host = url;
+      }
+      get host() {
+        return this.#host;
+      }
+      #check = () => {
+        if (this.name.length <= 3) {
+          throw new Error("长度不能小于三位");
+        }
+        return true;
+      };
+    }
+    let obj = new User("admin");
+    obj.host = "https://www.world.com";
+    console.log(obj.host);
+  </script>
+</html>
