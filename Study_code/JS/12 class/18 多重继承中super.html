@@ -6,7 +6,10 @@
   </head>
   <body></body>
   <script>
-    //super
+    /* 
+      17节的结果一般是正常的,但是如果是多层继承时，会出现新的问题
+      因为始终传递的是当前对象this ，造成从 this 原型循环调用 
+    */
     // class User {
     //   show() {
     //     console.log(this.name);
@@ -21,29 +24,31 @@
     //     super.show();
     //   }
     // }
-    // let hd = new Admin(" ");
-    // hd.show();
+    // let obj = new Admin("admin");
+    // obj.show();
+
     let common = {
       show() {
         console.log("common.show" + this.name);
-      }
+      },
     };
-    let hd = {
+    let obj = {
       __proto__: common,
-      name: "hd.name",
+      name: "obj.name",
       show() {
         super.show();
         // this.__proto__.show.call(this);
-      }
+      },
     };
-    let xj = {
-      __proto__: hd,
-      name: "xj.name",
+    let user = {
+      __proto__: obj,
+      name: "user.name",
       show() {
         super.show();
         // this.__proto__.show.call(this);
-      }
+      },
     };
-    xj.show();
+    console.log(obj.__proto__);
+    user.show();
   </script>
 </html>
