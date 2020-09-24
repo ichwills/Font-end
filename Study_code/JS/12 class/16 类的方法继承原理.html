@@ -8,27 +8,27 @@
   <script>
     // function User() {}
     // User.prototype.show = function() {
-    //   console.log(" ");
+    //   console.log("show");
     // };
     // function Admin() {}
     // Admin.prototype = Object.create(User.prototype);
-    // // console.dir(Admin);
-    // let hd = new Admin();
-    // hd.show();
+    // let obj = new Admin();
+    // obj.show();
+
     class User {
       show() {
-        console.log(" ");
+        console.log("show");
       }
     }
     class Admin extends User {
       constructor(name) {
-        super();
+        super(); //继承父类构造函数
         this.name = name;
       }
     }
     // console.dir(Admin);
-    let hd = new Admin("向军");
-    hd.show();
-    console.log(hd);
+    let obj = new Admin("admin");
+    obj.show();
+    console.log(obj);
   </script>
 </html>
