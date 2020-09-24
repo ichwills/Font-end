@@ -20,16 +20,16 @@
       info() {
         return {
           totalPrice: super.sum(),
-          data: this.data
+          data: this.data,
         };
       }
     }
     let data = [
       { name: "js", price: 100 },
       { name: "mysql", price: 212 },
-      { name: "vue.js", price: 98 }
+      { name: "vue", price: 98 },
     ];
-    let hd = new Lesson(data);
-    console.log(hd.info());
+    let obj = new Lesson(data);
+    console.log(obj.info());
   </script>
 </html>
