@@ -8,10 +8,10 @@
   <script>
     class Common {
       sum() {
-        return this.data.reduce((t, c) => t + c.price, 0);
+        return this.data.reduce((n, p) => n + p.price, 0);
       }
       getByKey(key) {
-        return this.data.filter(item => item.name.includes(key));
+        return this.data.filter((item) => item.name.includes(key));
       }
     }
     class Controller extends Common {}
@@ -23,19 +23,19 @@
       info() {
         return {
           totalPrice: super.sum(),
-          data: this.data
+          data: this.data,
         };
       }
       getByKey(key) {
-        return super.getByKey(key).map(item => item.name);
+        return super.getByKey(key).map((item) => item.name);
       }
     }
     let data = [
       { name: "js", price: 100 },
       { name: "mysql", price: 212 },
-      { name: "vue.js", price: 98 }
+      { name: "vue.js", price: 98 },
     ];
-    let hd = new Lesson(data);
-    console.log(hd.getByKey("js"));
+    let obj = new Lesson(data);
+    console.log(obj.getByKey("js"));
   </script>
 </html>
