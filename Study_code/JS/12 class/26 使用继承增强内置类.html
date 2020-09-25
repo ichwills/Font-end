@@ -20,13 +20,13 @@
         this.push(item);
       }
       remove(value) {
-        let pos = this.findIndex(item => item == value);
-        // console.log(pos);
+        let pos = this.findIndex((item) => item == value);
+        console.log(pos);
         this.splice(pos, 1);
       }
     }
-    let hd = new Arr(1, 2, 3);
-    hd.remove(3);
-    console.log(hd);
+    let obj = new Arr(7, 6, 2, 8, 3, 6);
+    obj.remove(2);
+    console.log(obj);
   </script>
 </html>
