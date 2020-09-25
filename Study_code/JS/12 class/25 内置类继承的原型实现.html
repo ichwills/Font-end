@@ -6,17 +6,19 @@
   </head>
   <body></body>
   <script>
+    //涉及使用this时都不能使用node.js,因为无法指向window
     function Arr(...args) {
-      args.forEach(item => this.push(item));
-      this.first = function() {
+      args.forEach((item) => this.push(item));
+      this.first = () => {
         return this[0];
       };
-      this.max = function() {
+      this.max = () => {
         return this.sort((a, b) => b - a)[0];
       };
     }
     Arr.prototype = Object.create(Array.prototype);
-    let hd = new Arr(99, 1, 2, 3, 4, 56, 195);
-    console.log(hd.max());
+    let obj = new Arr(99, 1, 2, 3, 4, 56, 195);
+    console.log(obj.first());
+    console.log(obj.max());
   </script>
 </html>
