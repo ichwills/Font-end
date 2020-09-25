@@ -6,8 +6,10 @@
   </head>
   <body></body>
   <script>
+    /* 静态的属性和方法也是可以被继承使用的 */
+
     // function User() {}
-    // User.site = " ";
+    // User.site = "hello world";
     // User.show = function() {
     //   console.log("User.static.method");
     // };
@@ -18,13 +20,13 @@
     // console.log(Admin.site);
 
     class User {
-      static site = " helloworld.com";
+      static site = "helloworld";
       static show() {
-        console.log("user.static show");
+        console.log("User.static show");
       }
     }
     class Admin extends User {}
-    // console.dir(Admin.site);
-    // Admin.show();
+    console.dir(Admin.site);
+    Admin.show();
   </script>
 </html>
