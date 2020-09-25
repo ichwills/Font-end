@@ -6,6 +6,7 @@
   </head>
   <body></body>
   <script>
+    /* 使用 isPrototypeOf 判断一个对象是否在另一个对象的原型链中 */
     // let a = {};
     // let b = {
     //   __proto__: a
@@ -16,13 +17,14 @@
     // console.log(a.isPrototypeOf(b));
     // console.log(a.isPrototypeOf(c));
     // console.log(c.isPrototypeOf(b));
+
+    /* class()≈function() 所以可以使用显式原型来检测,内有构造函数 */
     class Common {}
     class User extends Common {}
     class Admin extends User {}
-    let hd = new Admin();
-    console.log(Admin.prototype.isPrototypeOf(hd));
-    console.log(Common.prototype.isPrototypeOf(hd));
-
-    console.log(hd instanceof Common);
+    let obj = new Admin();
+    console.log(Admin.prototype.isPrototypeOf(obj));
+    console.log(Common.prototype.isPrototypeOf(obj));
+    console.log(obj instanceof Common);
   </script>
 </html>
