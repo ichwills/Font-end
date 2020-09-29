@@ -2,16 +2,18 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>从字符串中取出数值类型</title>
+    <title></title>
   </head>
   <body></body>
   <script>
-    let hd = " helloworld2200Hello World9988";
-	//函数方法
-    let nums = [...hd].filter(a => !Number.isNaN(parseInt(a)));
-    console.log(nums.join(""));
-	
-	//正则表达式方法
-    console.log(hd.match(/\d/g).join(""));
+    //从字符串中取出数值类型
+
+    let obj = " helloworld2200Hello World9988";
+    //函数方法
+    let num = [...obj].filter((a) => !Number.isNaN(parseInt(a)));
+    console.log(num.join(""));
+
+    //正则表达式方法
+    console.log(obj.match(/\d/g).join(""));
   </script>
 </html>
