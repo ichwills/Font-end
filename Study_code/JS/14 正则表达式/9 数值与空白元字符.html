@@ -1,30 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<title>元字符是正则表达式中的最小元素，只代表单一（一个）字符</title>
-	</head>
-	<body></body>
-	<script>
-		//匹配任意数字
-		// let hd = "CY 2010";
-		// console.log(hd.match(/\d/g)); 
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body></body>
+  <script>
+    //元字符是正则表达式中的最小元素，只代表单一（一个）字符
+    //匹配任意数字
+    // let obj = "CY 2010";
+    // console.log(obj.match(/\d/g));
 
-		//匹配所有电话号码
-		// let hd = `
-		//   张三:010-99999999,李四:020-88888888
-		// `;
-		// let res = hd.match(/\d{3}-\d{7,8}/g);
-		//console.log(res);
-		
-		//获取所有用户名
-		// let hd = `
-		// 张三:010-99999999,李四:020-88888888`;
-		// let res = hd.match(/[^:\d-,]+/g);
-		// console.log(res);
-		
-		//匹配任意非数字
-		//console.log(/\D/.test(2029));
+    //匹配所有电话号码
+    // let obj = `张三:010-99999999,李四:020-88888888`;
+    // let res = obj.match(/\d{3}-\d{7,8}/g);
+    // console.log(res);
 
-	</script>
+    //获取所有用户名
+    // let obj = `张三:010-99999999,李四:020-88888888`;
+    // let res = obj.match(/[^:\d-,]+/g);
+    // console.log(res);
+
+    //匹配任意非数字
+    console.log(/\D/.test(2020));
+  </script>
 </html>
