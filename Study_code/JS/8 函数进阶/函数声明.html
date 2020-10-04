@@ -8,24 +8,27 @@
   </head>
   <body></body>
   <script>
-    // let str = new String("Hello World.com");
+    // let str = new String("Hello World");
     // console.log(str);
-    // let str = " helloworld.com";
-    // console.log(str.substr(0, 1));
-    // let func = new Function("title", "console.log(title)");
-    // func(" ");
-    // function hd(title) {
+
+    let str = "hello world";
+    console.log(str.substring(0, 1));
+
+    let func = new Function("title", "console.log(title)");
+    func("func");
+
+    // function obj(title) {
     //   console.log(title);
     // }
-    // hd(" helloworld");
-    // hd(" helloworld");
-    // hd(" helloworld");
-    // hd(" helloworld");
-    // hd(" helloworld");
+    // obj("helloworld");
+    // obj("helloworld");
+    // obj("helloworld");
+    // obj("helloworld");
+    // obj("helloworld");
     // let cms = function(title) {
     //   console.log(title);
     // };
-    // cms(" ");
+    // cms("cms");
 
     let user = {
       name: null,
@@ -34,9 +37,9 @@
       },
       getUsername() {
         return this.name;
-      }
+      },
     };
-    user.setUsername(" ");
+    user.setUsername("user");
     console.log(user.getUsername());
   </script>
 </html>

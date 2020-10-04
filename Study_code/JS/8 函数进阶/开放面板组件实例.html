@@ -56,7 +56,7 @@
   <script>
     function panel(i) {
       let dds = document.querySelectorAll("dd");
-      dds.forEach(dd => dd.setAttribute("hidden", "hidden"));
+      dds.forEach((dd) => dd.setAttribute("hidden", "hidden"));
       dds[i].removeAttribute("hidden");
     }
     document.querySelectorAll("dt").forEach((dt, i) => {
