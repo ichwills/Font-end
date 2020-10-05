@@ -1,42 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-		<title>函数是对象所以可以通过赋值来指向到函数对象的指针，指针也可以传递给其他变量，注意后面要以;结尾</title>
-	</head>
-	<body></body>
-	<script>
-		/*使用函数表达式将 匿名函数 赋值给变量*/
-		// let hd = function(num) {
-		// 	return ++num;
-		// };
-		// console.log(hd instanceof Object); //true
-		// let cms = hd;
-		// console.log(cms(3));
-		
-		/*标准声明的函数优先级更高，解析器会优先提取函数并放在代码树顶端，所以标准声明函数位置不限制，所以下面的代码可以正常执行*/
-		// console.log(hd(3));
-		// function hd(num) {
-		// 	return ++num;
-		// };
-		
-		/*标准声明优先级高于赋值声明*/
-		// console.log(hd(3)); //4
-		
-		// function hd(num) {
-		//   return ++num;
-		// }
-		
-		// var hd = function() {
-		//   return "hd";
-		// };
-		
-		/*匿名函数*/
-		function sum(...args) {
-		  return args.reduce((a, b) => a + b);
-		}
-		console.log(sum(1, 2, 3));
-	</script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title></title>
+  </head>
+  <body></body>
+  <script>
+    //函数是对象所以可以通过赋值来指向到函数对象的指针，指针也可以传递给其他变量，注意后面要以;结尾
+    /*使用函数表达式将 匿名函数 赋值给变量*/
+    // let obj = function(num) {
+    // 	return ++num;
+    // };
+    // console.log(obj instanceof Object);
+    // let cms = obj;
+    // console.log(cms(3));
+
+    /*标准声明的函数优先级更高，解析器会优先提取函数并放在代码树顶端，所以标准声明函数位置不限制，所以下面的代码可以正常执行*/
+    // console.log(obj(3));
+    // function obj(num) {
+    // 	return ++num;
+    // };
+
+    /*标准声明优先级高于赋值声明*/
+    // console.log(obj(3));
+
+    // function obj(num) {
+    //   return ++num;
+    // }
+
+    // var obj = function() {
+    //   return "obj";
+    // };
+
+    /*匿名函数*/
+    let x = (function () {
+      console.log("hello world");
+    })();
+
+    let y = new (function () {
+      console.log("Hello World");
+    })();
+  </script>
 </html>
