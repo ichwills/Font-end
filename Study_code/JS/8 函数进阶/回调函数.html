@@ -4,16 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>在某个时刻被其他函数调用的函数称为回调函数，比如处理键盘、鼠标事件的函数</title>
+    <title></title>
   </head>
   <body>
     <button id="bt">hello world</button>
   </body>
   <script>
-    let hd = [1, 2, 3, 4];
-    hd.map(function(value, index, array) {
+    //在某个时刻被其他函数调用的函数称为回调函数，比如处理键盘、鼠标事件的函数
+    let obj = [1, 2, 3, 4];
+    obj.map(function (value, index, array) {
       array[index] += 10;
     });
-    console.table(hd);
+    console.table(obj);
   </script>
 </html>
