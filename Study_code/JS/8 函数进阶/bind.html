@@ -1,40 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-		<title>bind</title>
-	</head>
-	<body>
-		<button>hello world</button>
-	</body>
-	<script>
-		//bind是复制函数行为
-		let a = function() {};
-		let b = a;
-		console.log(a === b); //true
-		//bind是新复制函数
-		let c = a.bind();
-		console.log(a == c); //false
-		
-		//绑定参数注意事项
-		function hd(a, b) {
-		  return this.f + a + b;
-		}
-		
-		//使用bind会生成新函数
-		let newFunc = hd.bind({ f: 1 }, 3);
-		
-		//1+3+2 参数2赋值给b即 a=3,b=2
-		console.log(newFunc(2));
-		
-		//在事件中使用bind
-		 document.querySelector("button").addEventListener(
-		    "click",
-		    function(event) {
-		      console.log(event.target.innerHTML + this.url);
-		    }.bind({ url: "CY" })
-		  );
-	</script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>bind</title>
+  </head>
+  <body>
+    <button>hello world</button>
+  </body>
+  <script>
+    //bind是复制函数行为
+    let a = function () {};
+    let b = a;
+    console.log(a === b);
+
+    //bind是新复制函数
+    let c = a.bind();
+    console.log(a == c);
+
+    //绑定参数注意事项
+    function obj(a, b) {
+      return this.f + a + b;
+    }
+
+    //使用bind会生成新函数
+    let newFunc = obj.bind({ f: 1 }, 3);
+
+    //1+3+2 参数2赋值给b即 a=3,b=2
+    console.log(newFunc(2));
+
+    //在事件中使用bind
+    document.querySelector("button").addEventListener(
+      "click",
+      function (event) {
+        console.log(event.target.innerHTML + this.url);
+      }.bind({ url: ".com" })
+    );
+  </script>
 </html>
