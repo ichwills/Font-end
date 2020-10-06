@@ -1,43 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-		<title></title>
-	</head>
-	<body>
-		<button message="Cy">HW</button>
-		<button message="cY">hw</button>
-	</body>
-	<script>
-		//call apply
-		let lisi = {
-			name: "李四"
-		};
-		let wangwu = {
-			name: "王五"
-		};
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title></title>
+  </head>
+  <body>
+    <button message="Cy">HW</button>
+    <button message="cY">hw</button>
+  </body>
+  <script>
+    //call apply
+    let lisi = {
+      name: "ls",
+    };
+    let wangwu = {
+      name: "ww",
+    };
 
-		function User(web, url) {
-			console.log(this.name + web + url);
-		}
-		User.call(lisi, "CY", "Hello World");
-		User.apply(lisi, ["CY", "hello wolrd"]);
+    function User(pre, sub) {
+      console.log(sub + pre + this.name);
+    }
+    User.call(lisi, " is ", "Name");
+    User.apply(wangwu, [" is ", "name"]);
 
-		//使用 call 设置函数上下文
-		function show() {
-			alert(this.getAttribute('message'));
-		}
-		let bts = document.getElementsByTagName('button');
-		for (let i = 0; i < bts.length; i++) {
-			bts[i].addEventListener('click', () => show.call(bts[i]));
-		}
+    //使用 call 设置函数上下文
+    function show() {
+      console.log(this.getAttribute("message"));
+    }
+    let bts = document.getElementsByTagName("button");
+    for (let i = 0; i < bts.length; i++) {
+      bts[i].addEventListener("click", () => show.call(bts[i]));
+    }
 
-		//找数组中的数值最大值
-		let arr = [1, 3, 2, 8];
-		console.log(Math.max(arr)); //NaN
-		console.log(Math.max.apply(Math, arr)); //8
-		console.log(Math.max(...arr)); //8
-	</script>
+    //找数组中的数值最大值
+    let arr = [1, 3, 2, 8];
+    console.log(Math.max(arr));
+    console.log(Math.max.call(arr));
+    console.log(Math.max.apply(Math, arr));
+    console.log(Math.max(...arr));
+  </script>
 </html>
