@@ -1,3 +1,0 @@
-<view class="qiun-charts">
-  <canvas canvas-id="canvasColumn" id="canvasColumn" class="charts" bindtap="touchColumn"></canvas>
-</view>
