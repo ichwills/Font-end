@@ -1,27 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<title>用于将内容视为多行匹配，主要是对 ^和 $ 的修饰
-			将下面是将以 #数字 开始的课程解析为对象结构</title>
-	</head>
-	<body></body>
-	<script>
-		let hd = `
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body></body>
+  <script>
+    /*
+			用于将内容视为多行匹配，主要是对 ^和 $ 的修饰 将下面是将以 #数字
+			开始的课程解析为对象结构 
+		*/
+    let obj = `
     #1 js,200元 #
     #2 php,300元 #
     #9 hello world # CY
-    #3 node.js,180元 #
-  `;
-		// [{name:'js',price:'200元'}]
-		let lessons = hd.match(/^\s*#\d+\s+.+\s+#$/gm).map(v => {
-			v = v.replace(/\s*#\d+\s*/, "").replace(/\s+#/, "");
-			[name, price] = v.split(",");
-			return {
-				name,
-				price
-			};
-		});
-		console.log(JSON.stringify(lessons, null, 2));
-	</script>
+    #3 node.js,180元 #`;
+    let lessons = obj.match(/^\s*#\d+\s+.+\s+#$/gm).map((v) => {
+      v = v.replace(/\s*#\d+\s*/, "").replace(/\s+#/, "");
+      [name, price] = v.split(",");
+      return {
+        name,
+        price,
+      };
+    });
+    console.log(JSON.stringify(lessons, null, 2));
+  </script>
 </html>
