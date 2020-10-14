@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title> </title>
+    <!--绝对定位我们可以很方便的控制元素在任何位置的摆放 -->
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+
+      body {
+        padding: 100px;
+        margin: 0;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      ul li {
+        width: 300px;
+        border: solid 8px blueviolet;
+        overflow: hidden;
+        position: relative;
+      }
+
+      ul li img {
+        width: 100%;
+        float: left;
+      }
+
+      ul li > span {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        background: red;
+        border-radius: 50%; /* 设置圆角 */
+        text-align: center;
+        font-size: 14px;
+        color: white;
+        line-height: 2em;
+        left: 10px;
+        top: 10px;
+        box-shadow: 0 0 10px #333;
+      }
+    </style>
+  </head>
+
+  <body>
+    <ul>
+      <li>
+        <span>热</span>
+        <img
+          src="https://static.veer.com/veer/static/resources/keyword/2020-02-19/533ed30de651499da1c463bca44b6d60.jpg"
+          alt="here cannot find"
+        />
+      </li>
+    </ul>
+  </body>
+</html>
