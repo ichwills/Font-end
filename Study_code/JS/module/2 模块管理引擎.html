@@ -6,7 +6,7 @@
   </head>
   <body></body>
   <script>
-    let module = (function() {
+    let module = (function () {
       const moduleList = {};
       function define(name, modules, action) {
         modules.map((m, i) => {
@@ -16,32 +16,32 @@
       }
       return { define };
     })();
-    module.define("hd", [], function() {
+    module.define("cy", [], function () {
       return {
         first(arr) {
           return arr[0];
         },
         max(arr, key) {
           return arr.sort((a, b) => b[key] - a[key])[0];
-        }
+        },
       };
     });
-    module.define("lesson", ["hd"], function(hd) {
+    module.define("lesson", ["cy"], function (cy) {
       let data = [
         { name: "js", price: 199 },
-        { name: "mysql", price: 78 }
+        { name: "mysql", price: 78 },
       ];
     });
-    module.define("a", [], function() {
+    module.define("a", [], function () {
       return {
         site: " ",
-        url: " helloworld.com"
+        url: " helloworld.com",
       };
     });
-    module.define("b", ["a"], function(a) {
+    module.define("b", ["a"], function (a) {
       a.site = "Hello World";
     });
-    module.define("c", ["a"], function(a) {
+    module.define("c", ["a"], function (a) {
       console.log(a);
     });
   </script>
