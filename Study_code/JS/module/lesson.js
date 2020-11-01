@@ -10,3 +10,4 @@ class Lesson {
 let obj = new Lesson();
 obj.init();
 export { obj };
+console.log("lesson.js");
