@@ -21,6 +21,6 @@ function jsonStringify(obj) {
     return (arr ? "[" : "{") + String(json) + (arr ? "]" : "}");
   }
 }
-jsonStringify({ x: 5 });
-jsonStringify([1, "false", false]);
-jsonStringify({ b: undefined });
+console.log(jsonStringify({ x: 5 }));
+console.log(jsonStringify([1, "false", false]));
+console.log(jsonStringify({ b: undefined }));
