@@ -1,5 +1,5 @@
 {
-  "prettier.printWidth": 150,
+  "prettier.printWidth": 200,
   "prettier.tabWidth": 2,
   "prettier.useTabs": false,
   "prettier.semi": true,
