@@ -1,7 +1,6 @@
-/.idea
-/Test
-/lib
-/.vscode
-/H5 Boilerplate
-/debug.log
-/TS-test
+.idea
+.vscode
+lib
+Test
+debug.log
+.gitignore
