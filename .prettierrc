@@ -3,7 +3,7 @@
   "prettier.tabWidth": 2,
   "prettier.useTabs": false,
   "prettier.semi": true,
-  "prettier.singleQuote": true,
+  "prettier.singleQuote": false,
   "prettier.proseWrap": "preserve",
   "prettier.arrowParens": "avoid",
   "prettier.bracketSpacing": true,
