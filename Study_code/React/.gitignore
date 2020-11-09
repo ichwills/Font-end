@@ -117,3 +117,5 @@ dist
 
 #user
 /Test
+package-lock.json
+.gitignore
