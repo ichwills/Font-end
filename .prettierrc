@@ -1,11 +1,11 @@
 {
-  "prettier.printWidth": 200,
+  "prettier.printWidth": 120,
   "prettier.tabWidth": 2,
   "prettier.useTabs": false,
   "prettier.semi": true,
-  "prettier.singleQuote": false,
-  "prettier.proseWrap": "preserve",
-  "prettier.arrowParens": "avoid",
+  "prettier.singleQuote": true,
+  "prettier.proseWrap": "always",
+  "prettier.arrowParens": "always",
   "prettier.bracketSpacing": true,
   "prettier.disableLanguages": ["vue"],
   "prettier.endOfLine": "auto",
@@ -16,8 +16,6 @@
   "prettier.jsxSingleQuote": false,
   "prettier.parser": "babylon",
   "prettier.requireConfig": false,
-  "prettier.stylelintIntegration": false,
   "prettier.trailingComma": "es5",
-  "prettier.tslintIntegration": false,
-  "insertSpaceBeforeFunctionParenthesis": false
+  "prettier.tslintIntegration": false
 }
