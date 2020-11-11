@@ -1,82 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JS Drum Kit</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <title>JS Drum Kit</title>
-  <link rel="stylesheet" href="style.css">
-</head>
+  <body>
+    <div class="keys">
+      <div data-key="65" class="key">
+        <kbd>A</kbd>
+        <span class="sound">clap</span>
+      </div>
+      <div data-key="83" class="key">
+        <kbd>S</kbd>
+        <span class="sound">hihat</span>
+      </div>
+      <div data-key="68" class="key">
+        <kbd>D</kbd>
+        <span class="sound">kick</span>
+      </div>
+      <div data-key="70" class="key">
+        <kbd>F</kbd>
+        <span class="sound">openhat</span>
+      </div>
+      <div data-key="71" class="key">
+        <kbd>G</kbd>
+        <span class="sound">boom</span>
+      </div>
+      <div data-key="72" class="key">
+        <kbd>H</kbd>
+        <span class="sound">ride</span>
+      </div>
+      <div data-key="74" class="key">
+        <kbd>J</kbd>
+        <span class="sound">snare</span>
+      </div>
+      <div data-key="75" class="key">
+        <kbd>K</kbd>
+        <span class="sound">tom</span>
+      </div>
+      <div data-key="76" class="key">
+        <kbd>L</kbd>
+        <span class="sound">tink</span>
+      </div>
+    </div>
 
-<body>
-  <div class="keys">
-    <div data-key="65" class="key">
-      <kbd>A</kbd>
-      <span class="sound">clap</span>
-    </div>
-    <div data-key="83" class="key">
-      <kbd>S</kbd>
-      <span class="sound">hihat</span>
-    </div>
-    <div data-key="68" class="key">
-      <kbd>D</kbd>
-      <span class="sound">kick</span>
-    </div>
-    <div data-key="70" class="key">
-      <kbd>F</kbd>
-      <span class="sound">openhat</span>
-    </div>
-    <div data-key="71" class="key">
-      <kbd>G</kbd>
-      <span class="sound">boom</span>
-    </div>
-    <div data-key="72" class="key">
-      <kbd>H</kbd>
-      <span class="sound">ride</span>
-    </div>
-    <div data-key="74" class="key">
-      <kbd>J</kbd>
-      <span class="sound">snare</span>
-    </div>
-    <div data-key="75" class="key">
-      <kbd>K</kbd>
-      <span class="sound">tom</span>
-    </div>
-    <div data-key="76" class="key">
-      <kbd>L</kbd>
-      <span class="sound">tink</span>
-    </div>
-  </div>
+    <audio data-key="65" src="sounds/clap.wav">A</audio>
+    <audio data-key="83" src="sounds/hihat.wav">S</audio>
+    <audio data-key="68" src="sounds/kick.wav">D</audio>
+    <audio data-key="70" src="sounds/openhat.wav">F</audio>
+    <audio data-key="71" src="sounds/boom.wav">G</audio>
+    <audio data-key="72" src="sounds/ride.wav">H</audio>
+    <audio data-key="74" src="sounds/snare.wav">J</audio>
+    <audio data-key="75" src="sounds/tom.wav">K</audio>
+    <audio data-key="76" src="sounds/tink.wav">L</audio>
 
-  <audio data-key="65" src="sounds/clap.wav"></audio>
-  <audio data-key="83" src="sounds/hihat.wav"></audio>
-  <audio data-key="68" src="sounds/kick.wav"></audio>
-  <audio data-key="70" src="sounds/openhat.wav"></audio>
-  <audio data-key="71" src="sounds/boom.wav"></audio>
-  <audio data-key="72" src="sounds/ride.wav"></audio>
-  <audio data-key="74" src="sounds/snare.wav"></audio>
-  <audio data-key="75" src="sounds/tom.wav"></audio>
-  <audio data-key="76" src="sounds/tink.wav"></audio>
+    <script>
+      //在 CSS transition 结束后会被触发 利用这个事件消除原来事件的样式
+      function removeTransition(e) {
+        //因为CSS中不但存在一个样式所以需要有一个判断语句判断并消除所有的样式
+        if (e.propertyName !== "transform") return;
+        e.target.classList.remove("playing");
+      }
 
-  <script>
-    function removeTransition(e) {
-      if (e.propertyName !== 'transform') return;
-      e.target.classList.remove('playing');
-    }
+      //添加键盘事件监听后 触发键盘事件时即可获取事件的 keyCode 属性值 以此为线索，操作对应的按钮及音频
+      function playSound(e) {
+        const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+        const key = document.querySelector(`div[data-key="${e.keyCode}"]`);
+        while (!audio) return;
 
-    function playSound(e) {
-      const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
-      const key = document.querySelector(`div[data-key="${e.keyCode}"]`);
-      if (!audio) return;
-
-      key.classList.add('playing');
-      audio.currentTime = 0;
-      audio.play();
-    }
-
-    const keys = Array.from(document.querySelectorAll('.key'));
-    keys.forEach(key => key.addEventListener('transitionend', removeTransition));
-    window.addEventListener('keydown', playSound);
-  </script>
-</body>
-
+        //每次播放音频之前，设置播放时间戳为 0：
+        key.classList.add("playing");
+        audio.currentTime = 0;
+        audio.play();
+      }
+      /*使用 document.querySelector 获取一组符合 CSS 选择符的元素快照
+      类型为 NodeList（此对象是对于文档的实时运行的动态查询）
+      对其进行遍历时可采用 forEach 方法*/
+      const keys = Array.from(document.querySelectorAll(".key"));
+      keys.forEach((key) =>
+        key.addEventListener("transitionend", removeTransition)
+      );
+      window.addEventListener("keydown", playSound);
+    </script>
+  </body>
 </html>
