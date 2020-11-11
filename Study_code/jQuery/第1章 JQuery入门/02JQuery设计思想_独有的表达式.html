@@ -1,36 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-        <title>Document</title>
-        <script src = 'jquery-1.10.1.min.js'></script>
-        <script>
-            window.onload = function(){
-                // $("li").css("backgroundColor", 'red');
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <script src="../Lib/jquery-3.5.0.min.js"></script>
+    <script>
+      window.onload = function () {
+        // $("li").css("backgroundColor", 'red');
 
-                //表达式的写法
-                // $("li:first").css("backgroundColor", 'red');
-                // $("li:last").css("backgroundColor", 'red');
+        //表达式的写法
+        // $("li:first").css("backgroundColor", 'red');
+        // $("li:last").css("backgroundColor", 'red');
 
-                //比较高级的表达式写法
-                // $("li:even").css("backgroundColor", 'red');//偶数
+        //比较高级的表达式写法
+        // $("li:even").css("backgroundColor", 'red');//偶数
 
-                // $("li:odd").css("backgroundColor", 'blue');//奇数
+        // $("li:odd").css("backgroundColor", 'blue');//奇数
 
-
-                $("li:eq(2)").css("backgroundColor", 'red');
-            }
-        </script>
-    </head>
-    <body>
-        <ul>
-            <li>1111</li>
-            <li>1111</li>
-            <li>1111</li>
-            <li>1111</li>
-            <li>1111</li>
-        </ul>
-    </body>
+        $("li:eq(2)").css("backgroundColor", "red");
+      };
+    </script>
+  </head>
+  <body>
+    <ul>
+      <li>1111</li>
+      <li>1111</li>
+      <li>1111</li>
+      <li>1111</li>
+      <li>1111</li>
+    </ul>
+  </body>
 </html>

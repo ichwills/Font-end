@@ -1,24 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-        <title>Document</title>
-        <style>
-            div{width: 100px; height: 100px; background-color: orange}
-            #div2{background-color: blue}
-            .box{background-color: green}
-        </style>
-        <script src = 'jquery-1.10.1.min.js'></script>
-        <script>
-            /* 
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        background-color: orange;
+      }
+      #div2 {
+        background-color: blue;
+      }
+      .box {
+        background-color: green;
+      }
+    </style>
+    <script src="../Lib/jquery-3.5.0.min.js"></script>
+    <script>
+      /* 
                 停止动画的函数
 
                 delay()  延迟
             */
-            $(function(){
-                /* $("#div1").hover(function(){
+      $(function () {
+        /* $("#div1").hover(function(){
 
                     
                         // 小技巧：
@@ -36,22 +44,24 @@
                     }, 2000)
                 }) */
 
-                $("#div1").click(function(){
-                    $("#div1").animate({width: 300}, 2000).delay(4000).animate({height: 300}, 2000);
-                })
+        $("#div1").click(function () {
+          $("#div1")
+            .animate({ width: 300 }, 2000)
+            .delay(4000)
+            .animate({ height: 300 }, 2000);
+        });
 
-                $("#div2").click(function(){
-                    // $("#div1").stop(); //停止第一个动画，当时后续动画正常运动
-                    // $("#div1").stop(true); //停止所有动画
-                    // $("#div1").stop(true, true); //停止所有动画，并且将当前正在进行的动画，直接到达目的值
-                    $("#div1").finish(); //停止所有动画,并且将所有的动画都到达目的值
-                })
-            })
-        </script>
-    </head>
-    <body>
-        <div id = 'div1'></div>
-        <div id = 'div2'></div>
-        
-    </body>
+        $("#div2").click(function () {
+          // $("#div1").stop(); //停止第一个动画，当时后续动画正常运动
+          // $("#div1").stop(true); //停止所有动画
+          // $("#div1").stop(true, true); //停止所有动画，并且将当前正在进行的动画，直接到达目的值
+          $("#div1").finish(); //停止所有动画,并且将所有的动画都到达目的值
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="div1"></div>
+    <div id="div2"></div>
+  </body>
 </html>

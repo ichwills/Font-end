@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
-    <script src='jquery-1.10.1.min.js'></script>
+    <script src="../Lib/jquery-3.5.0.min.js"></script>
     <script>
       /* 
           • insertBefore()     before()
@@ -31,19 +30,17 @@
 
         // $("div").remove();
 
-
         //找到span节点插入到div的前面
         // $("span").insertBefore($("div")).css("backgroundColor", 'red');
 
         //div节点前面是span
-        $("div").before($("span")).css("backgroundColor", 'red');
-      })
+        $("div").before($("span")).css("backgroundColor", "red");
+      });
     </script>
   </head>
 
   <body>
-    <div id='div1'><em>em</em>div文本</div>
+    <div id="div1"><em>em</em>div文本</div>
     <span>span</span>
   </body>
-
 </html>

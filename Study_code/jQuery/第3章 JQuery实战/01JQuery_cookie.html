@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-        <title>Document</title>
-        <script src = 'jquery-1.10.1.min.js'></script>
-        <script src = 'jquery.cookie.js'></script>
-        <script>
-            /* 
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <script src="../Lib/jquery-3.5.0.min.js"></script>
+    <script src="jquery.cookie.js"></script>
+    <script>
+      /* 
                 $.cookie()
 
                 具体调用的格式
@@ -22,7 +22,7 @@
                 $.cookie(name, null); 删除cookie
              */
 
-             /* $.cookie("变种人", "X教授", {
+      /* $.cookie("变种人", "X教授", {
                  expires: 7,
                  raw: true
              })
@@ -35,21 +35,19 @@
                  expires: 1000
              }) */
 
+      alert($.cookie("变种人"));
+      alert($.cookie("赛亚人"));
+      alert($.cookie("海贼王"));
 
-             alert($.cookie("变种人"));
-             alert($.cookie("赛亚人"));
-             alert($.cookie("海贼王"));
-
-             $(function(){
-                 $("#btn1").click(function(){
-                     $.cookie("赛亚人", null);
-                     alert($.cookie("赛亚人"));
-                 })
-             })
-        
-        </script>
-    </head>
-    <body>
-        <button id = 'btn1'>删除cookie</button>
-    </body>
+      $(function () {
+        $("#btn1").click(function () {
+          $.cookie("赛亚人", null);
+          alert($.cookie("赛亚人"));
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <button id="btn1">删除cookie</button>
+  </body>
 </html>

@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-        <title>Document</title>
-        <script src = 'jquery-1.10.1.min.js'></script>
-        <script>
-            /* 
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <script src="../Lib/jquery-3.5.0.min.js"></script>
+    <script>
+      /* 
                 add() 可以将多个选择器拼接在一起
 
                 slice()  slice(start, end) [start, end)
                 获取指定范围内获取到的元素节点。
              */
-            $(function(){
-                /* $("div")
+      $(function () {
+        /* $("div")
                 .css("backgroundColor", 'red')
                 .click(function(){
                     alert("单击");
@@ -51,8 +51,8 @@
                     $(this).css("backgroundColor", 'blue');
                 }) */
 
-                // $("div").add("span").add("ul li")
-                /* $("div,span,ul li")
+        // $("div").add("span").add("ul li")
+        /* $("div,span,ul li")
                 .css("backgroundColor", 'red')
                 .click(function(){
                     alert("单击");
@@ -64,20 +64,20 @@
                     $(this).css("backgroundColor", 'blue');
                 }) */
 
-                $("ul li").slice(1, 4).css("backgroundColor", 'red');
-            })
-        </script>
-    </head>
-    <body>
-        <div>div</div>
-        <span>span</span>
-        <p>p</p>
-        <ul>
-            <li>111</li>
-            <li>111</li>
-            <li>111</li>
-            <li>111</li>
-            <li>111</li>
-        </ul>
-    </body>
+        $("ul li").slice(1, 4).css("backgroundColor", "red");
+      });
+    </script>
+  </head>
+  <body>
+    <div>div</div>
+    <span>span</span>
+    <p>p</p>
+    <ul>
+      <li>111</li>
+      <li>111</li>
+      <li>111</li>
+      <li>111</li>
+      <li>111</li>
+    </ul>
+  </body>
 </html>

@@ -1,31 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
-    <script src='jquery-1.10.1.min.js'></script>
+    <script src="../Lib/jquery-3.5.0.min.js"></script>
     <script>
-        $(function () {
-            /* 
+      $(function () {
+        /* 
             通过jquery html , 修改value  类似innerHTML
              */
-            console.log($("#div1").html());
-            $("#div1").html("<h2>新赋值的内容</h2>")
+        console.log($("#div1").html());
+        $("#div1").html("<h2>新赋值的内容</h2>");
 
-            console.log($("input").val());
-            $("input").val("world hello");
-        })
+        console.log($("input").val());
+        $("input").val("world hello");
+      });
     </script>
-</head>
+  </head>
 
-<body>
-    <div id='div1'>
-        div
-    </div>
-    <input type="text" value='helloworld' />
-</body>
-
+  <body>
+    <div id="div1">div</div>
+    <input type="text" value="helloworld" />
+  </body>
 </html>

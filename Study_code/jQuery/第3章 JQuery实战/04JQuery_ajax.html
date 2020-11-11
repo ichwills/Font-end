@@ -1,57 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-        <title>Document</title>
-        <style>
-            div{width: 400px; height: 400px; border: 1px solid black;}
-        </style>
-        <script src = 'jquery-1.10.1.min.js'></script>
-        <script>
-            /* 
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 400px;
+        height: 400px;
+        border: 1px solid black;
+      }
+    </style>
+    <script src="../Lib/jquery-3.5.0.min.js"></script>
+    <script>
+      /* 
                 load方法
                 将url传入以后，将下载到数据直接填充到被选中元素的innerHTML中
             */
-           $(function(){
-               
-               $("button").eq(0).click(function(){
-                   $("div").load("2.txt #p1", function(data, statusText, xhr){
-                        /* 
+      $(function () {
+        $("button")
+          .eq(0)
+          .click(function () {
+            $("div").load("2.txt #p1", function (data, statusText, xhr) {
+              /* 
                             data 下载到的数据
                             statusText  下载的状态  success
                             xhr ajax对象
                         */
-                      /*  alert(data + ", " + statusText);
+              /*  alert(data + ", " + statusText);
                        alert(xhr.status); */
-                   })
-               })
+            });
+          });
 
-               /* $("button").eq(1).click(function(){
+        /* $("button").eq(1).click(function(){
                    
                    $.get("2.txt", function(data, statusText, xhr){
                         alert(data);
                    })
                }) */
 
-               $("button").eq(2).click(function(){
-                   
-                   $.post("1.post.php", {
-                       username: 'tian',
-                       age: 19,
-                       password: "123abc"
-                   }, function(data, statusText, xhr){
-                       alert(data);
-                   })
-               })
-           })
-        </script>
-    </head>
-    <body>
-        <button>下载数据</button>
-        <button>GET请求</button>
-        <button>POST请求</button>
-        <div></div>
-    </body>
+        $("button")
+          .eq(2)
+          .click(function () {
+            $.post(
+              "1.post.php",
+              {
+                username: "tian",
+                age: 19,
+                password: "123abc",
+              },
+              function (data, statusText, xhr) {
+                alert(data);
+              }
+            );
+          });
+      });
+    </script>
+  </head>
+  <body>
+    <button>下载数据</button>
+    <button>GET请求</button>
+    <button>POST请求</button>
+    <div></div>
+  </body>
 </html>
