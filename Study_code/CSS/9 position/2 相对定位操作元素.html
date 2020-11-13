@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <title> </title>
+    <!-- 相对定位参照规定框 例如:<img>参照<p> -->
     <style>
       * {
         padding: 0;
@@ -20,14 +21,13 @@
         width: 30px;
         height: 30px;
         position: relative; /*将以此为准规定范围*/
-        top: -10px;
+        top: -10px; /* top 与 bottom冲突, left 与 right冲突*/
         /* left: 20px; */
         /* right: 30px; */
         /* bottom: 30px; */
       }
     </style>
   </head>
-
   <body>
     <p>
       <img
