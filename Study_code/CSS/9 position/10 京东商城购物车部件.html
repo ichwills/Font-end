@@ -22,16 +22,6 @@
         cursor: pointer;
       }
 
-      article:hover div:nth-of-type(1) {
-        border-bottom: none;
-        border-color: blueviolet;
-      }
-
-      article:hover div:nth-of-type(2) {
-        display: block;
-        border-color: blueviolet;
-      }
-
       article div {
         height: 50px;
         border: solid 1px #ddd;
@@ -51,6 +41,16 @@
         right: 0;
         top: 50px;
         display: none;
+      }
+
+      article:hover div:nth-of-type(1) {
+        border-bottom: none;
+        border-color: blueviolet;
+      }
+
+      article:hover div:nth-of-type(2) {
+        display: block;
+        border-color: blueviolet;
       }
     </style>
   </head>
