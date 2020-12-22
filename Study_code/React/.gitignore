@@ -119,3 +119,4 @@ dist
 /Test
 package-lock.json
 .gitignore
+JSX
