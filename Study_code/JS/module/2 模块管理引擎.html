@@ -2,21 +2,22 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title> </title>
+    <title></title>
   </head>
   <body></body>
   <script>
     let module = (function () {
       const moduleList = {};
-      function define(name, modules, action) {
+      function define(name, modules, func) {
         modules.map((m, i) => {
           modules[i] = moduleList[m];
         });
-        moduleList[name] = action.apply(null, modules);
+        moduleList[name] = func.apply(null, modules);
       }
       return { define };
     })();
-    module.define("cy", [], function () {
+
+    module.define('cy', [], function () {
       return {
         first(arr) {
           return arr[0];
@@ -26,22 +27,25 @@
         },
       };
     });
-    module.define("lesson", ["cy"], function (cy) {
+
+    module.define('lesson', ['cy'], function (cy) {
       let data = [
-        { name: "js", price: 199 },
-        { name: "mysql", price: 78 },
+        { name: 'js', price: 199 },
+        { name: 'mysql', price: 78 },
       ];
     });
-    module.define("a", [], function () {
+
+    module.define('a', [], function () {
       return {
-        site: " ",
-        url: " helloworld.com",
+        site: 'site',
+        url: 'site.com',
       };
     });
-    module.define("b", ["a"], function (a) {
-      a.site = "Hello World";
+    module.define('b', ['a'], function (a) {
+      a.word = 'Hello World';
     });
-    module.define("c", ["a"], function (a) {
+
+    module.define('c', ['a'], function (a) {
       console.log(a);
     });
   </script>

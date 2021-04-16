@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body></body>
+
+  <script type="module" src="./count.js">
+    /*
+    模块在导入时只执行一次解析,之后的导入不会再执行模块代码,使用第一次解析结果,并共享数据
+        可以在首次导入时完成一些初始化工作
+        如果模块内有后台请求，也只执行一次即可
+    */
+      import { obj } from './count.js';
+      console.log(obj.get());
+      import { count } from './lesson.js';
+      console.log(count);
+  </script>
+</html>

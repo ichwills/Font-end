@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body></body>
+  <script type="module">
+    //模块默认顶层静态导入,选择语句不能使用
+    //ES6语法
+    import { site, show, User } from './modules/m7.js';
+
+    //浏览器无法识别require  属于node.js
+    // const m7 = require('./modules/m7.js');
+    console.log(site);
+    console.log(show());
+    console.log(User.render());
+  </script>
+</html>

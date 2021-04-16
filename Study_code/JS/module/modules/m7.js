@@ -1,10 +1,10 @@
-let site = " ";
+let site = 'Site';
 function show() {
-  return "show function";
+  return 'show function';
 }
 class User {
   static render() {
-    return "user static render";
+    return 'user static render';
   }
 }
 export { site, show, User };
