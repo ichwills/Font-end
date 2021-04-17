@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body>
+    <button>Button</button>
+  </body>
+  <script type="module">
+    //import函数   因为import必须写在顶层
+    document.querySelector('button').addEventListener('click', () => {
+      import('./modules/m14.js').then(({ site, url }) => {
+        console.log(site, url);
+      });
+    });
+  </script>
+</html>
