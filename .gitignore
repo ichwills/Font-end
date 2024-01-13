@@ -1,11 +1,10 @@
-.idea
-.vscode
-lib
-Test
-debug.log
-.gitignore
-.prettierrc
+# gitignore template for Vue.js projects
+#
+# Recommended template: Node.gitignore
 
-Mysql
-class
-Vue
+# TODO: where does this rule come from?
+docs/_book
+
+# TODO: where does this rule come from?
+test/
+Vue/
