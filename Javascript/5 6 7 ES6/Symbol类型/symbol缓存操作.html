@@ -1,25 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-		<title></title>
-	</head>
-	<body></body>
-	<script>
-		/*使用Symbol可以解决在保存数据时由于名称相同造成的耦合覆盖问题*/
-		class Cache {
-			static data = {};
-			static set(name, value) {
-				return (this.data[name] = value);
-			}
-			static get(name) {
-				return this.data[name];
-			}
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title></title>
+</head>
+
+<body></body>
+<script>
+	/*使用Symbol可以解决在保存数据时由于名称相同造成的耦合覆盖问题*/
+	class Cache {
+		static data = {};
+		static set (name, value) {
+			return (this.data[name] = value);
 		}
-		Cache.set("Hello World", " helloworld.com");
-		console.log(Cache.get("Hello World"));
+		static get (name) {
+			return this.data[name];
+		}
+	}
+	Cache.set("Hello World", " helloworld.com");
+	console.log(Cache.get("Hello World"));
 		// let user = {
 		// 	name: "apple",
 		// 	desc: "用户资料",
@@ -33,5 +35,6 @@
 		// Cache.set(user.key, user);
 		// Cache.set(cart.key, cart);
 		// console.log(Cache.get(cart.key));
-	</script>
+</script>
+
 </html>

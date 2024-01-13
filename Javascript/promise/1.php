@@ -14,4 +14,4 @@
  */
 header("Access-Control-Allow-Origin:*");
 sleep(3);
-echo ' helloworld.com';
+echo ' hello world.com';

@@ -1,36 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title></title>
-  </head>
-  <body></body>
-  <script>
-	/*传入相同参数Symbol是独立唯一的，因为参数只是描述而已，使用 Symbol.for则不会*/
-	//let edu = Symbol("HELLO WORLD");
-    //let hd = Symbol("hello world");
-    //console.log(hd == edu);//false
-	
-	/*无法生效
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title></title>
+</head>
+
+<body></body>
+<script>
+  /*传入相同参数Symbol是独立唯一的，因为参数只是描述而已，使用 Symbol.for则不会*/
+  //let edu = Symbol("HELLO WORLD");
+  //let hd = Symbol("hello world");
+  //console.log(hd == edu);//false
+
+  /*无法生效
     // hd.name = " ";
     // console.log(edu.name);*/
-	
-    // console.log(edu.description);//使用description可以获取传入的描述参数
-	
-	/*symbol-for
-	根据描述获取Symbol，如果不存在则新建一个Symbol
-	使用Symbol.for会在系统中将Symbol登记
-	使用Symbol则不会登记*/
-    let cms = Symbol.for("HW");
-    // let edu = Symbol.for("HW");
-    // console.log(cms == edu);
-    let hw = Symbol("hello world");
-    let hw1 = Symbol("hello world");
-    let hw2 = Symbol("hello world");
-    console.log(Symbol.keyFor(cms));
-	console.log(Symbol.keyFor(hw));
+
+  // console.log(edu.description);//使用description可以获取传入的描述参数
+
+  /*symbol-for
+  根据描述获取Symbol，如果不存在则新建一个Symbol
+  使用Symbol.for会在系统中将Symbol登记
+  使用Symbol则不会登记*/
+  let cms = Symbol.for("HW");
+  // let edu = Symbol.for("HW");
+  // console.log(cms == edu);
+  let hw = Symbol("hello world");
+  let hw1 = Symbol("hello world");
+  let hw2 = Symbol("hello world");
+  console.log(Symbol.keyFor(cms));
+  console.log(Symbol.keyFor(hw));
 	//Symbol.keyFor根据使用Symbol.for登记的Symbol返回描述，如果找不到返回undefined 。
-  </script>
+</script>
+
 </html>
